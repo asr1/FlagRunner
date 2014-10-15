@@ -1,0 +1,166 @@
+﻿Public Class MazeScreen
+    Inherits BaseScreen
+
+    Public Shared Map As MapBase
+    Private Shared MapWidth As Integer = 50
+    Private Shared MapHeight As Integer = 50
+    Public Shared TileSize As Integer = 24
+
+
+    'Current Coordinates
+    Public MapX As Integer = 0
+    Public MapY As Integer = 0
+
+    Private MoveTime As Double = 0
+
+    Public Player1 As Player
+    Public Player2 As Player
+
+
+    Public Shared Function getMapSize() As Vector2
+        Return New Vector2(MapWidth, MapHeight)
+    End Function
+
+    Public Sub New()
+        Name = "MazeScreen"
+        Map = New MapBase(MapWidth, MapHeight, New Vector2(0, 0), New Vector2(5, 5))
+        Player1 = New Player
+        Player2 = New Player
+    End Sub
+
+    Public Overrides Sub HandleInput()
+        'Player 1
+        If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then 'And Player1.AvatarMoving = False Then
+            If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.One) Then
+                Player1.MoveAvatar(Direction.Down, Player1.AvatarPosition.X, Player1.AvatarPosition.Y + 1)
+                LastDir = Direction.Down
+            ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.One) Then
+                Player1.MoveAvatar(Direction.Up, Player1.AvatarPosition.X, Player1.AvatarPosition.Y - 1)
+                LastDir = Direction.Up
+            ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.One) Then
+                Player1.MoveAvatar(Direction.Left, Player1.AvatarPosition.X - 1, Player1.AvatarPosition.Y)
+                LastDir = Direction.Left
+            ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.One) Then
+                Player1.MoveAvatar(Direction.Right, Player1.AvatarPosition.X + 1, Player1.AvatarPosition.Y)
+                LastDir = Direction.Right
+            End If
+        Else
+            Player1.MoveDir = Direction.None
+        End If
+
+
+        'Player 2
+        If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then 'And Player2.AvatarMoving = False Then
+            If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Two) Then
+                Player2.MoveAvatar(Direction.Down, Player2.AvatarPosition.X, Player2.AvatarPosition.Y + 1)
+                LastDir = Direction.Down
+            ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Two) Then
+                Player2.MoveAvatar(Direction.Up, Player2.AvatarPosition.X, Player2.AvatarPosition.Y - 1)
+                LastDir = Direction.Up
+            ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Two) Then
+                Player2.MoveAvatar(Direction.Left, Player2.AvatarPosition.X - 1, Player2.AvatarPosition.Y)
+                LastDir = Direction.Left
+            ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Two) Then
+                Player2.MoveAvatar(Direction.Right, Player2.AvatarPosition.X + 1, Player2.AvatarPosition.Y)
+                LastDir = Direction.Right
+            End If
+        Else
+            Player2.MoveDir = Direction.None
+        End If
+
+    End Sub
+
+    Public Overrides Sub Update()
+        'character movement updates
+        MoveTime += Globals.GameTime.ElapsedGameTime.TotalMilliseconds
+
+        If MoveTime > 25 Then
+            'Player 1
+            If Player1.AvatarMoving = True Then
+                If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
+                    'finish move cycle before accepting new inputs
+                    Player1.Move(Player1.LastDir)
+                Else 'If not between movements, accept new
+                    Player1.Move(Player1.MoveDir)
+                End If
+
+                'Between movements
+                If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then
+                    Player1.AvatarMoving = False
+                End If
+            End If
+
+            'Player 2
+            If Player2.AvatarMoving = True Then
+                If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
+                    'finish move cycle before accepting new inputs
+                    Player2.Move(Player2.LastDir)
+                Else 'If not between movements, accept new
+                    Player2.Move(Player2.MoveDir)
+                End If
+
+                'Between movements
+                If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then
+                    Player2.AvatarMoving = False
+                End If
+            End If
+
+            MoveTime = 0 'reset time to reset cycle
+        End If
+
+        'End character movement updates
+    End Sub
+
+    'returns the first open square near the given coordinates.
+    Public Shared Function FindOpen(X As Integer, Y As Integer) As Vector2
+        While MapBase.TileList(X, Y).isBlocked = True 'Loop until we find one
+            If MapBase.TileList(X, Y).isBlocked = False Then
+                Return New Vector2(X, Y)
+            Else
+                X += 1
+            End If
+            If MapBase.TileList(X, Y).isBlocked = False Then
+                Return New Vector2(X, Y)
+            Else
+                X -= 1
+                Y += 1
+                If MapBase.TileList(X, Y).isBlocked = False Then
+                    Return New Vector2(X, Y)
+                Else
+                    X += 1
+                End If
+            End If
+
+        End While
+        Return New Vector2(X, Y)
+    End Function
+
+    Public Overrides Sub Draw()
+        MyBase.Draw()
+        Globals.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
+
+        'Draw Maze Layer (Players will walk "on" this)
+        For DrawX As Integer = -1 To MapWidth 'Start drawing to the left of the screen, avoiding clipping
+            For DrawY As Integer = -1 To MapHeight
+                Dim X As Integer = DrawX + MapX
+                Dim Y As Integer = DrawY + MapY
+
+                If X >= 0 And X <= MapWidth And Y >= 0 And Y <= MapHeight Then
+                    Globals.SpriteBatch.Draw(MapBase.TileList(X, Y).TileGFX, New Rectangle(DrawX * TileSize, DrawY * TileSize, TileSize, TileSize), New Rectangle(0, 0, 31, 31), Color.White)
+                    'DEBUG view coordinates on tile
+                    'If DrawX Mod 10 = 0 And DrawY Mod 2 = 0 Then
+                    'Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "x: " & X & vbCrLf & "y: " & Y, New Vector2(DrawX * TileSize, DrawY * TileSize), Color.White)
+                    'End If
+
+                End If
+            Next
+        Next 'End maze
+
+        'Avatars
+        Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.AvatarPosition.X * TileSize, Player1.AvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
+        Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.AvatarPosition.X * TileSize, Player2.AvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
+
+        Globals.SpriteBatch.End()
+    End Sub
+
+End Class

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FlagRunner
+</name>
+</assembly>
+<members>
+<member name="M:FlagRunner.Program.Main(System.String[])">
+	<summary>
+ The main entry point for the application.
+ </summary>
+</member>
+</members>
+</doc>
