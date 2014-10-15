@@ -34,3 +34,4 @@ C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRu
 C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\CrackedWall2.xnb
 C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.xnb
 C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.wma
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Base.xnb

@@ -34,13 +34,17 @@ Public Class Player
     Public Sub New()
         MoveSpeed = BaseSpeed
         If playerNum = 1 Then
-            AvatarPosition = MazeScreen.FindOpen(0, 0)
+            'AvatarPosition = MazeScreen.FindOpen(0, 0)
+            AvatarPosition = New Vector2(1, 1)
         ElseIf playerNum = 2 Then
-            AvatarPosition = MazeScreen.FindOpen(MazeScreen.getMapSize.X - 5, 0)
+            'AvatarPosition = MazeScreen.FindOpen(MazeScreen.getMapSize.X - 5, 0)
+            AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, 1)
         ElseIf playerNum = 3 Then
-            AvatarPosition = MazeScreen.FindOpen(0, MazeScreen.getMapSize.Y - 5)
+            'AvatarPosition = MazeScreen.FindOpen(0, MazeScreen.getMapSize.Y - 5)
+            AvatarPosition = New Vector2(0, MazeScreen.getMapSize.Y - 1)
         ElseIf playerNum = 4 Then
-            AvatarPosition = MazeScreen.FindOpen(MazeScreen.getMapSize.X - 5, MazeScreen.getMapSize.Y - 5)
+            'AvatarPosition = MazeScreen.FindOpen(MazeScreen.getMapSize.X - 5, MazeScreen.getMapSize.Y - 5)
+            AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1)
         End If
         playerNum += 1
     End Sub

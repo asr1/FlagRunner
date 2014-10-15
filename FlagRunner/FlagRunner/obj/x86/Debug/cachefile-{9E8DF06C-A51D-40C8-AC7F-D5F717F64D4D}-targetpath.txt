@@ -24,3 +24,4 @@ Content\GFX\CrackedWall3.xnb
 Content\GFX\CrackedWall2.xnb
 Content\Songs\Athens.xnb
 Content\Songs\Athens.wma
+Content\GFX\Base.xnb

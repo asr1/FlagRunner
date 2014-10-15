@@ -2,6 +2,7 @@
     Cobble 'Walkable background
     Wall 'Cannot be destroyed. Always exterior.
     CrackedWall 'Cracked wall can be destroyed with rocket launcher. 
+    Base 'It's walkable, a spawn point, and a score point.
 End Enum
 
 Public Structure Tile

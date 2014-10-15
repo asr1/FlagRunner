@@ -171,6 +171,15 @@
       <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.wma</Extra>
       <Time>2014-10-11T15:58:17.6218378-05:00</Time>
     </Item>
+    <Item>
+      <Source>GFX\Base.png</Source>
+      <Name>GFX\Base</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Base.xnb</Output>
+      <Time>2014-10-15T13:48:59.2952925-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>
@@ -178,10 +187,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

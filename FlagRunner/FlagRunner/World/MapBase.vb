@@ -34,6 +34,9 @@
                         Case TileType.CrackedWall
                             .TileGFX = Textures.CrackedWall
                             .isBlocked = True
+                        Case TileType.Base
+                            .TileGFX = Textures.BaseTile
+                            .isBlocked = False
                     End Select
                 End With
             Next
@@ -63,6 +66,10 @@
             TileList(0, x).TerrainType = TileType.Wall
             TileList(Row, x).TerrainType = TileType.Wall
         Next
+
+        'Draw bases
+        TileList(1, 1).TerrainType = TileType.Base
+        TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
 
     End Sub
 

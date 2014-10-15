@@ -74,7 +74,7 @@
         'character movement updates
         MoveTime += Globals.GameTime.ElapsedGameTime.TotalMilliseconds
 
-        If MoveTime > 25 Then
+        If MoveTime > 15 Then
             'Player 1
             If Player1.AvatarMoving = True Then
                 If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
@@ -156,9 +156,17 @@
             Next
         Next 'End maze
 
+        'Redraw bases, with the right colors this time.
+        Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
+        Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
+
+
         'Avatars
         Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.AvatarPosition.X * TileSize, Player1.AvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
         Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.AvatarPosition.X * TileSize, Player2.AvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
+
+
+
 
         Globals.SpriteBatch.End()
     End Sub
