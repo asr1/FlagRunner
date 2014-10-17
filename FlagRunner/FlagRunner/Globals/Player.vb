@@ -41,7 +41,7 @@ Public Class Player
             AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, 1)
         ElseIf playerNum = 3 Then
             'AvatarPosition = MazeScreen.FindOpen(0, MazeScreen.getMapSize.Y - 5)
-            AvatarPosition = New Vector2(0, MazeScreen.getMapSize.Y - 1)
+            AvatarPosition = New Vector2(1, MazeScreen.getMapSize.Y - 1)
         ElseIf playerNum = 4 Then
             'AvatarPosition = MazeScreen.FindOpen(MazeScreen.getMapSize.X - 5, MazeScreen.getMapSize.Y - 5)
             AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1)

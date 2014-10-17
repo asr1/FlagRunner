@@ -19,7 +19,7 @@
     End Sub
 
     'Iterate through entire map and set properties appropiately based on type
-    Public Sub UpdateTiles(Width As Integer, Height As Integer)
+    Public Shared Sub UpdateTiles(Width As Integer, Height As Integer)
         For x = 0 To Width
             For y = 0 To Height
                 With TileList(x, y)
@@ -67,9 +67,10 @@
             TileList(Row, x).TerrainType = TileType.Wall
         Next
 
+        'Don't do this here. Move it.
         'Draw bases
-        TileList(1, 1).TerrainType = TileType.Base
-        TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
+        'TileList(1, 1).TerrainType = TileType.Base
+        'TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
 
     End Sub
 
@@ -125,6 +126,11 @@
 
         TileList(WalkWay, divPos).TerrainType = TileType.Cobble
 
+        'Make another hole for more routes
+        WalkWay = Top + Rand.Next(0, (Bottom - Top) / 2 - 1) * 2 + 1
+
+        TileList(WalkWay, divPos).TerrainType = TileType.Cobble
+
         'Recursion time
         GenerateMaze(Left, divPos, Top, Bottom)
         GenerateMaze(divPos, Right, Top, Bottom)
@@ -152,6 +158,11 @@
 
         'Make way for walking (odd integer)
         Dim WalkWay As Integer = Left + Rand.Next(0, (Right - Left) / 2 - 1) * 2 + 1
+
+        TileList(divPos, WalkWay).TerrainType = TileType.Cobble
+
+        'More openings for more paths
+        WalkWay = Left + Rand.Next(0, (Right - Left) / 2 - 1) * 2 + 1
 
         TileList(divPos, WalkWay).TerrainType = TileType.Cobble
 

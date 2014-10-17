@@ -38,33 +38,6 @@
       <Time>2014-10-06T19:08:26.6132821-05:00</Time>
     </Item>
     <Item>
-      <Source>GFX\Cobble.png</Source>
-      <Name>GFX\Cobble</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Cobble.xnb</Output>
-      <Time>2014-10-07T22:02:38.1986269-05:00</Time>
-    </Item>
-    <Item>
-      <Source>GFX\Wall.png</Source>
-      <Name>GFX\Wall</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Wall.xnb</Output>
-      <Time>2014-10-07T22:03:33.4877892-05:00</Time>
-    </Item>
-    <Item>
-      <Source>GFX\CrackedWall.png</Source>
-      <Name>GFX\CrackedWall</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\CrackedWall.xnb</Output>
-      <Time>2014-10-11T14:00:29.3765573-05:00</Time>
-    </Item>
-    <Item>
       <Source>GFX\Avatars\Pirate.png</Source>
       <Name>GFX\Avatars\Pirate</Name>
       <Importer>TextureImporter</Importer>
@@ -144,24 +117,6 @@
       <Time>2014-10-11T13:27:43.2921037-05:00</Time>
     </Item>
     <Item>
-      <Source>GFX\CrackedWall3.png</Source>
-      <Name>GFX\CrackedWall3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\CrackedWall3.xnb</Output>
-      <Time>2014-10-07T22:03:44.8414386-05:00</Time>
-    </Item>
-    <Item>
-      <Source>GFX\CrackedWall2.png</Source>
-      <Name>GFX\CrackedWall2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\CrackedWall2.xnb</Output>
-      <Time>2014-10-11T13:59:36.080509-05:00</Time>
-    </Item>
-    <Item>
       <Source>Songs\Athens.wav</Source>
       <Name>Songs\Athens</Name>
       <Importer>WavImporter</Importer>
@@ -172,13 +127,67 @@
       <Time>2014-10-11T15:58:17.6218378-05:00</Time>
     </Item>
     <Item>
-      <Source>GFX\Base.png</Source>
-      <Name>GFX\Base</Name>
+      <Source>GFX\Tiles\Cobble.png</Source>
+      <Name>GFX\Tiles\Cobble</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Base.xnb</Output>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Cobble.xnb</Output>
+      <Time>2014-10-07T22:02:38.1986269-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Tiles\Wall.png</Source>
+      <Name>GFX\Tiles\Wall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Wall.xnb</Output>
+      <Time>2014-10-07T22:03:33.4877892-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Tiles\CrackedWall3.png</Source>
+      <Name>GFX\Tiles\CrackedWall3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall3.xnb</Output>
+      <Time>2014-10-07T22:03:44.8414386-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Tiles\CrackedWall2.png</Source>
+      <Name>GFX\Tiles\CrackedWall2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall2.xnb</Output>
+      <Time>2014-10-11T13:59:36.080509-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Tiles\CrackedWall.png</Source>
+      <Name>GFX\Tiles\CrackedWall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall.xnb</Output>
+      <Time>2014-10-11T14:00:29.3765573-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Tiles\Base.png</Source>
+      <Name>GFX\Tiles\Base</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Base.xnb</Output>
       <Time>2014-10-15T13:48:59.2952925-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Connected.png</Source>
+      <Name>GFX\Connected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Connected.xnb</Output>
+      <Time>2014-10-15T19:27:09.2088092-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -187,10 +196,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

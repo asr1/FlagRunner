@@ -14,16 +14,28 @@ Public Class Input
     Shared CurrentButtonState2 As GamePadState
     Shared lastButtonState2 As GamePadState
 
+    'Xbox 360 controller 3
+    Shared CurrentButtonState3 As GamePadState
+    Shared lastButtonState3 As GamePadState
+
+    'Xbox 360 controller 4
+    Shared CurrentButtonState4 As GamePadState
+    Shared lastButtonState4 As GamePadState
+
     Public Shared Sub Update()
         'Current store to old
         LastKeyState = CurrentKeyState
         LastButtonState1 = CurrentButtonState1
         lastButtonState2 = CurrentButtonState2
+        lastButtonState3 = CurrentButtonState3
+        lastButtonState4 = CurrentButtonState4
 
         'new store to current
         CurrentKeyState = Keyboard.GetState
         CurrentButtonState1 = GamePad.GetState(PlayerIndex.One)
         CurrentButtonState2 = GamePad.GetState(PlayerIndex.Two)
+        CurrentButtonState3 = GamePad.GetState(PlayerIndex.Three)
+        CurrentButtonState4 = GamePad.GetState(PlayerIndex.Four)
     End Sub
 
 
@@ -39,6 +51,10 @@ Public Class Input
                 Return CurrentButtonState1.IsButtonDown(button)
             Case PlayerIndex.Two
                 Return CurrentButtonState2.IsButtonDown(button)
+            Case PlayerIndex.Three
+                Return CurrentButtonState3.IsButtonDown(button)
+            Case PlayerIndex.Four
+                Return CurrentButtonState4.IsButtonDown(button)
         End Select
         Return False
     End Function
@@ -57,7 +73,11 @@ Public Class Input
             Case PlayerIndex.One
                 Return CurrentButtonState1.IsButtonDown(button) And LastButtonState1.IsButtonUp(button)
             Case PlayerIndex.Two
-                Return CurrentButtonState2.IsButtonDown(button)
+                Return CurrentButtonState2.IsButtonDown(button) And lastButtonState2.IsButtonUp(button)
+            Case PlayerIndex.Three
+                Return CurrentButtonState3.IsButtonDown(button) And lastButtonState3.IsButtonUp(button)
+            Case PlayerIndex.Four
+                Return CurrentButtonState4.IsButtonDown(button) And lastButtonState4.IsButtonUp(button)
         End Select
         Return False
     End Function

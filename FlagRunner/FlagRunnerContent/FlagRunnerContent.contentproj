@@ -59,21 +59,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GFX\Cobble.png">
+    <Compile Include="GFX\Tiles\Cobble.png">
       <Name>Cobble</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GFX\Wall.png">
+    <Compile Include="GFX\Tiles\Wall.png">
       <Name>Wall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GFX\CrackedWall3.png">
+    <Compile Include="GFX\Tiles\CrackedWall3.png">
       <Name>CrackedWall3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -126,14 +126,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GFX\CrackedWall2.png">
+    <Compile Include="GFX\Tiles\CrackedWall2.png">
       <Name>CrackedWall2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GFX\CrackedWall.png">
+    <Compile Include="GFX\Tiles\CrackedWall.png">
       <Name>CrackedWall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -147,12 +147,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GFX\Base.png">
+    <Compile Include="GFX\Tiles\Base.png">
       <Name>Base</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GFX\Connected.png">
+      <Name>Connected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

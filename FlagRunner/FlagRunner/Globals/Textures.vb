@@ -5,6 +5,7 @@ Public Class Textures
     Public Shared Wall As Texture2D
     Public Shared CrackedWall As Texture2D
     Public Shared BaseTile As Texture2D
+    Public Shared StatusLight As Texture2D
 
     'Avatars
     Public Shared Pirate As Texture2D
@@ -12,11 +13,12 @@ Public Class Textures
 
     Public Shared Sub Load()
         BlackGradient = Globals.Content.Load(Of Texture2D)("GFX/blackgradient")
-        Cobble = Globals.Content.Load(Of Texture2D)("GFX/Cobble")
-        Wall = Globals.Content.Load(Of Texture2D)("GFX/Wall")
-        CrackedWall = Globals.Content.Load(Of Texture2D)("GFX/CrackedWall")
+        Cobble = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Cobble")
+        Wall = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Wall")
+        CrackedWall = Globals.Content.Load(Of Texture2D)("GFX/Tiles/CrackedWall")
         Pirate = Globals.Content.Load(Of Texture2D)("GFX/Avatars/Pirate")
-        BaseTile = Globals.Content.Load(Of Texture2D)("GFX/Base")
+        BaseTile = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Base")
+        StatusLight = Globals.Content.Load(Of Texture2D)("GFX/Connected")
     End Sub
 End Class
 

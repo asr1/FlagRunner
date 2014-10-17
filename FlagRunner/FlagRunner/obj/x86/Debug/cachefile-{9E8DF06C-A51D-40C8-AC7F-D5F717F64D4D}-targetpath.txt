@@ -2,9 +2,6 @@ Content\Fonts\Georgia_16.xnb
 Content\GFX\BlackGradient.xnb
 Content\Fonts\Centaur_10.xnb
 Content\Fonts\Georgia_16_Bold.xnb
-Content\GFX\Cobble.xnb
-Content\GFX\Wall.xnb
-Content\GFX\CrackedWall.xnb
 Content\GFX\Avatars\Pirate.xnb
 Content\Songs\Rienzi.xnb
 Content\Songs\Rienzi.wma
@@ -20,8 +17,12 @@ Content\Songs\Siegfried.xnb
 Content\Songs\Siegfried.wma
 Content\Songs\1812.xnb
 Content\Songs\1812.wma
-Content\GFX\CrackedWall3.xnb
-Content\GFX\CrackedWall2.xnb
 Content\Songs\Athens.xnb
 Content\Songs\Athens.wma
-Content\GFX\Base.xnb
+Content\GFX\Tiles\Cobble.xnb
+Content\GFX\Tiles\Wall.xnb
+Content\GFX\Tiles\CrackedWall3.xnb
+Content\GFX\Tiles\CrackedWall2.xnb
+Content\GFX\Tiles\CrackedWall.xnb
+Content\GFX\Tiles\Base.xnb
+Content\GFX\Connected.xnb

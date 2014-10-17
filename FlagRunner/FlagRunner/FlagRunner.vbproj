@@ -95,6 +95,7 @@
     <Compile Include="Globals\Globals.vb" />
     <Compile Include="Globals\Input.vb" />
     <Compile Include="Globals\Player.vb" />
+    <Compile Include="Globals\Status.vb" />
     <Compile Include="Globals\Textures.vb" />
     <Compile Include="Items\Weapons\Weapon.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
