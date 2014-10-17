@@ -26,23 +26,23 @@
     Public Sub New()
         Name = "MazeScreen"
         Map = New MapBase(MapWidth, MapHeight, New Vector2(0, 0), New Vector2(5, 5))
-        If Status.Player1 Then
+        If Status.isConnected(PlayerIndex.One) Then
             Player1 = New Player
         End If
-        If Status.Player2 Then
+        If Status.isConnected(PlayerIndex.Two) Then
             Player2 = New Player
         End If
-        If Status.Player3 Then
+        If Status.isConnected(PlayerIndex.Three) Then
             Player3 = New Player
         End If
-        If Status.Player4 Then
+        If Status.isConnected(PlayerIndex.Four) Then
             Player4 = New Player
         End If
     End Sub
 
     Public Overrides Sub HandleInput()
         'Player 1
-        If Status.Player1 Then
+        If Status.isConnected(PlayerIndex.One) Then
             If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then 'And Player1.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.One) Then
                     Player1.MoveAvatar(Direction.Down, Player1.AvatarPosition.X, Player1.AvatarPosition.Y + 1)
@@ -64,7 +64,7 @@
 
 
         'Player 2
-        If Status.Player2 Then
+        If Status.isConnected(PlayerIndex.Two) Then
             If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then 'And Player2.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Two) Then
                     Player2.MoveAvatar(Direction.Down, Player2.AvatarPosition.X, Player2.AvatarPosition.Y + 1)
@@ -85,7 +85,7 @@
         End If
 
         'Player 3
-        If Status.Player3 Then
+        If Status.isConnected(PlayerIndex.Three) Then
             If Player3.AvatarOffset.X = 0 And Player3.AvatarOffset.Y = 0 Then 'And Player3.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Three) Then
                     Player3.MoveAvatar(Direction.Down, Player3.AvatarPosition.X, Player3.AvatarPosition.Y + 1)
@@ -106,7 +106,7 @@
         End If
 
         'Player 4
-        If Status.Player4 Then
+        If Status.isConnected(PlayerIndex.Four) Then
             If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then 'And Player4.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Four) Then
                     Player4.MoveAvatar(Direction.Down, Player4.AvatarPosition.X, Player4.AvatarPosition.Y + 1)
@@ -136,7 +136,7 @@
 
         If MoveTime > 15 Then
             'Player 1
-            If Status.Player1 Then
+            If Status.isConnected(PlayerIndex.One) Then
                 If Player1.AvatarMoving = True Then
                     If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -153,7 +153,7 @@
             End If
 
             'Player 2
-            If Status.Player2 Then
+            If Status.isConnected(PlayerIndex.Two) Then
                 If Player2.AvatarMoving = True Then
                     If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -170,7 +170,7 @@
             End If
 
             'Player 3
-            If Status.Player3 Then
+            If Status.isConnected(PlayerIndex.Three) Then
                 If Player3.AvatarMoving = True Then
                     If Player3.MoveDir = Direction.None And (Player3.AvatarOffset.X <> 0 Or Player3.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -187,7 +187,7 @@
             End If
 
             'Player 4
-            If Status.Player4 Then
+            If Status.isConnected(PlayerIndex.Four) Then
                 If Player4.AvatarMoving = True Then
                     If Player4.MoveDir = Direction.None And (Player4.AvatarOffset.X <> 0 Or Player4.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -255,34 +255,34 @@
         Next 'End maze
 
         'Draw bases with the right colors and properties.
-        If Status.Player1 Then
+        If Status.isConnected(PlayerIndex.One) Then
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
             MapBase.TileList(1, 1).TerrainType = TileType.Base
         End If
-        If Status.Player2 Then
+        If Status.isConnected(PlayerIndex.Two) Then
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
         End If
-        If Status.Player3 Then
+        If Status.isConnected(PlayerIndex.Three) Then
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
             MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
         End If
-        If Status.Player4 Then
+        If Status.isConnected(PlayerIndex.Four) Then
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
         End If
 
         'Avatars
-        If Status.Player1 Then
+        If Status.isConnected(PlayerIndex.One) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.AvatarPosition.X * TileSize, Player1.AvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
         End If
-        If Status.Player2 Then
+        If Status.isConnected(PlayerIndex.Two) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.AvatarPosition.X * TileSize, Player2.AvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
         End If
-        If Status.Player3 Then
+        If Status.isConnected(PlayerIndex.Three) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.AvatarPosition.X * TileSize, Player3.AvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Green)
         End If
-        If Status.Player4 Then
+        If Status.isConnected(PlayerIndex.Four) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.AvatarPosition.X * TileSize, Player4.AvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
         End If
         Globals.SpriteBatch.End()
