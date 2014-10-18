@@ -19,6 +19,8 @@
     Public Player4 As Player
 
 
+    Public Shared ConnectedPlayers(0 To 3) As Player
+
     Public Shared Function getMapSize() As Vector2
         Return New Vector2(MapWidth, MapHeight)
     End Function
@@ -131,72 +133,136 @@
         'Update Tiles
         MapBase.UpdateTiles(MazeScreen.getMapSize().X, MazeScreen.getMapSize().Y)
 
-        'character movement updates
+
+        'Updates player information
+        If Status.isConnected(PlayerIndex.One) Then
+            'Update the hit box
+            Player1.HitBox = New Rectangle(Player1.AvatarPosition.X * TileSize, Player1.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+
+            'If they were just created, add them to the list.
+            If Player1.NeedsUpdating = True Then
+                'Updates the list of players
+
+                'Add the player to the list
+                ConnectedPlayers(0) = Player1
+                Player1.NeedsUpdating = False
+            End If
+        End If
+
+        'Player 2
+        If Status.isConnected(PlayerIndex.Two) Then
+            'Update the hit box
+            Player2.HitBox = New Rectangle(Player2.AvatarPosition.X * TileSize, Player2.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+
+            'If they were just created, add them to the list.
+            If Player2.NeedsUpdating = True Then
+                'Updates the list of players
+
+                'Add the player to the list
+                ConnectedPlayers(1) = Player2
+                Player2.NeedsUpdating = False
+            End If
+        End If
+
+        'Player 3
+        If Status.isConnected(PlayerIndex.Three) Then
+            'Update the hit box
+            Player3.HitBox = New Rectangle(Player3.AvatarPosition.X * TileSize, Player3.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+
+            'If they were just created, add them to the list.
+            If Player3.NeedsUpdating = True Then
+                'Updates the list of players
+
+                'Add the player to the list
+                ConnectedPlayers(2) = Player3
+                Player3.NeedsUpdating = False
+            End If
+        End If
+
+        'Player 4
+        If Status.isConnected(PlayerIndex.Four) Then
+            'Update the hit box
+            Player4.HitBox = New Rectangle(Player4.AvatarPosition.X * TileSize, Player4.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+
+            'If they were just created, add them to the list.
+            If Player4.NeedsUpdating = True Then
+                'Updates the list of players
+
+                'Add the player to the list
+                ConnectedPlayers(3) = Player4
+                Player4.NeedsUpdating = False
+            End If
+        End If
+
+
+
+
+    'character movement updates
         MoveTime += Globals.GameTime.ElapsedGameTime.TotalMilliseconds
 
         If MoveTime > 15 Then
-            'Player 1
+    'Player 1
             If Status.isConnected(PlayerIndex.One) Then
                 If Player1.AvatarMoving = True Then
                     If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
+    'finish move cycle before accepting new inputs
                         Player1.Move(Player1.LastDir)
                     Else 'If not between movements, accept new
                         Player1.Move(Player1.MoveDir)
                     End If
 
-                    'Between movements
+    'Between movements
                     If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then
                         Player1.AvatarMoving = False
                     End If
                 End If
             End If
 
-            'Player 2
+    'Player 2
             If Status.isConnected(PlayerIndex.Two) Then
                 If Player2.AvatarMoving = True Then
                     If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
+    'finish move cycle before accepting new inputs
                         Player2.Move(Player2.LastDir)
                     Else 'If not between movements, accept new
                         Player2.Move(Player2.MoveDir)
                     End If
 
-                    'Between movements
+    'Between movements
                     If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then
                         Player2.AvatarMoving = False
                     End If
                 End If
             End If
 
-            'Player 3
+    'Player 3
             If Status.isConnected(PlayerIndex.Three) Then
                 If Player3.AvatarMoving = True Then
                     If Player3.MoveDir = Direction.None And (Player3.AvatarOffset.X <> 0 Or Player3.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
+    'finish move cycle before accepting new inputs
                         Player3.Move(Player3.LastDir)
                     Else 'If not between movements, accept new
                         Player3.Move(Player3.MoveDir)
                     End If
 
-                    'Between movements
+    'Between movements
                     If Player3.AvatarOffset.X = 0 And Player3.AvatarOffset.Y = 0 Then
                         Player3.AvatarMoving = False
                     End If
                 End If
             End If
 
-            'Player 4
+    'Player 4
             If Status.isConnected(PlayerIndex.Four) Then
                 If Player4.AvatarMoving = True Then
                     If Player4.MoveDir = Direction.None And (Player4.AvatarOffset.X <> 0 Or Player4.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
+    'finish move cycle before accepting new inputs
                         Player4.Move(Player4.LastDir)
                     Else 'If not between movements, accept new
                         Player4.Move(Player4.MoveDir)
                     End If
 
-                    'Between movements
+    'Between movements
                     If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then
                         Player4.AvatarMoving = False
                     End If
@@ -205,7 +271,7 @@
                 MoveTime = 0 'reset time to reset cycle
             End If
         End If
-        'End character movement updates
+    'End character movement updates
     End Sub
 
     'returns the first open square near the given coordinates.
@@ -253,6 +319,9 @@
                 End If
             Next
         Next 'End maze
+
+        Globals.SpriteBatch.Draw(Textures.BlackGradient, Player1.HitBox, Color.Blue)
+        Globals.SpriteBatch.Draw(Textures.BlackGradient, Player2.HitBox, Color.Red)
 
         'Draw bases with the right colors and properties.
         If Status.isConnected(PlayerIndex.One) Then
