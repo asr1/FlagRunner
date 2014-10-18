@@ -320,8 +320,9 @@
             Next
         Next 'End maze
 
-        Globals.SpriteBatch.Draw(Textures.BlackGradient, Player1.HitBox, Color.Blue)
-        Globals.SpriteBatch.Draw(Textures.BlackGradient, Player2.HitBox, Color.Red)
+        'Debug hit boxes
+        'Globals.SpriteBatch.Draw(Textures.BlackGradient, Player1.HitBox, Color.Blue)
+        'Globals.SpriteBatch.Draw(Textures.BlackGradient, Player2.HitBox, Color.Red)
 
         'Draw bases with the right colors and properties.
         If Status.isConnected(PlayerIndex.One) Then
