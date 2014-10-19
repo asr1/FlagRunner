@@ -6,6 +6,7 @@
     Up
 End Enum
 
+
 'There is no player update function; it would cause dependency issues.
 'Player updates are handled in the Mazescreen Class.
 
@@ -13,8 +14,15 @@ End Enum
 Public Class Player
     Private Shared playerNum = 1 'The number of players
     Private UniquePlayerNum As Integer 'The unique identifier for this specific player
+    Private PlayerColor As Color 'The color of the given player
+    Private Const MaxHealth As Integer = 10 'The maximum health a player has
+    Private Health As Integer 'The current health a player has
 
+    'Set these equal to fists or something
+    Private MainWeapon As Weapon
+    Private SecondaryWeapon As Weapon
 
+    Public Const PUNCH_DAMAGE = 1
 
     'Used to toggle if a player is created
     Public NeedsUpdating As Boolean = False
@@ -43,20 +51,24 @@ Public Class Player
     Public Sub New()
         'Set attributes
         MoveSpeed = BaseSpeed
+        Health = MaxHealth
         UniquePlayerNum = playerNum
         HitBox = New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
-
 
 
         'Position them appropriately
         If playerNum = 1 Then
             AvatarPosition = New Vector2(1, 1)
+            PlayerColor = Color.Blue
         ElseIf playerNum = 2 Then
             AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, 1)
+            PlayerColor = Color.Red
         ElseIf playerNum = 3 Then
             AvatarPosition = New Vector2(1, MazeScreen.getMapSize.Y - 1)
+            PlayerColor = Color.Green
         ElseIf playerNum = 4 Then
             AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1)
+            PlayerColor = Color.Orange
         End If
         NeedsUpdating = True
         playerNum += 1
@@ -68,6 +80,11 @@ Public Class Player
         Return UniquePlayerNum
     End Function
 
+    'Getter for health
+    Public Function GetHealth() As Integer
+        Return Health
+    End Function
+
     ''A new function used for respawning that takes in the player's number
     ''To ensure they are created appropriately
     'Public Sub New(Pnum As Integer)
@@ -75,6 +92,7 @@ Public Class Player
 
     'End Sub
 
+    'Moves the player
     Public Sub Move(Dir As Direction)
         Me.MoveDir = Dir
         HitBox = New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
@@ -121,6 +139,7 @@ Public Class Player
     End Sub
 
 
+    'Sets the status of the avatar as moving
     Public Sub MoveAvatar(Dir As Direction, AvX As Integer, AvY As Integer)
         'If I'm not walking into a wall or another person, go right ahead
 
@@ -132,6 +151,13 @@ Public Class Player
             MoveDir = Dir
         End If
         Me.HitBox = Temp
+    End Sub
+
+    'Switch the weapons the player is holding.
+    Public Sub SwapWeapons()
+        Dim temp As Weapon = MainWeapon
+        MainWeapon = SecondaryWeapon
+        SecondaryWeapon = temp
     End Sub
 
     'Detects a collision with another player
@@ -152,6 +178,25 @@ Public Class Player
         Next
         'We iterated through every player without finding a collision
         Return False
+    End Function
+
+    'Detects a collision with another player
+    'Returns the player with which a collision occurs.
+    'Should only be called after detect collision
+    Private Function FindCollision(player As Player) As Player
+        For Each p As Player In MazeScreen.ConnectedPlayers
+            If Not IsNothing(p) Then
+                'Don't test for collision with ourself
+                If Not p.Equals(player) Then
+                    If player.HitBox.Intersects(p.HitBox) Then
+                        Return p
+                    End If
+                End If
+            End If
+        Next
+        'We iterated through every player without finding a collision
+        'Don't get here
+        Return Nothing
     End Function
 
     'Returns true if the unique player identifiers are the same, false otherwise.
@@ -186,5 +231,52 @@ Public Class Player
         Return SRect
     End Function
 
+    'Decrease hit points by the amount specified, 
+    'Going no lower than zero
+    Public Sub DecreaseHealth(i As Integer)
+        Me.Health = Math.Max(0, Me.Health - i)
+    End Sub
+
+
+    Public Sub Punch()
+        MazeScreen.test()
+
+        Select Case Me.LastDir
+            Case Direction.Down
+                Me.HitBox.Y += 4
+                'Me.AvatarPosition.Y += 4
+                If DetectCollision(Me) Then
+                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                End If
+                'Me.AvatarPosition.Y -= 4
+                Me.HitBox.Y -= 4
+            Case Direction.Left
+                'Me.AvatarPosition.X -= 4
+                Me.HitBox.X -= 4
+                If DetectCollision(Me) Then
+                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                End If
+                'Me.AvatarPosition.X += 4
+                Me.HitBox.X += 4
+            Case Direction.Right
+                Me.HitBox.X += 4
+                If DetectCollision(Me) Then
+                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                End If
+                Me.HitBox.X -= 4
+            Case Direction.Up
+                Me.HitBox.Y += 4
+                If DetectCollision(Me) Then
+                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                End If
+                Me.HitBox.Y -= 4
+        End Select
+
+        'TODO
+        'Swing my fists, and if there's a collision with another player, do damage
+        'Use lastdir for swing direction.
+        'Also, draw fists OR rock the body forward.
+        'Also play sound for swing, sound for hit
+    End Sub
 
 End Class

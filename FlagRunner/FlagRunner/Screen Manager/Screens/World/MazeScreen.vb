@@ -45,6 +45,7 @@
     Public Overrides Sub HandleInput()
         'Player 1
         If Status.isConnected(PlayerIndex.One) Then
+            'movement
             If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then 'And Player1.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.One) Then
                     Player1.MoveAvatar(Direction.Down, Player1.AvatarPosition.X, Player1.AvatarPosition.Y + 1)
@@ -61,6 +62,9 @@
                 End If
             Else
                 Player1.MoveDir = Direction.None
+            End If 'End Movement
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.One) Then
+                Player1.Punch()
             End If
         End If
 
@@ -84,6 +88,9 @@
             Else
                 Player2.MoveDir = Direction.None
             End If
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Two) Then
+                Player2.Punch()
+            End If
         End If
 
         'Player 3
@@ -105,6 +112,9 @@
             Else
                 Player3.MoveDir = Direction.None
             End If
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Three) Then
+                Player3.Punch()
+            End If
         End If
 
         'Player 4
@@ -125,6 +135,9 @@
                 End If
             Else
                 Player4.MoveDir = Direction.None
+            End If
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Four) Then
+                Player4.Punch()
             End If
         End If
     End Sub
@@ -355,7 +368,27 @@
         If Status.isConnected(PlayerIndex.Four) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.AvatarPosition.X * TileSize, Player4.AvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
         End If
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
+        'Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize, TileSize, TileSize), Color.Plum)
+        'Debug
+        'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player3.GetHealth.ToString, New Vector2(0, 0), Color.Red)
+
         Globals.SpriteBatch.End()
+    End Sub
+
+    Public Shared Sub test()
+
+        Globals.SpriteBatch.Begin()
+        'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
+        Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize, TileSize, TileSize), Color.Plum)
+        Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+        Globals.SpriteBatch.End()
+        'Globals.BackBuffer.GraphicsDevice.Present()
+        ' Globals.Graphics.GraphicsDevice.SetRenderTarget(New RenderTarget2D(GGraphicsDevice, Globals.Graphics.GraphicsDevice.Viewport.X, Globals.Graphics.GraphicsDevice.Viewport.Y))
+        'The problem exists with my custom backbuffer. Must investigate further.
+        '  Globals.Graphics.GraphicsDevice.Present()
+        'Garbage is here-ish
+
     End Sub
 
 End Class
