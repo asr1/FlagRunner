@@ -48,16 +48,16 @@
             'movement
             If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then 'And Player1.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.One) Then
-                    Player1.MoveAvatar(Direction.Down, Player1.AvatarPosition.X, Player1.AvatarPosition.Y + 1)
+                    Player1.MoveAvatar(Direction.Down, Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y + 1)
                     Player1.LastDir = Direction.Down
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.One) Then
-                    Player1.MoveAvatar(Direction.Up, Player1.AvatarPosition.X, Player1.AvatarPosition.Y - 1)
+                    Player1.MoveAvatar(Direction.Up, Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y - 1)
                     Player1.LastDir = Direction.Up
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.One) Then
-                    Player1.MoveAvatar(Direction.Left, Player1.AvatarPosition.X - 1, Player1.AvatarPosition.Y)
+                    Player1.MoveAvatar(Direction.Left, Player1.getAvatarPosition.X - 1, Player1.getAvatarPosition.Y)
                     Player1.LastDir = Direction.Left
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.One) Then
-                    Player1.MoveAvatar(Direction.Right, Player1.AvatarPosition.X + 1, Player1.AvatarPosition.Y)
+                    Player1.MoveAvatar(Direction.Right, Player1.getAvatarPosition.X + 1, Player1.getAvatarPosition.Y)
                     Player1.LastDir = Direction.Right
                 End If
             Else
@@ -73,16 +73,16 @@
         If Status.isConnected(PlayerIndex.Two) Then
             If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then 'And Player2.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Two) Then
-                    Player2.MoveAvatar(Direction.Down, Player2.AvatarPosition.X, Player2.AvatarPosition.Y + 1)
+                    Player2.MoveAvatar(Direction.Down, Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y + 1)
                     Player2.LastDir = Direction.Down
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Two) Then
-                    Player2.MoveAvatar(Direction.Up, Player2.AvatarPosition.X, Player2.AvatarPosition.Y - 1)
+                    Player2.MoveAvatar(Direction.Up, Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y - 1)
                     Player2.LastDir = Direction.Up
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Two) Then
-                    Player2.MoveAvatar(Direction.Left, Player2.AvatarPosition.X - 1, Player2.AvatarPosition.Y)
+                    Player2.MoveAvatar(Direction.Left, Player2.getAvatarPosition.X - 1, Player2.getAvatarPosition.Y)
                     Player2.LastDir = Direction.Left
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Two) Then
-                    Player2.MoveAvatar(Direction.Right, Player2.AvatarPosition.X + 1, Player2.AvatarPosition.Y)
+                    Player2.MoveAvatar(Direction.Right, Player2.getAvatarPosition.X + 1, Player2.getAvatarPosition.Y)
                     Player2.LastDir = Direction.Right
                 End If
             Else
@@ -97,16 +97,16 @@
         If Status.isConnected(PlayerIndex.Three) Then
             If Player3.AvatarOffset.X = 0 And Player3.AvatarOffset.Y = 0 Then 'And Player3.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Three) Then
-                    Player3.MoveAvatar(Direction.Down, Player3.AvatarPosition.X, Player3.AvatarPosition.Y + 1)
+                    Player3.MoveAvatar(Direction.Down, Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y + 1)
                     Player3.LastDir = Direction.Down
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Three) Then
-                    Player3.MoveAvatar(Direction.Up, Player3.AvatarPosition.X, Player3.AvatarPosition.Y - 1)
+                    Player3.MoveAvatar(Direction.Up, Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y - 1)
                     Player3.LastDir = Direction.Up
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Three) Then
-                    Player3.MoveAvatar(Direction.Left, Player3.AvatarPosition.X - 1, Player3.AvatarPosition.Y)
+                    Player3.MoveAvatar(Direction.Left, Player3.getAvatarPosition.X - 1, Player3.getAvatarPosition.Y)
                     Player3.LastDir = Direction.Left
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Three) Then
-                    Player3.MoveAvatar(Direction.Right, Player3.AvatarPosition.X + 1, Player3.AvatarPosition.Y)
+                    Player3.MoveAvatar(Direction.Right, Player3.getAvatarPosition.X + 1, Player3.getAvatarPosition.Y)
                     Player3.LastDir = Direction.Right
                 End If
             Else
@@ -121,16 +121,16 @@
         If Status.isConnected(PlayerIndex.Four) Then
             If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then 'And Player4.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Four) Then
-                    Player4.MoveAvatar(Direction.Down, Player4.AvatarPosition.X, Player4.AvatarPosition.Y + 1)
+                    Player4.MoveAvatar(Direction.Down, Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y + 1)
                     Player4.LastDir = Direction.Down
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Four) Then
-                    Player4.MoveAvatar(Direction.Up, Player4.AvatarPosition.X, Player4.AvatarPosition.Y - 1)
+                    Player4.MoveAvatar(Direction.Up, Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y - 1)
                     Player4.LastDir = Direction.Up
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Four) Then
-                    Player4.MoveAvatar(Direction.Left, Player4.AvatarPosition.X - 1, Player4.AvatarPosition.Y)
+                    Player4.MoveAvatar(Direction.Left, Player4.getAvatarPosition.X - 1, Player4.getAvatarPosition.Y)
                     Player4.LastDir = Direction.Left
                 ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Four) Then
-                    Player4.MoveAvatar(Direction.Right, Player4.AvatarPosition.X + 1, Player4.AvatarPosition.Y)
+                    Player4.MoveAvatar(Direction.Right, Player4.getAvatarPosition.X + 1, Player4.getAvatarPosition.Y)
                     Player4.LastDir = Direction.Right
                 End If
             Else
@@ -150,7 +150,7 @@
         'Updates player information
         If Status.isConnected(PlayerIndex.One) Then
             'Update the hit box
-            Player1.HitBox = New Rectangle(Player1.AvatarPosition.X * TileSize, Player1.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+            Player1.HitBox = New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
 
             'If they were just created, add them to the list.
             If Player1.NeedsUpdating = True Then
@@ -165,7 +165,7 @@
         'Player 2
         If Status.isConnected(PlayerIndex.Two) Then
             'Update the hit box
-            Player2.HitBox = New Rectangle(Player2.AvatarPosition.X * TileSize, Player2.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+            Player2.HitBox = New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
 
             'If they were just created, add them to the list.
             If Player2.NeedsUpdating = True Then
@@ -180,7 +180,7 @@
         'Player 3
         If Status.isConnected(PlayerIndex.Three) Then
             'Update the hit box
-            Player3.HitBox = New Rectangle(Player3.AvatarPosition.X * TileSize, Player3.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+            Player3.HitBox = New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
 
             'If they were just created, add them to the list.
             If Player3.NeedsUpdating = True Then
@@ -195,7 +195,7 @@
         'Player 4
         If Status.isConnected(PlayerIndex.Four) Then
             'Update the hit box
-            Player4.HitBox = New Rectangle(Player4.AvatarPosition.X * TileSize, Player4.AvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+            Player4.HitBox = New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
 
             'If they were just created, add them to the list.
             If Player4.NeedsUpdating = True Then
@@ -357,16 +357,16 @@
 
         'Avatars
         If Status.isConnected(PlayerIndex.One) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.AvatarPosition.X * TileSize, Player1.AvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
         End If
         If Status.isConnected(PlayerIndex.Two) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.AvatarPosition.X * TileSize, Player2.AvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
         End If
         If Status.isConnected(PlayerIndex.Three) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.AvatarPosition.X * TileSize, Player3.AvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Green)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Green)
         End If
         If Status.isConnected(PlayerIndex.Four) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.AvatarPosition.X * TileSize, Player4.AvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
         End If
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
         'Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize, TileSize, TileSize), Color.Plum)

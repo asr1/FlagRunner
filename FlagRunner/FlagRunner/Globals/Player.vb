@@ -33,7 +33,7 @@ Public Class Player
     Public NeedsUpdating As Boolean = False
 
     'Map coordinates
-    Public AvatarPosition As Vector2
+    Private AvatarPosition As Vector2
 
     'Avatar offset for smooth walking
     Public AvatarOffset As Vector2 = New Vector2(0, 0)
@@ -90,6 +90,15 @@ Public Class Player
         Return Health
     End Function
 
+    'Getter for Position
+    Public Function getAvatarPosition() As Vector2
+        Return AvatarPosition
+    End Function
+
+    'Setter for position
+    Public Sub setAvatarPosition(Position As Vector2)
+        AvatarPosition = Position
+    End Sub
     ''A new function used for respawning that takes in the player's number
     ''To ensure they are created appropriately
     'Public Sub New(Pnum As Integer)
