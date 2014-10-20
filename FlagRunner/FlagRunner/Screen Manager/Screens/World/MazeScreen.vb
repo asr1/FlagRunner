@@ -376,22 +376,30 @@
         Globals.SpriteBatch.End()
     End Sub
 
+    'So we can draw the backbuffer but we cannot modify it. Weird.
     Public Shared Sub test()
         Dim sb As SpriteBatch = New SpriteBatch(Globals.Graphics.GraphicsDevice)
         'Globals.Graphics.GraphicsDevice.SetRenderTarget(Globals.BackBuffer)
+        'Globals.Graphics.GraphicsDevice.SetRenderTarget(Globals.BackBuffer)
         Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+        ' Dim Temp As Texture2D = Globals.BackBuffer
         'Globals.SpriteBatch.Begin()
         ' sb.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
         'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
         'sb.Begin(SpriteSortMode.Immediate, BlendState.Additive, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
         sb.Begin()
-        'sb.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize * 5, TileSize, TileSize * 5), Color.Plum)
+        sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.GameSize.X, Globals.GameSize.Y), Color.White)
+        ' sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White)
+        'TWO LINES UP IS GOOD
+        'Need to investigate window resize.
+
+        sb.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize * 5, TileSize, TileSize * 5), Color.Plum)
         'Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
         'Globals.Graphics.GraphicsDevice.PresentationParameters.
         'Globals.Graphics.GraphicsDevice.GetType.GetField("LazyClearFlags", Reflection.BindingFlags.NonPublic Or Reflection.BindingFlags.Instance).SetValue(Globals.Graphics.GraphicsDevice, 0)
 
-
-        sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.GameSize.X, Globals.GameSize.Y), Color.White)
+        '  Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+        'sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.GameSize.X, Globals.GameSize.Y), Color.White)
         sb.End()
         'Globals.SpriteBatch.End()
         'Globals.BackBuffer.GraphicsDevice.Present()

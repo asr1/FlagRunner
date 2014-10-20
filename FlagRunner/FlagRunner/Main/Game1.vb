@@ -29,6 +29,9 @@ Public Class Game1
         MyBase.Initialize()
     End Sub
 
+    Public Function getViewPort() As Viewport
+        Return GraphicsDevice.Viewport
+    End Function
     'LoadContent will be called once per game and is the place to load
     'all of your content.
     Protected Overrides Sub LoadContent()
