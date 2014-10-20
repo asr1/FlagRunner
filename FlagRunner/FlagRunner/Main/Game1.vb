@@ -25,7 +25,7 @@ Public Class Game1
         Globals.Graphics.PreferredBackBufferHeight = Globals.GameSize.Y
         Globals.Graphics.ApplyChanges()
 
-        Globals.BackBuffer = New RenderTarget2D(Globals.Graphics.GraphicsDevice, Globals.GameSize.X, Globals.GameSize.Y)
+        Globals.BackBuffer = New RenderTarget2D(Globals.Graphics.GraphicsDevice, Globals.GameSize.X, Globals.GameSize.Y, False, SurfaceFormat.Color, RenderTargetUsage.PreserveContents)
         MyBase.Initialize()
     End Sub
 

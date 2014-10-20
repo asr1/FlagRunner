@@ -196,10 +196,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

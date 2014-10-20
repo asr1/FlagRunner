@@ -7,6 +7,11 @@
 End Enum
 
 
+'Okay so what we're going to do is have a boolean or possibly a state enum 
+'And then in the mazescreen draw sub we're going to update our position/drawing appropriately.
+'It's possible there is a better way, but we would have to solve the errors with our backbuffer
+'Re: the screen turning purple when we try to draw.
+
 'There is no player update function; it would cause dependency issues.
 'Player updates are handled in the Mazescreen Class.
 
@@ -240,6 +245,7 @@ Public Class Player
 
     Public Sub Punch()
         MazeScreen.test()
+
 
         Select Case Me.LastDir
             Case Direction.Down

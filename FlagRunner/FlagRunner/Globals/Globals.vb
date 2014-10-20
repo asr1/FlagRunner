@@ -5,5 +5,5 @@
     Public Shared GameTime As GameTime
     Public Shared WindowFocused As Boolean
     Public Shared GameSize As Vector2
-    Public Shared BackBuffer As RenderTarget2D 'Possible uneccessary, VBA might do this already
+    Public Shared BackBuffer As RenderTarget2D 'Possibly uneccessary, XNA might do this already
 End Class
