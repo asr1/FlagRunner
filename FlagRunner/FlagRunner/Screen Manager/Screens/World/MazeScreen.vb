@@ -385,7 +385,7 @@
         'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
         'sb.Begin(SpriteSortMode.Immediate, BlendState.Additive, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
         sb.Begin()
-        sb.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize * 5, TileSize, TileSize * 5), Color.Plum)
+        'sb.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize * 5, TileSize, TileSize * 5), Color.Plum)
         'Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
         'Globals.Graphics.GraphicsDevice.PresentationParameters.
         'Globals.Graphics.GraphicsDevice.GetType.GetField("LazyClearFlags", Reflection.BindingFlags.NonPublic Or Reflection.BindingFlags.Instance).SetValue(Globals.Graphics.GraphicsDevice, 0)
