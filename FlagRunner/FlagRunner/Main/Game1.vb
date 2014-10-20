@@ -25,13 +25,13 @@ Public Class Game1
         Globals.Graphics.PreferredBackBufferHeight = Globals.GameSize.Y
         Globals.Graphics.ApplyChanges()
 
-        Globals.BackBuffer = New RenderTarget2D(Globals.Graphics.GraphicsDevice, Globals.GameSize.X, Globals.GameSize.Y, False, SurfaceFormat.Color, RenderTargetUsage.PreserveContents)
+        Globals.BackBuffer = New RenderTarget2D(Globals.Graphics.GraphicsDevice, Globals.GameSize.X, Globals.GameSize.Y)
+        ' Globals.BackBuffer = New RenderTarget2D(Globals.Graphics.GraphicsDevice, Globals.GameSize.X, Globals.GameSize.Y, False, SurfaceFormat.Color, RenderTargetUsage.PreserveContents)
         MyBase.Initialize()
     End Sub
 
-    Public Function getViewPort() As Viewport
-        Return GraphicsDevice.Viewport
-    End Function
+
+
     'LoadContent will be called once per game and is the place to load
     'all of your content.
     Protected Overrides Sub LoadContent()
@@ -76,6 +76,9 @@ Public Class Game1
         ScreenManager.update()
 
         'Add screen here. Todo?
+
+
+        Globals.Graphics.ApplyChanges()
 
         'Input
         Input.update()

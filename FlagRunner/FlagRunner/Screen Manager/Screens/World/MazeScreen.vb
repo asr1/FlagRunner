@@ -388,9 +388,12 @@
         'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
         'sb.Begin(SpriteSortMode.Immediate, BlendState.Additive, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
         sb.Begin()
-        sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.GameSize.X, Globals.GameSize.Y), Color.White)
-        ' sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White)
-        'TWO LINES UP IS GOOD
+        'sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.GameSize.X, Globals.GameSize.Y), Color.White) 'The good line   
+        'sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Width, Globals.Graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Height), Color.White)
+        'sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White)
+        'sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Width, Globals.Graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Width), Color.White)
+        sb.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White) 'Better line! use this!!
+        'THREE LINES UP IS GOOD
         'Need to investigate window resize.
 
         sb.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize * 5, TileSize, TileSize * 5), Color.Plum)
