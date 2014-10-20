@@ -244,25 +244,26 @@ Public Class Player
 
 
     Public Sub Punch()
-        MazeScreen.test()
+        Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+        Globals.SpriteBatch.Begin()
+        'Redraw the background
+        Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
 
         Select Case Me.LastDir
             Case Direction.Down
                 Me.HitBox.Y += 4
-                'Me.AvatarPosition.Y += 4
+                'Draw this animation
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, (Me.AvatarPosition.Y) + 1, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
-                'Me.AvatarPosition.Y -= 4
                 Me.HitBox.Y -= 4
             Case Direction.Left
-                'Me.AvatarPosition.X -= 4
                 Me.HitBox.X -= 4
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
-                'Me.AvatarPosition.X += 4
                 Me.HitBox.X += 4
             Case Direction.Right
                 Me.HitBox.X += 4
@@ -278,11 +279,13 @@ Public Class Player
                 Me.HitBox.Y -= 4
         End Select
 
-        'TODO
-        'Swing my fists, and if there's a collision with another player, do damage
-        'Use lastdir for swing direction.
-        'Also, draw fists OR rock the body forward.
-        'Also play sound for swing, sound for hit
+
+        Globals.SpriteBatch.End()
+        Globals.Graphics.GraphicsDevice.Present()
+
+    'TODO
+    'Also, draw fists OR rock the body forward.
+    'Also play sound for swing, sound for hit
     End Sub
 
 End Class
