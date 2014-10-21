@@ -78,7 +78,7 @@ Public Class Game1
         'Add screen here. Todo?
 
 
-        Globals.Graphics.ApplyChanges()
+        ' Globals.Graphics.ApplyChanges()
 
         'Input
         Input.update()

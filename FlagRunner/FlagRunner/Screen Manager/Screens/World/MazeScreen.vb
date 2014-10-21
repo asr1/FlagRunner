@@ -4,7 +4,7 @@
     Public Shared Map As MapBase
     Private Shared MapWidth As Integer = 50
     Private Shared MapHeight As Integer = 50
-    Public Shared TileSize As Integer = 24
+    Public Const TileSize As Integer = 24
 
 
     'Current Coordinates

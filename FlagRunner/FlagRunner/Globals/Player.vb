@@ -251,7 +251,7 @@ Public Class Player
         Me.Health = Math.Max(0, Me.Health - i)
     End Sub
 
-
+    'Present issue: Sprite draws in wrong spot on full screen. Please investigate.
     Public Sub Punch()
         Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
         Globals.SpriteBatch.Begin()
@@ -263,25 +263,28 @@ Public Class Player
             Case Direction.Down
                 Me.HitBox.Y += 4
                 'Draw this animation
-                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, (Me.AvatarPosition.Y) + 1, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, (Me.AvatarPosition.Y * MazeScreen.TileSize) + 1, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.Y -= 4
             Case Direction.Left
                 Me.HitBox.X -= 4
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle((Me.AvatarPosition.X * MazeScreen.TileSize) - 4, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.X += 4
             Case Direction.Right
                 Me.HitBox.X += 4
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle((Me.AvatarPosition.X * MazeScreen.TileSize), (Me.AvatarPosition.Y * MazeScreen.TileSize) + 4, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.X -= 4
             Case Direction.Up
                 Me.HitBox.Y += 4
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle((Me.AvatarPosition.X * MazeScreen.TileSize) + 4, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
