@@ -245,7 +245,7 @@ Public Class Player
         Return SRect
     End Function
 
-    'Decrease hit points by the amount specified, 
+    'Decrease hit points by the amount specified,  
     'Going no lower than zero
     Public Sub DecreaseHealth(i As Integer)
         Me.Health = Math.Max(0, Me.Health - i)
