@@ -209,7 +209,7 @@ Public Class Player
             End If
         Next
         'We iterated through every player without finding a collision
-        'Don't get here
+        'We should never get here
         Return Nothing
     End Function
 
@@ -220,7 +220,7 @@ Public Class Player
             Return False
         End If
 
-        'Or not a player
+        '...Or not a player, return false
         If Not TypeOf (obj) Is Player Then
             Return False
         End If
@@ -263,40 +263,41 @@ Public Class Player
             Case Direction.Down
                 Me.HitBox.Y += 4
                 'Draw this animation
-                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, (Me.AvatarPosition.Y * MazeScreen.TileSize) + 1, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize * MazeScreen.ScaleFactor.X, ((Me.AvatarPosition.Y * MazeScreen.TileSize) + 1) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.Y -= 4
+
             Case Direction.Left
                 Me.HitBox.X -= 4
-                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle((Me.AvatarPosition.X * MazeScreen.TileSize) - 4, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize) - 4) * MazeScreen.ScaleFactor.X, (Me.AvatarPosition.Y * MazeScreen.TileSize) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.X += 4
+
             Case Direction.Right
                 Me.HitBox.X += 4
-                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle((Me.AvatarPosition.X * MazeScreen.TileSize), (Me.AvatarPosition.Y * MazeScreen.TileSize) + 4, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize)) * MazeScreen.ScaleFactor.X, ((Me.AvatarPosition.Y * MazeScreen.TileSize) + 4) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.X -= 4
+
             Case Direction.Up
                 Me.HitBox.Y += 4
-                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle((Me.AvatarPosition.X * MazeScreen.TileSize) + 4, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
+                Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize) + 4) * MazeScreen.ScaleFactor.X, (Me.AvatarPosition.Y * MazeScreen.TileSize) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
                 End If
                 Me.HitBox.Y -= 4
         End Select
-
-
+     
         Globals.SpriteBatch.End()
         Globals.Graphics.GraphicsDevice.Present()
 
     'TODO
-    'Also, draw fists OR rock the body forward.
     'Also play sound for swing, sound for hit
     End Sub
 

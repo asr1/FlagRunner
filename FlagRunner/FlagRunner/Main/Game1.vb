@@ -6,7 +6,7 @@ End Enum
 Public Class Game1
     Inherits Microsoft.Xna.Framework.Game
 
-    'Screen size needs to be tilesize * size of TileList
+    'Screen size needs to be tilesize * size of Tilelist
     Public Const GAME_SIZE_X As Integer = 1224, GAME_SIZE_Y As Integer = 1224
     Private ScreenManager As ScreenManager
     Public Shared GameMode As GameMode
@@ -19,6 +19,7 @@ Public Class Game1
     Protected Overrides Sub Initialize()
         Me.IsMouseVisible = False 'We don't want the mouse
         Window.AllowUserResizing = True 'Errr, we may regret this?
+
 
         Globals.GameSize = New Vector2(GAME_SIZE_X, GAME_SIZE_Y)
         Globals.Graphics.PreferredBackBufferWidth = Globals.GameSize.X

@@ -1,6 +1,9 @@
 ﻿Public Class MazeScreen
     Inherits BaseScreen
 
+
+    'The ratio of expected screen size to actual. Might need to adjsut if issues on other screens (like check min/max for positive/negative ratio)
+    Public Shared ScaleFactor As Vector2 = New Vector2(Globals.Graphics.GraphicsDevice.Viewport.Width / Globals.GameSize.X, Globals.Graphics.GraphicsDevice.Viewport.Height / Globals.GameSize.Y)
     Public Shared Map As MapBase
     Private Shared MapWidth As Integer = 50
     Private Shared MapHeight As Integer = 50
@@ -325,9 +328,9 @@
                 If X >= 0 And X <= MapWidth And Y >= 0 And Y <= MapHeight Then
                     Globals.SpriteBatch.Draw(MapBase.TileList(X, Y).TileGFX, New Rectangle(DrawX * TileSize, DrawY * TileSize, TileSize, TileSize), New Rectangle(0, 0, 31, 31), Color.White)
                     'DEBUG view coordinates on tile
-                    'If DrawX Mod 10 = 0 And DrawY Mod 2 = 0 Then
-                    'Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "x: " & X & vbCrLf & "y: " & Y, New Vector2(DrawX * TileSize, DrawY * TileSize), Color.White)
-                    'End If
+                    If DrawX Mod 10 = 0 And DrawY Mod 2 = 0 Then
+                        Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "x: " & X & vbCrLf & "y: " & Y, New Vector2(DrawX * TileSize, DrawY * TileSize), Color.White)
+                    End If
 
                 End If
             Next
