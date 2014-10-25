@@ -48,12 +48,19 @@ Public Class MainMenu
 
     Public Overrides Sub HandleInput()
 
-
-
-        'If Input.ButtonPressed(KonamiCode(KonamiCounter), PlayerIndex.One) Then
-        '    KonamiCounter += 1
+        ''If there was a button pressed
+        'If Input.HasPlayerOneInputChanged() = True Then
+        '    'And that button was the next in the code
+        '    If (Input.ButtonPressed(KonamiCode(KonamiCounter), PlayerIndex.One)) Then
+        '        'Increase our code count
+        '        KonamiCounter += 1
+        '    Else 'Unless we pressed the wrong button
+        '        KonamiCounter = 0
+        '    End If
+        '    'Don't overflow. Also check if we finished
         '    If KonamiCounter = KonamiCode.Length Then
         '        KonamiStatus = True
+        '        KonamiCounter = 0
         '    End If
         'End If
 

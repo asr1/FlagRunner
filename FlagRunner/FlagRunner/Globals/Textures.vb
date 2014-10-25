@@ -11,7 +11,6 @@ Public Class Textures
     'Avatars
     Public Shared Pirate As Texture2D
 
-
     Public Shared Sub Load()
         BlackGradient = Globals.Content.Load(Of Texture2D)("GFX/blackgradient")
         Cobble = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Cobble")
@@ -22,6 +21,10 @@ Public Class Textures
         StatusLight = Globals.Content.Load(Of Texture2D)("GFX/Connected")
         HealthBar = Globals.Content.Load(Of Texture2D)("GFX/Healthbar")
     End Sub
+
+    Public Shared Function GetHealthBarSource() As Rectangle
+        Return New Rectangle(64, 0, 64, 64)
+    End Function
 End Class
 
 

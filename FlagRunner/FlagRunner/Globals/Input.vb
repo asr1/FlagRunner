@@ -39,6 +39,21 @@ Public Class Input
     End Sub
 
 
+    'Public Shared Function HasPlayerOneInputChanged() As Boolean
+
+    '    If (CurrentButtonState1.PacketNumber = LastButtonState1.PacketNumber) Then
+
+    '        ''ignore thumbstick movement
+    '        'If (ignoreThumbsticks = True) And ((Not currentState.ThumbSticks.Left.Length() = LastButtonState1.ThumbSticks.Left.Length()) And (Not currentState.ThumbSticks.Right.Length() = LastButtonState1.ThumbSticks.Right.Length())) Then
+    '        '    Return False
+    '        'End If
+    '        Return False
+
+    '    End If
+    '    Return True
+    'End Function
+
+
     'Holding a key down
     Public Shared Function KeyDown(key As Keys) As Boolean
         Return CurrentKeyState.IsKeyDown(key)

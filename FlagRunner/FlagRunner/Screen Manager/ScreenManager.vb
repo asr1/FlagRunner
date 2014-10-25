@@ -13,7 +13,8 @@ Public Class ScreenManager
     Public Sub New()
         AddScreen(debugScreen)
 
-        SoundManager.Play()
+        'TODO: UNCOMMENT OUT THIS LINE BEFORE RELEASE
+        ' SoundManager.Play()
     End Sub
 
     Public Sub Update()
