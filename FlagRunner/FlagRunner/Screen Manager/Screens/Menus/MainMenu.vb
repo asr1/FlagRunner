@@ -36,7 +36,29 @@ Public Class MainMenu
         Entries.Add(Entry)
     End Sub
 
+
+
+    ''TEMPORARY TEST KONAMI CODE
+    'Public Shared KonamiCode() As Buttons = {Buttons.DPadUp, Buttons.DPadUp, Buttons.DPadDown, Buttons.DPadDown, Buttons.DPadLeft, Buttons.DPadRight, Buttons.B}
+    'Public Shared KonamiCounter As Integer = 0
+    'Public Shared KonamiStatus As Boolean = False
+    'Public Shared temp As Buttons
+
+
+
     Public Overrides Sub HandleInput()
+
+
+
+        'If Input.ButtonPressed(KonamiCode(KonamiCounter), PlayerIndex.One) Then
+        '    KonamiCounter += 1
+        '    If KonamiCounter = KonamiCode.Length Then
+        '        KonamiStatus = True
+        '    End If
+        'End If
+
+
+
         'Menu Up
         If Input.KeyPressed(Keys.Up) Or Input.KeyPressed(Keys.W) Or Input.ButtonPressed(Buttons.DPadUp, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.Four) Then
             MenuSelect -= 1
@@ -84,11 +106,11 @@ Public Class MainMenu
                 Case MenuItems.Options
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
-                    'ScreenManager.AddScreen(New OptionScreen)
+                    ScreenManager.AddScreen(New OptionScreen)
                 Case MenuItems.Credits
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
-                    'ScreenManager.AddScreen(New CreditScreen)
+                    ScreenManager.AddScreen(New CreditScreen)
             End Select
         End If
     End Sub
@@ -99,6 +121,16 @@ Public Class MainMenu
         For Each Entry In Entries
             'TODO ??
         Next
+
+
+
+        'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, KonamiCounter, New Vector2(90, 80), Color.Black)
+        'If KonamiStatus = True Then
+        '    Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(0, 0, 500, 500), Color.Pink)
+        '    KonamiStatus = False
+        'End If
+
+
 
         'Draw actual menu options
         Dim MenuY As Integer = MenuPos.Y + 20

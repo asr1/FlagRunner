@@ -71,7 +71,6 @@
             End If
         End If
 
-
         'Player 2
         If Status.isConnected(PlayerIndex.Two) Then
             If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then 'And Player2.AvatarMoving = False Then
@@ -328,17 +327,22 @@
                 If X >= 0 And X <= MapWidth And Y >= 0 And Y <= MapHeight Then
                     Globals.SpriteBatch.Draw(MapBase.TileList(X, Y).TileGFX, New Rectangle(DrawX * TileSize, DrawY * TileSize, TileSize, TileSize), New Rectangle(0, 0, 31, 31), Color.White)
                     'DEBUG view coordinates on tile
-                    If DrawX Mod 10 = 0 And DrawY Mod 2 = 0 Then
-                        Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "x: " & X & vbCrLf & "y: " & Y, New Vector2(DrawX * TileSize, DrawY * TileSize), Color.White)
+                    If Options.debugMode = True Then
+                        If DrawX Mod 10 = 0 And DrawY Mod 2 = 0 Then
+                            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "x: " & X & vbCrLf & "y: " & Y, New Vector2(DrawX * TileSize, DrawY * TileSize), Color.White)
+                        End If
                     End If
+
 
                 End If
             Next
         Next 'End maze
 
         'Debug hit boxes
-        'Globals.SpriteBatch.Draw(Textures.BlackGradient, Player1.HitBox, Color.Blue)
-        'Globals.SpriteBatch.Draw(Textures.BlackGradient, Player2.HitBox, Color.Red)
+        If Options.debugMode = True Then
+            Globals.SpriteBatch.Draw(Textures.BlackGradient, Player1.HitBox, Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.BlackGradient, Player2.HitBox, Color.Red)
+        End If
 
         'Draw bases with the right colors and properties.
         If Status.isConnected(PlayerIndex.One) Then
@@ -358,23 +362,59 @@
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
         End If
 
-        'Avatars
+        'Avatars and health bars
         If Status.isConnected(PlayerIndex.One) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
+
+            If Options.HeathBarOption = DisplayHealth.Number Then
+                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player1.GetHealth, New Vector2(Player1.getAvatarPosition.X * TileSize, (Player1.getAvatarPosition.Y * TileSize) - TileSize), Color.White)
+            ElseIf Options.HeathBarOption = DisplayHealth.Bar Then
+                'Health bar frame.
+                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize - 10, TileSize, 10), New Rectangle(64, 0, 64, 64), Color.White)
+                'Healthbar fill
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player1.getAvatarPosition.X * TileSize + 1), Player1.getAvatarPosition.Y * TileSize - 10, TileSize * Player1.GetHealth / Player.MaxHealth, 9), Color.Green)
+            End If
         End If
+
         If Status.isConnected(PlayerIndex.Two) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
+
+            If Options.HeathBarOption = DisplayHealth.Number Then
+                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player2.GetHealth, New Vector2(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize - TileSize), Color.White)
+            ElseIf Options.HeathBarOption = DisplayHealth.Bar Then
+                'Health bar frame
+                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize - 10, TileSize, 10), New Rectangle(64, 0, 64, 64), Color.White)
+                'Healthbar fill
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player2.getAvatarPosition.X * TileSize + 1), Player2.getAvatarPosition.Y * TileSize - 10, TileSize * Player2.GetHealth / Player.MaxHealth, 9), Color.Green)
+            End If
         End If
+
         If Status.isConnected(PlayerIndex.Three) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Green)
+
+            If Options.HeathBarOption = DisplayHealth.Number Then
+                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player3.GetHealth, New Vector2(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize - TileSize), Color.White)
+            ElseIf Options.HeathBarOption = DisplayHealth.Bar Then
+                'Health bar Frame
+                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize - 10, TileSize, 10), New Rectangle(64, 0, 64, 64), Color.White)
+                'Health bar fill
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player3.getAvatarPosition.X * TileSize + 1, Player3.getAvatarPosition.Y * TileSize - 10, TileSize * Player3.GetHealth / Player.MaxHealth, 9), Color.Green)
+            End If
         End If
+
         If Status.isConnected(PlayerIndex.Four) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
+
+            If Options.HeathBarOption = DisplayHealth.Number Then
+                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player4.GetHealth, New Vector2(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - TileSize), Color.White)
+            ElseIf Options.HeathBarOption = DisplayHealth.Bar Then
+                'Health bar Frame
+                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - 10, TileSize, 10), New Rectangle(64, 0, 64, 64), Color.White)
+                'Health bar fill
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player4.getAvatarPosition.X * TileSize + 1, Player4.getAvatarPosition.Y * TileSize - 10, TileSize * Player4.GetHealth / Player.MaxHealth, 9), Color.Green)
+            End If
+
         End If
-        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "hello", New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), Color.Red, 0, New Vector2(2 * MazeScreen.TileSize, 2 * MazeScreen.TileSize), 5, SpriteEffects.None, 0)
-        'Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(5 * TileSize, 5 * TileSize, TileSize, TileSize), Color.Plum)
-        'Debug
-        'Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player3.GetHealth.ToString, New Vector2(0, 0), Color.Red)
 
         Globals.SpriteBatch.End()
     End Sub

@@ -94,6 +94,7 @@
     <Compile Include="Globals\Fonts.vb" />
     <Compile Include="Globals\Globals.vb" />
     <Compile Include="Globals\Input.vb" />
+    <Compile Include="Globals\Options.vb" />
     <Compile Include="Globals\Player.vb" />
     <Compile Include="Globals\Status.vb" />
     <Compile Include="Globals\Textures.vb" />
@@ -107,6 +108,7 @@
     <Compile Include="Screen Manager\Screens\Debug.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MainMenu.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MenuEntry.vb" />
+    <Compile Include="Screen Manager\Screens\OptionScreen.vb" />
     <Compile Include="Screen Manager\Screens\TitleScreen.vb" />
     <Compile Include="Screen Manager\Screens\World\MazeScreen.vb" />
     <Compile Include="Sound Manager\SoundManager.vb" />

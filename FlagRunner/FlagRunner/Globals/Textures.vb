@@ -6,6 +6,7 @@ Public Class Textures
     Public Shared CrackedWall As Texture2D
     Public Shared BaseTile As Texture2D
     Public Shared StatusLight As Texture2D
+    Public Shared HealthBar As Texture2D
 
     'Avatars
     Public Shared Pirate As Texture2D
@@ -19,6 +20,7 @@ Public Class Textures
         Pirate = Globals.Content.Load(Of Texture2D)("GFX/Avatars/Pirate")
         BaseTile = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Base")
         StatusLight = Globals.Content.Load(Of Texture2D)("GFX/Connected")
+        HealthBar = Globals.Content.Load(Of Texture2D)("GFX/Healthbar")
     End Sub
 End Class
 

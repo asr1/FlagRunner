@@ -20,14 +20,14 @@ Public Class Player
     Private Shared playerNum = 1 'The number of players
     Private UniquePlayerNum As Integer 'The unique identifier for this specific player
     Private PlayerColor As Color 'The color of the given player
-    Private Const MaxHealth As Integer = 10 'The maximum health a player has
+    Public Const MaxHealth As Integer = 10 'The maximum health a player has
     Private Health As Integer 'The current health a player has
 
     'Set these equal to fists or something
     Private MainWeapon As Weapon
     Private SecondaryWeapon As Weapon
 
-    Public Const PUNCH_DAMAGE = 1
+    Private Const PUNCH_DAMAGE = 1
 
     'Used to toggle if a player is created
     Public NeedsUpdating As Boolean = False
@@ -85,7 +85,7 @@ Public Class Player
         Return UniquePlayerNum
     End Function
 
-    'Getter for health
+    'Getter for current player health
     Public Function GetHealth() As Integer
         Return Health
     End Function

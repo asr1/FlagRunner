@@ -18,11 +18,15 @@
 
     End Sub
 
+
     Public Overrides Sub Draw()
         MyBase.Draw()
+
         'Pixel arty magic
         'Globals.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
         Globals.SpriteBatch.Begin()
+
+
         'TODO make background less gray so disabled is more readable
         Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(0, 0, Globals.GameSize.X - 2, Globals.GameSize.Y), New Rectangle(0, 0, 64, 1), Color.MintCream)
         'Left offset
