@@ -9,6 +9,8 @@ Public Class OptionScreen
     'TODO
     '(resolution, volume, % breakable walls, item drop frequency, relative item drop frequency, health bar display)
 
+    Private MenuSize As New Vector2(250, 160)
+    Private MenuPos As New Vector2(Globals.GameSize.X / 2, Globals.GameSize.Y / 3)
     Private MenuEntries As New List(Of MenuEntry) 'A list of main vertical elements
     Private HealthBarEntries As New List(Of MenuEntry) 'A horizontal list of Elements
 
@@ -40,17 +42,6 @@ Public Class OptionScreen
             .Enabled = Enabled
         End With
         list.Add(Entry)
-    End Sub
-
-
-    Public Overrides Sub Draw()
-        Globals.SpriteBatch.Begin()
-        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Volume", New Vector2(10, 130), Color.White)
-
-
-
-        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Back", New Vector2(10, Globals.GameSize.Y - Fonts.Georgia_16.MeasureString("Back").Y), Color.Red)
-        Globals.SpriteBatch.End()
     End Sub
 
     Public Overrides Sub HandleInput()
@@ -100,23 +91,58 @@ Public Class OptionScreen
         If Input.KeyPressed(Keys.Left) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.One) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.Four) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.Four) Then
             Select Case menuSelect
                 Case OptionItems.HealthBar
-                    'TODO
+                    'Enable WrapAround
+                    HealthSelect -= 1
+                    If HealthSelect < 0 Then
+                        HealthSelect = Utilities.MaxEnum(GetType(DisplayHealth))
+                    End If
+                    Options.SetHealthBarOption(HealthSelect)
             End Select
         End If
 
         'Then Right
         If Input.KeyPressed(Keys.Right) Or Input.ButtonPressed(Buttons.LeftThumbstickRight, PlayerIndex.One) Or Input.ButtonPressed(Buttons.DPadRight, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickRight, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.DPadRight, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.LeftThumbstickRight, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.DPadRight, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.LeftThumbstickRight, PlayerIndex.Four) Or Input.ButtonPressed(Buttons.DPadRight, PlayerIndex.Four) Then
             Select Case menuSelect
+                'If we're going right on healthbar
                 Case OptionItems.HealthBar
-
+                    'Enable wrap around
                     HealthSelect += 1
                     If HealthSelect > Utilities.MaxEnum(GetType(DisplayHealth)) Then
                         HealthSelect = 0
                     End If
-                    'TODO
+                    'Set the option appropriately
+                    Options.SetHealthBarOption(HealthSelect)
             End Select
         End If
 
     End Sub
+
+
+    Public Overrides Sub Draw()
+        Globals.SpriteBatch.Begin()
+        'Starrt with our beloved texture
+        Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(0, 0, Globals.GameSize.X - 2, Globals.GameSize.Y), New Rectangle(0, 0, 64, 1), Color.MintCream)
+
+
+        'TODO: Add arrows around option choices
+
+        'Draw the menu
+        Dim MenuY As Integer = 30
+        For x = 0 To MenuEntries.Count - 1
+            If x = menuSelect Then
+                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(MenuPos.X + MenuSize.X / 2 - 110, MenuY, 330, 30), Textures.GetHealthBarSource, Color.Orange)
+            End If
+            'Either way, draw the menu words
+            Globals.SpriteBatch.DrawString(Fonts.Georgia_16, MenuEntries.Item(x).Text, New Vector2(MenuPos.X + MenuSize.X / 2 - Fonts.Georgia_16.MeasureString(MenuEntries.Item(x).Text).X / 2, MenuY), Color.White)
+            MenuY += 30 'Move down so we don't overwrite ourself
+        Next
+
+        'And manually draw submenu. Investigate a way to loop through this? 'Note: No better way to do thsi
+        'If we make a superItem class, we lose the readability. Do it like this.
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, [Enum].GetName(GetType(DisplayHealth), Options.GetHealthBarOption), New Vector2(MenuPos.X + MenuSize.X / 2 + 80, 30), Color.White)
+
+        Globals.SpriteBatch.End()
+    End Sub
+
 
 End Class

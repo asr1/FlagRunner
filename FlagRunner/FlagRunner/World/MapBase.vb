@@ -1,6 +1,5 @@
 ﻿Public Class MapBase
     Public Shared TileList(0, 0) As Tile
-    Public Const RESOLUTION As Integer = 10
     Dim Rand As Random = New Random
 
     Public Sub New(Width As Integer, Height As Integer, Start1 As Vector2, Start2 As Vector2)
@@ -82,7 +81,7 @@
 
         'Ensure we have room to split
         'And choose a direction
-        If Width > RESOLUTION And Height > RESOLUTION Then
+        If Width > Options.GetResolution And Height > Options.GetResolution Then
             If Width > Height Then
                 DivideVert(Left, Right, Top, Bottom)
             ElseIf Height > Width Then
@@ -96,9 +95,9 @@
                 End If
 
             End If
-        ElseIf Width > RESOLUTION And Height <= RESOLUTION Then
+        ElseIf Width > Options.GetResolution And Height <= Options.GetResolution Then
             DivideVert(Left, Right, Top, Bottom)
-        ElseIf Width <= RESOLUTION And Height > RESOLUTION Then
+        ElseIf Width <= Options.GetResolution And Height > Options.GetResolution Then
             DivideHorz(Left, Right, Top, Bottom)
         End If
 
