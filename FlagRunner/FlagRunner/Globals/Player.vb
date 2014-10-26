@@ -20,7 +20,7 @@ Public Class Player
     Private Shared playerNum = 1 'The number of players
     Private UniquePlayerNum As Integer 'The unique identifier for this specific player
     Private PlayerColor As Color 'The color of the given player
-    Public Const MaxHealth As Integer = 10 'The maximum health a player has
+    Private Shared MaxHealth As Integer = Options.getHealth 'The maximum health a player has
     Private Health As Integer 'The current health a player has
 
     'Set these equal to fists or something
@@ -99,6 +99,12 @@ Public Class Player
     Public Sub setAvatarPosition(Position As Vector2)
         AvatarPosition = Position
     End Sub
+
+    Public Shared Function getMaxHealth() As Integer
+        Return MaxHealth
+    End Function
+
+
     ''A new function used for respawning that takes in the player's number
     ''To ensure they are created appropriately
     'Public Sub New(Pnum As Integer)
@@ -293,12 +299,12 @@ Public Class Player
                 End If
                 Me.HitBox.Y -= 4
         End Select
-     
+
         Globals.SpriteBatch.End()
         Globals.Graphics.GraphicsDevice.Present()
 
-    'TODO
-    'Also play sound for swing, sound for hit
+        'TODO
+        'Also play sound for swing, sound for hit
     End Sub
 
 End Class

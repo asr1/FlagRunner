@@ -8,6 +8,13 @@
 
         Initialize(Width, Height)
         GenerateMaze(0, Width, 0, Height)
+
+        'To be safe, let's generate our outside walls again.
+        'Ideally, this would be unecessary, but it coveres any changes
+        'To the Algorithm that would result in an outer wall having the 
+        'Potential to be Breakable.
+        GenerateOutside(Width, Height)
+
         UpdateTiles(Width, Height)
         'Generate maps until we have a path from corner 1 to 4 and corner 2 to 3
         '  While Not MazeSolver.SolveMaze(New Vector2(1, 1), 4) = True And Not MazeSolver.SolveMaze(New Vector2(1, MazeScreen.getMapSize.X - 1), 3) = True
@@ -55,6 +62,17 @@
             Next
         Next
 
+        GenerateOutside(Width, Height)
+
+        'Don't do this here. Move it.
+        'Draw bases
+        'TileList(1, 1).TerrainType = TileType.Base
+        'TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
+
+    End Sub
+
+    'Generate outside walls
+    Private Sub GenerateOutside(Row As Integer, Col As Integer)
         'Make Outer Walls
         For x = 0 To Row
             TileList(x, 0).TerrainType = TileType.Wall
@@ -65,12 +83,6 @@
             TileList(0, x).TerrainType = TileType.Wall
             TileList(Row, x).TerrainType = TileType.Wall
         Next
-
-        'Don't do this here. Move it.
-        'Draw bases
-        'TileList(1, 1).TerrainType = TileType.Base
-        'TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
-
     End Sub
 
     'It's possible that references to right and left are actually to top and bottom, and vice-versa
@@ -101,6 +113,8 @@
             DivideHorz(Left, Right, Top, Bottom)
         End If
 
+   
+
     End Sub
 
     'If sections are being blocked off, the problem here
@@ -111,10 +125,10 @@
 
 
         For x As Integer = Top To Bottom - 1
-            'Have a 5% chance it's breakable
+            'Have a 5% chance it's breakable (by default)
             Dim WallCheck As Integer = Rand.Next(0, 100)
             Dim WallType As TileType = TileType.Wall
-            If WallCheck < 5 Then
+            If WallCheck < Options.GetBreakability Then
                 WallType = TileType.CrackedWall
             End If
             TileList(x, divPos).TerrainType = WallType
@@ -146,10 +160,10 @@
 
         'Fill in that maze 
         For x As Integer = Left To Right - 1
-            'Have a 5% chance it's breakable
+            'Have a 5% chance it's breakable (by default)
             Dim WallCheck As Integer = Rand.Next(0, 100)
             Dim WallType As TileType = TileType.Wall
-            If WallCheck < 5 Then
+            If WallCheck < Options.GetBreakability Then
                 WallType = TileType.CrackedWall
             End If
             TileList(divPos, x).TerrainType = WallType

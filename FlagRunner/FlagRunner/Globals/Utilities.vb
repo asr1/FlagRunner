@@ -35,9 +35,10 @@
         Return Min
     End Function
 
-    'Returns the number one smaller than the one inputted in the given array
+    'Returns the number one smaller than the one inputted in the given enum
     'OR if the number given is the smallest, returns the largest number in 
-    'The given array
+    'The given enum.
+    'PRECONDITIONS: The enum must be sorted smallest to largest
     Public Shared Function NextSmallestEnum(ByVal EnumType As Type, Value As Integer) As Long
 
         Dim FirstElement As Boolean = True
@@ -59,9 +60,10 @@
         Return MaxEnum(EnumType)
     End Function
 
-    'Returns the number one greater than the one inputted in the given array
+    'Returns the number one greater than the one inputted in the given enum
     'OR if the number given is the biggest, returns the smallest number in 
-    'The given array
+    'The given enum.
+    'PRECONDITIONS: The enum must be sorted smallest to largest
     Public Shared Function NextGreatestEnum(ByVal EnumType As Type, Value As Integer) As Long
         For Each i In [Enum].GetValues(EnumType)
             'If I pass in the highest value, return the lowest

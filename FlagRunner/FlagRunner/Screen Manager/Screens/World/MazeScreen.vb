@@ -372,7 +372,7 @@
                 'Health bar frame.
                 Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
                 'Healthbar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player1.getAvatarPosition.X * TileSize + 1), Player1.getAvatarPosition.Y * TileSize - 10, TileSize * Player1.GetHealth / Player.MaxHealth, 9), Color.Green)
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player1.getAvatarPosition.X * TileSize + 1), Player1.getAvatarPosition.Y * TileSize - 10, TileSize * Player1.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
         End If
 
@@ -385,7 +385,7 @@
                 'Health bar frame
                 Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
                 'Healthbar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player2.getAvatarPosition.X * TileSize + 1), Player2.getAvatarPosition.Y * TileSize - 10, TileSize * Player2.GetHealth / Player.MaxHealth, 9), Color.Green)
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player2.getAvatarPosition.X * TileSize + 1), Player2.getAvatarPosition.Y * TileSize - 10, TileSize * Player2.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
         End If
 
@@ -398,7 +398,7 @@
                 'Health bar Frame
                 Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
                 'Health bar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player3.getAvatarPosition.X * TileSize + 1, Player3.getAvatarPosition.Y * TileSize - 10, TileSize * Player3.GetHealth / Player.MaxHealth, 9), Color.Green)
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player3.getAvatarPosition.X * TileSize + 1, Player3.getAvatarPosition.Y * TileSize - 10, TileSize * Player3.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
         End If
 
@@ -411,7 +411,7 @@
                 'Health bar Frame
                 Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
                 'Health bar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player4.getAvatarPosition.X * TileSize + 1, Player4.getAvatarPosition.Y * TileSize - 10, TileSize * Player4.GetHealth / Player.MaxHealth, 9), Color.Green)
+                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player4.getAvatarPosition.X * TileSize + 1, Player4.getAvatarPosition.Y * TileSize - 10, TileSize * Player4.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
 
         End If
