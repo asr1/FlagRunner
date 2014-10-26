@@ -4,10 +4,20 @@
     Number
 End Enum
 
+Public Enum ResolutionSize
+    Corridors = 2
+    Tight = 5
+    Close = 7
+    Balanced = 10
+    Vast = 12
+    Spacious = 16
+    Open = 24
+End Enum
+
 Public Class Options
     Private Shared HealthBarOption As DisplayHealth = DisplayHealth.Bar 'Toggle for health bar display (none, bar, num)
     Private Shared DebugMode As Boolean = False
-    Private Shared Resolution As Integer = 10
+    Private Shared Resolution As ResolutionSize = ResolutionSize.Balanced
 
 
     Public Shared Function GetHealthBarOption() As DisplayHealth
@@ -22,19 +32,11 @@ Public Class Options
         Return DebugMode
     End Function
 
-    Public Shared Sub DecreaseResolution()
-        If Resolution > 3 Then
-            Resolution -= 1
-        End If
+    Public Shared Sub SetResolution(newRes As ResolutionSize)
+        Resolution = newRes
     End Sub
 
-    Public Shared Sub IncreaseResoltuion()
-        If Resolution < 16 Then
-            Resolution += 1
-        End If
-    End Sub
-
-    Public Shared Function GetResolution() As Integer
+    Public Shared Function GetResolution() As ResolutionSize
         Return Resolution
     End Function
 

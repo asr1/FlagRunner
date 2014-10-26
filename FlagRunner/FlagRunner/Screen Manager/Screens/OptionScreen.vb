@@ -1,5 +1,6 @@
 ﻿Public Enum OptionItems
     HealthBar
+    OpenSpace
     Back
 End Enum
 
@@ -11,12 +12,16 @@ Public Class OptionScreen
 
     Private MenuSize As New Vector2(250, 160)
     Private MenuPos As New Vector2(Globals.GameSize.X / 2, Globals.GameSize.Y / 3)
+
+    'Menus
     Private MenuEntries As New List(Of MenuEntry) 'A list of main vertical elements
     Private HealthBarEntries As New List(Of MenuEntry) 'A horizontal list of Elements
-
+    Private ResolutionEntries As New List(Of MenuEntry) 'A Horizontal List of Sizes
     Private menuSelect As OptionItems = OptionItems.HealthBar
 
+    'Submenu selectors
     Dim HealthSelect As DisplayHealth = Options.GetHealthBarOption
+    Dim ResSelect As ResolutionSize = Options.GetResolution
 
     Public Sub New()
         Name = "OptionScreen"
@@ -24,12 +29,14 @@ Public Class OptionScreen
 
         'Add main menu items
         AddEntry("Health Bar", MenuEntries, True)
+        AddEntry("Open Space", MenuEntries, True)
         AddEntry("Back", MenuEntries, True)
 
         'Add sub menu items
         'First Healthbar
         For i As Integer = 0 To Utilities.MaxEnum(GetType(DisplayHealth))
             AddEntry([Enum].GetName(GetType(DisplayHealth), i), HealthBarEntries, True)
+            AddEntry([Enum].GetName(GetType(ResolutionSize), i), ResolutionEntries, True)
         Next
     End Sub
 
@@ -90,13 +97,15 @@ Public Class OptionScreen
         'Start with left
         If Input.KeyPressed(Keys.Left) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.One) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.LeftThumbstickLeft, PlayerIndex.Four) Or Input.ButtonPressed(Buttons.DPadLeft, PlayerIndex.Four) Then
             Select Case menuSelect
+                'The Health bar
                 Case OptionItems.HealthBar
-                    'Enable WrapAround
-                    HealthSelect -= 1
-                    If HealthSelect < 0 Then
-                        HealthSelect = Utilities.MaxEnum(GetType(DisplayHealth))
-                    End If
+                    'Get the next smallest value or wrap around
+                    HealthSelect = Utilities.NextSmallestEnum(GetType(DisplayHealth), HealthSelect)
                     Options.SetHealthBarOption(HealthSelect)
+                    'The Resolution
+                Case OptionItems.OpenSpace
+                    ResSelect = Utilities.NextSmallestEnum(GetType(ResolutionSize), ResSelect)
+                    Options.SetResolution(ResSelect)
             End Select
         End If
 
@@ -106,12 +115,14 @@ Public Class OptionScreen
                 'If we're going right on healthbar
                 Case OptionItems.HealthBar
                     'Enable wrap around
-                    HealthSelect += 1
-                    If HealthSelect > Utilities.MaxEnum(GetType(DisplayHealth)) Then
-                        HealthSelect = 0
-                    End If
+                    HealthSelect = Utilities.NextGreatestEnum(GetType(DisplayHealth), HealthSelect)
                     'Set the option appropriately
                     Options.SetHealthBarOption(HealthSelect)
+
+                    'Set Resolution
+                Case OptionItems.OpenSpace
+                    ResSelect = Utilities.NextGreatestEnum(GetType(ResolutionSize), ResSelect)
+                    Options.SetResolution(ResSelect)
             End Select
         End If
 
@@ -139,7 +150,10 @@ Public Class OptionScreen
 
         'And manually draw submenu. Investigate a way to loop through this? 'Note: No better way to do thsi
         'If we make a superItem class, we lose the readability. Do it like this.
+        'Health Bars
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, [Enum].GetName(GetType(DisplayHealth), Options.GetHealthBarOption), New Vector2(MenuPos.X + MenuSize.X / 2 + 80, 30), Color.White)
+        'Resolution
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, [Enum].GetName(GetType(ResolutionSize), Options.GetResolution), New Vector2(MenuPos.X + MenuSize.X / 2 + 80, 60), Color.White)
 
         Globals.SpriteBatch.End()
     End Sub
