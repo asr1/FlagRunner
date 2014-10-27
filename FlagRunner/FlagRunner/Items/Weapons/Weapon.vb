@@ -1,4 +1,5 @@
 ﻿Public MustInherit Class Weapon
+    Inherits Item
     Public FireTime As Integer 'The amount of time between a trigger press and a shot fired
     Public RelaodTime As Integer 'The amount of time between expending a full clip and being able to fire again
     Public AmmoCapacity As Integer 'The amount of ammo in one full clip

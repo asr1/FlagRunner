@@ -19,7 +19,7 @@ Public Enum Breakability
     Few = 5
     Sparse = 10
     Seldom = 20
-    intermittent = 30
+    Intermittent = 30
     Uncommon = 40
     Common = 50
     Frequent = 60
@@ -28,7 +28,7 @@ Public Enum Breakability
 End Enum
 
 Public Enum Health
-    Inept = 2
+    Crippled = 2
     Weak = 5
     Standard = 10
     Tough = 20

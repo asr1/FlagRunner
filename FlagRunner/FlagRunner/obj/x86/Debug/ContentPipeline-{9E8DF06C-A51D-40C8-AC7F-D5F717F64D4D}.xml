@@ -198,6 +198,15 @@
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Healthbar.xnb</Output>
       <Time>2014-10-25T18:21:56.5587111-05:00</Time>
     </Item>
+    <Item>
+      <Source>GFX\Items\Trident.png</Source>
+      <Name>GFX\Items\Trident</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Trident.xnb</Output>
+      <Time>2014-10-27T15:31:27.4922691-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>

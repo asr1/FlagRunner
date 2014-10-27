@@ -26,6 +26,8 @@
 
     'Iterate through entire map and set properties appropiately based on type
     Public Shared Sub UpdateTiles(Width As Integer, Height As Integer)
+        Dim rand As Random = New Random 'Used for item declaration
+
         For x = 0 To Width
             For y = 0 To Height
                 With TileList(x, y)
@@ -34,6 +36,10 @@
                         Case TileType.Cobble
                             .TileGFX = Textures.Cobble
                             .isBlocked = False
+                            'Randomly populatre with items
+                            If rand.Next(0, 100) < Options.getTotalFrequency Then
+                                .Item = Options.GetItem
+                            End If
                         Case TileType.Wall
                             .TileGFX = Textures.Wall
                             .isBlocked = True

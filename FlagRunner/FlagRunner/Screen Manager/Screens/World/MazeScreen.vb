@@ -362,9 +362,16 @@
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
         End If
 
+
+
         'Avatars and health bars
         If Status.isConnected(PlayerIndex.One) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
+
+            'TEST DEBUG
+            Globals.SpriteBatch.Draw(Textures.Trident, New Rectangle(Player1.getAvatarPosition.X * TileSize + 30, Player1.getAvatarPosition.Y * TileSize, 32, 32), Color.White)
+
+
 
             If Options.GetHealthBarOption = DisplayHealth.Number Then
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player1.GetHealth, New Vector2(Player1.getAvatarPosition.X * TileSize, (Player1.getAvatarPosition.Y * TileSize) - TileSize), Color.White)

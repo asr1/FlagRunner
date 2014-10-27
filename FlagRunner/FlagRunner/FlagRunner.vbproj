@@ -91,14 +91,16 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Globals\Fonts.vb" />
+    <Compile Include="Globals\Options\ItemOptions.vb" />
+    <Compile Include="Globals\Resources\Fonts.vb" />
     <Compile Include="Globals\Globals.vb" />
     <Compile Include="Globals\Input.vb" />
-    <Compile Include="Globals\Options.vb" />
+    <Compile Include="Globals\Options\Options.vb" />
     <Compile Include="Globals\Player.vb" />
     <Compile Include="Globals\Status.vb" />
-    <Compile Include="Globals\Textures.vb" />
+    <Compile Include="Globals\Resources\Textures.vb" />
     <Compile Include="Globals\Utilities.vb" />
+    <Compile Include="Items\Item.vb" />
     <Compile Include="Items\Weapons\Weapon.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Program.vb" />
