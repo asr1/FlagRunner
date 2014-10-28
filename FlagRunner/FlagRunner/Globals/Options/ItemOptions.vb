@@ -1,13 +1,18 @@
 ﻿Public Enum Frequency
     None = 0
-    Low = 5
-    Medium = 30
-    High = 70
+    Low = 2
+    Medium = 8
+    High = 12
 End Enum
 
 Partial Public Class Options
-    Private Shared AllItems As List(Of Item) 'A list containing every item in play.
-    Private Shared TotalFrequency As Frequency 'The frequency with which items will be generated
+    Private Shared AllItems As New List(Of Item) 'A list containing every item in play.
+    Private Shared TotalFrequency As Frequency = Frequency.High 'The frequency with which items will be generated
+
+    Public Shared Sub InitializeItems()
+        Dim t As Trident = New Trident
+        AllItems.Add(t)
+    End Sub
 
     Public Shared Function getTotalFrequency() As Frequency
         Return TotalFrequency
@@ -24,15 +29,19 @@ Partial Public Class Options
     'But the chance of being selected is equal to
     'The relative frequency /100. Otherwise it will reroll.
     Public Shared Function GetItem() As Item
-        Dim Rand As Random = New Random
-        'Pick a random item
-        Dim item As Item = AllItems(Rand.Next(0, AllItems.Count - 1))
-        'Then see if we pick it. 
-        Dim i As Integer = Rand.Next(0, 100)
-        If i < item.getRelFreq Then
-            Return item
-        Else
-            Return GetItem() 'Reroll
-        End If
+        'Loop until we get a value
+        While True
+            Dim Rand As Random = New Random
+            'Pick a random item
+            Dim item As Item = AllItems(Rand.Next(0, AllItems.Count - 1))
+            'Then see if we pick it. 
+            Dim i As Integer = Rand.Next(0, 100)
+            If i < item.getRelFreq Then
+                Return item
+            End If
+        End While
+        'This will never be reached
+        Return Nothing
     End Function
+
 End Class

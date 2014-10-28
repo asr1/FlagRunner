@@ -1,5 +1,6 @@
 ﻿Public Enum ItemOptionsList
     TotalFrequency
+    Back
 End Enum
 Public Class ItemOptionScreen
     Inherits BaseScreen
@@ -24,7 +25,7 @@ Public Class ItemOptionScreen
 
         'Add main menu items
         OptionScreen.AddEntry("Item Frequency", ItemMenuEntries, True)
-
+        OptionScreen.AddEntry("Back", ItemMenuEntries, True)
 
         'Add sub menu items
         For i As Integer = 0 To Utilities.MaxEnum(GetType(Frequency))
@@ -66,9 +67,13 @@ Public Class ItemOptionScreen
         End If
 
         'Invoke Selected menu Item when selected
-        'Note that nothing can be invoked yet.
+        'Note that only back can be enabled
         If Input.KeyPressed(Keys.Enter) Or Input.ButtonPressed(Buttons.A, PlayerIndex.One) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Four) Then
-            'Nothing to invoke yet
+            Select Case menuSelect
+                Case ItemOptionsList.Back
+                    ScreenManager.UnloadScreen("ItemScreen")
+                    ScreenManager.AddScreen(New OptionScreen)
+            End Select
         End If
 
         'But if we hit right or left, we'll need to cycle through the individual array option.

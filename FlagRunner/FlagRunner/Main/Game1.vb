@@ -45,6 +45,9 @@ Public Class Game1
         Textures.Load()
         Sounds.load()
 
+        'Load Weapons
+        Options.InitializeItems()
+
         'Add default screens
         ScreenManager = New ScreenManager
         ScreenManager.AddScreen(New TitleScreen)

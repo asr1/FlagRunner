@@ -15,6 +15,9 @@
         'Potential to be Breakable.
         GenerateOutside(Width, Height)
 
+        'Fill with items once
+        InitializeItems(Width, Height)
+
         UpdateTiles(Width, Height)
         'Generate maps until we have a path from corner 1 to 4 and corner 2 to 3
         '  While Not MazeSolver.SolveMaze(New Vector2(1, 1), 4) = True And Not MazeSolver.SolveMaze(New Vector2(1, MazeScreen.getMapSize.X - 1), 3) = True
@@ -36,10 +39,6 @@
                         Case TileType.Cobble
                             .TileGFX = Textures.Cobble
                             .isBlocked = False
-                            'Randomly populatre with items
-                            If rand.Next(0, 100) < Options.getTotalFrequency Then
-                                .Item = Options.GetItem
-                            End If
                         Case TileType.Wall
                             .TileGFX = Textures.Wall
                             .isBlocked = True
@@ -50,6 +49,23 @@
                             .TileGFX = Textures.BaseTile
                             .isBlocked = False
                     End Select
+                End With
+            Next
+        Next
+    End Sub
+
+    'Randomly populate with items
+    Public Sub InitializeItems(Width As Integer, Height As Integer)
+        For x = 0 To Width
+            For y = 0 To Height
+                With TileList(x, y)
+                    If .TerrainType = TileType.Cobble Then
+                        If Rand.Next(0, 100) < Options.getTotalFrequency Then
+                            .Item = Options.GetItem
+                        Else
+                            .Item = Nothing
+                        End If
+                    End If
                 End With
             Next
         Next
@@ -119,7 +135,7 @@
             DivideHorz(Left, Right, Top, Bottom)
         End If
 
-   
+
 
     End Sub
 

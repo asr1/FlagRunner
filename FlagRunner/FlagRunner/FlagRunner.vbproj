@@ -101,6 +101,7 @@
     <Compile Include="Globals\Resources\Textures.vb" />
     <Compile Include="Globals\Utilities.vb" />
     <Compile Include="Items\Item.vb" />
+    <Compile Include="Items\Weapons\Trident.vb" />
     <Compile Include="Items\Weapons\Weapon.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Program.vb" />
