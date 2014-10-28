@@ -109,6 +109,7 @@
     <Compile Include="Screen Manager\ScreenManager.vb" />
     <Compile Include="Screen Manager\Screens\CreditScreen.vb" />
     <Compile Include="Screen Manager\Screens\Debug.vb" />
+    <Compile Include="Screen Manager\Screens\ItemOptionScreen.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MainMenu.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MenuEntry.vb" />
     <Compile Include="Screen Manager\Screens\OptionScreen.vb" />

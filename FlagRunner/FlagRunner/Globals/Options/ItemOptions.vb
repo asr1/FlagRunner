@@ -1,7 +1,7 @@
 ﻿Public Enum Frequency
     None = 0
     Low = 5
-    Med = 30
+    Medium = 30
     High = 70
 End Enum
 
@@ -12,6 +12,10 @@ Partial Public Class Options
     Public Shared Function getTotalFrequency() As Frequency
         Return TotalFrequency
     End Function
+
+    Public Shared Sub setTotalFrequency(newFreq As Frequency)
+        TotalFrequency = newFreq
+    End Sub
 
     'Returns an item based on frequency selected
     'This is called when populating tiles initially

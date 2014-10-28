@@ -5,14 +5,13 @@
     Health
     VPoints
     Volume
+    Items
     Back
 End Enum
 
 Public Class OptionScreen
     Inherits BaseScreen
 
-    'TODO
-    '(item drop frequency, relative item drop frequency)
 
     Private MenuSize As New Vector2(250, 160)
     Private MenuPos As New Vector2(Globals.GameSize.X / 3, Globals.GameSize.Y / 3)
@@ -45,20 +44,30 @@ Public Class OptionScreen
         AddEntry("Health", MenuEntries, True)
         AddEntry("Points to win", MenuEntries, True)
         AddEntry("Music Volume", MenuEntries, True)
+        AddEntry("Item Options", MenuEntries, True)
         AddEntry("Back", MenuEntries, True)
 
         'Add sub menu items
         For i As Integer = 0 To Utilities.MaxEnum(GetType(DisplayHealth))
             AddEntry([Enum].GetName(GetType(DisplayHealth), i), HealthBarEntries, True)
+        Next
+        For i As Integer = 0 To Utilities.MaxEnum(GetType(ResolutionSize))
             AddEntry([Enum].GetName(GetType(ResolutionSize), i), ResolutionEntries, True)
+        Next
+        For i As Integer = 0 To Utilities.MaxEnum(GetType(Breakability))
             AddEntry([Enum].GetName(GetType(Breakability), i), BreakableEntries, True)
+        Next
+        For i As Integer = 0 To Utilities.MaxEnum(GetType(Health))
             AddEntry([Enum].GetName(GetType(Health), i), HealthEntries, True)
+        Next
+        For i As Integer = 0 To Utilities.MaxEnum(GetType(VPoints))
             AddEntry([Enum].GetName(GetType(VPoints), i), VicPointEntries, True)
         Next
+
     End Sub
 
     'Subroutine to create a menu item and add it to a given menu or submenu
-    Public Sub AddEntry(Text As String, list As List(Of MenuEntry), Enabled As Boolean)
+    Public Shared Sub AddEntry(Text As String, list As List(Of MenuEntry), Enabled As Boolean)
         Dim Entry As MenuEntry
         Entry = New MenuEntry
         With Entry
@@ -100,13 +109,16 @@ Public Class OptionScreen
         End If
 
         'Invoke Selected menu Item when selected
-        'Note that the only thing we can "select" here is back
+        'Note that the only things we can "select" here are back and Item Options
         If Input.KeyPressed(Keys.Enter) Or Input.ButtonPressed(Buttons.A, PlayerIndex.One) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Four) Then
             Select Case menuSelect
                 Case OptionItems.Back
                     ScreenManager.UnloadScreen("OptionScreen")
                     ScreenManager.AddScreen(New TitleScreen)
                     ScreenManager.AddScreen(New MainMenu)
+                Case OptionItems.Items
+                    ScreenManager.UnloadScreen("OptionScreen")
+                    ScreenManager.AddScreen(New ItemOptionScreen)
             End Select
         End If
 
@@ -192,7 +204,7 @@ Public Class OptionScreen
             MenuY += 30 'Move down so we don't overwrite ourself
         Next
 
-        'And manually draw submenu. Investigate a way to loop through this? 'Note: No better way to do thsi
+        'And manually draw submenu. Investigate a way to loop through this? 'Note: No better way to do this
         'If we make a superItem class, we lose the readability. Do it like this.
         'Health Bars
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, [Enum].GetName(GetType(DisplayHealth), Options.GetHealthBarOption), New Vector2(MenuPos.X + MenuSize.X / 2 + 100, 30), Color.White)
