@@ -328,7 +328,7 @@
                 If X >= 0 And X <= MapWidth And Y >= 0 And Y <= MapHeight Then
                     Globals.SpriteBatch.Draw(MapBase.TileList(X, Y).TileGFX, New Rectangle(DrawX * TileSize, DrawY * TileSize, TileSize, TileSize), New Rectangle(0, 0, 31, 31), Color.White)
                     If Not MapBase.TileList(X, Y).Item Is Nothing Then
-                        Globals.SpriteBatch.Draw(MapBase.TileList(X, Y).Item.GFX, New Rectangle(DrawX * TileSize, DrawY * TileSize, TileSize, TileSize), New Rectangle(0, 0, 31, 31), Color.White)
+                        Globals.SpriteBatch.Draw(MapBase.TileList(X, Y).Item.GFX, New Rectangle(DrawX * TileSize, DrawY * TileSize, 32, 32), New Rectangle(0, 0, 31, 31), Color.White)
                     End If
 
                     'DEBUG view coordinates on tile
