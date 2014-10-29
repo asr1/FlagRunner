@@ -1,8 +1,11 @@
 ﻿Public Enum MenuItems
     CTF
     Deathmatch
+    Nightlight
+    LastManStanding
     Options
     Credits
+    Quit
 End Enum
 
 
@@ -22,8 +25,11 @@ Public Class MainMenu
 
         AddEntry("Capture The Flag", False)
         AddEntry("Deathmatch", True)
+        AddEntry("Nightlight", False)
+        AddEntry("Last Man Standing", False)
         AddEntry("Options", True)
         AddEntry("Credits", True)
+        AddEntry("Quit", True)
     End Sub
 
     Public Sub AddEntry(Text As String, Enabled As Boolean)
@@ -110,6 +116,8 @@ Public Class MainMenu
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
                     ScreenManager.AddScreen(New MazeScreen)
+                Case MenuItems.Nightlight
+                Case MenuItems.LastManStanding
                 Case MenuItems.Options
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
@@ -118,6 +126,8 @@ Public Class MainMenu
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
                     ScreenManager.AddScreen(New CreditScreen)
+                Case MenuItems.Quit
+                    Game1.ShouldExit = True
             End Select
         End If
     End Sub

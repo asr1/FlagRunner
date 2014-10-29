@@ -114,6 +114,7 @@
     <Compile Include="Screen Manager\Screens\Menus\MainMenu.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MenuEntry.vb" />
     <Compile Include="Screen Manager\Screens\OptionScreen.vb" />
+    <Compile Include="Screen Manager\Screens\PauseScreen.vb" />
     <Compile Include="Screen Manager\Screens\TitleScreen.vb" />
     <Compile Include="Screen Manager\Screens\World\MazeScreen.vb" />
     <Compile Include="Sound Manager\SoundManager.vb" />

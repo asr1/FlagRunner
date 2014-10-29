@@ -148,6 +148,8 @@
         'Update Tiles
         MapBase.UpdateTiles(MazeScreen.getMapSize().X, MazeScreen.getMapSize().Y)
 
+        'Anyone pause?
+        Game1.CheckForPause()
 
         'Updates player information
         If Status.isConnected(PlayerIndex.One) Then
@@ -208,8 +210,6 @@
                 Player4.NeedsUpdating = False
             End If
         End If
-
-
 
 
     'character movement updates
@@ -341,8 +341,6 @@
             Next
         Next 'End maze
 
-
-
         'Debug hit boxes
         If Options.GetDebugMode = True Then
             Globals.SpriteBatch.Draw(Textures.BlackGradient, Player1.HitBox, Color.Blue)
@@ -366,8 +364,6 @@
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
         End If
-
-
 
         'Avatars and health bars
         If Status.isConnected(PlayerIndex.One) Then

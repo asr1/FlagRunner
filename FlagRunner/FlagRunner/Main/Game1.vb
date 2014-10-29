@@ -1,10 +1,15 @@
 Public Enum GameMode
-    CTF
-    Deathmatch
+    CTF 'capture the flag 
+    Deathmatch 'First to x kills wins. 
+    LastManStanding 'Last one alive wins
+    Nightlight 'All is dark. Light sources hurt you.
 End Enum
 
 Public Class Game1
     Inherits Microsoft.Xna.Framework.Game
+
+    Public Shared isPaused As Boolean = False
+    Public Shared ShouldExit As Boolean = False 'If we get an exit signal.
 
     'Screen size needs to be tilesize * size of Tilelist
     Public Const GAME_SIZE_X As Integer = 1224, GAME_SIZE_Y As Integer = 1224
@@ -31,7 +36,31 @@ Public Class Game1
         MyBase.Initialize()
     End Sub
 
+    'Begin pause
+    Private Shared Sub BeginPause()
+        isPaused = True
+        SoundManager.Pause()
+        'If we add vibration, stop it here.
+    End Sub
 
+    'End pause
+    Private Shared Sub EndPause()
+        SoundManager.Play()
+        isPaused = False
+    End Sub
+
+    'Check for pause action. If start, pause. 
+    'If already paused, unpause. Anyone can unpause.
+    Public Shared Sub CheckForPause()
+        If Input.ButtonPressed(Buttons.Start, PlayerIndex.One) Or Input.ButtonPressed(Buttons.Start, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.Start, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.Start, PlayerIndex.Four) Then
+            If isPaused = False Then
+                ScreenManager.AddScreen(New PauseScreen)
+                BeginPause()
+            Else
+                EndPause()
+            End If
+        End If
+    End Sub
 
     'LoadContent will be called once per game and is the place to load
     'all of your content.
@@ -66,9 +95,20 @@ Public Class Game1
     'Allows the game to run logic such as updating the world,
     'checking for collisions, gathering input, and playing audio.
     Protected Overrides Sub Update(ByVal gameTime As GameTime)
+        'Input
+        Input.Update()
+
+
         ' Allows the game to exit
-        If GamePad.GetState(PlayerIndex.One).Buttons.Back = ButtonState.Pressed Then
+        If ShouldExit = True Then
             Me.Exit()
+        End If
+
+
+        'Don't update this frame if we're paused.
+        If isPaused Then
+            CheckForPause()
+            Return
         End If
 
         'Update logic
@@ -84,8 +124,7 @@ Public Class Game1
 
         ' Globals.Graphics.ApplyChanges()
 
-        'Input
-        Input.update()
+
     End Sub
 
     'This is called when the game should draw itself.
