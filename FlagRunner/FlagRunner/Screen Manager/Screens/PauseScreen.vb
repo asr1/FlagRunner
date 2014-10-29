@@ -6,11 +6,11 @@ End Enum
 Public Class PauseScreen
     Inherits BaseScreen
 
-    Private Entries As New List(Of MenuEntry)
-    Private PauseSelect As PauseItems = PauseItems.ResumeGame
+    Private Shared Entries As New List(Of MenuEntry)
+    Private Shared PauseSelect As PauseItems = PauseItems.ResumeGame
 
-    Private MenuSize As New Vector2(250, 160)
-    Private MenuPos As New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16_Bold.MeasureString("FLAG RUNNER").X, Globals.GameSize.Y / 3)
+    Private Shared MenuSize As New Vector2(250, 160)
+    Private Shared MenuPos As New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16_Bold.MeasureString("FLAG RUNNER").X, Globals.GameSize.Y / 3)
 
     Public Sub New()
         Name = "PauseScreen"
@@ -30,8 +30,8 @@ Public Class PauseScreen
         Entries.Add(Entry)
     End Sub
 
-
-    Public Overrides Sub HandleInput()
+    'We moved everything into one update sub.
+    Public Shared Sub HandlePauseScreen()
 
         'Menu Up
         If Input.KeyPressed(Keys.Up) Or Input.KeyPressed(Keys.W) Or Input.ButtonPressed(Buttons.DPadUp, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.One) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.LeftThumbstickUp, PlayerIndex.Four) Then
@@ -76,9 +76,10 @@ Public Class PauseScreen
                     ScreenManager.AddScreen(New MainMenu)
             End Select
         End If
-    End Sub
 
-    Public Overrides Sub Draw()
+        'This is where update ends and draw begins.
+        'I wish I didn't have to handle pausing this way.
+
         Globals.SpriteBatch.Begin()
 
         'Draw the menu
@@ -93,5 +94,4 @@ Public Class PauseScreen
         Next
         Globals.SpriteBatch.End()
     End Sub
-
 End Class

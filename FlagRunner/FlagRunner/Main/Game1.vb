@@ -40,7 +40,16 @@ Public Class Game1
     Private Shared Sub BeginPause()
         isPaused = True
         SoundManager.Pause()
-        'If we add vibration, stop it here.
+
+        ScreenManager.AddScreen(New PauseScreen)
+        'Stop any vibrartion
+        GamePad.SetVibration(PlayerIndex.One, 0, 0)
+        GamePad.SetVibration(PlayerIndex.Two, 0, 0)
+        GamePad.SetVibration(PlayerIndex.Three, 0, 0)
+        GamePad.SetVibration(PlayerIndex.Four, 0, 0)
+
+
+
     End Sub
 
     'End pause
@@ -54,7 +63,6 @@ Public Class Game1
     Public Shared Sub CheckForPause()
         If Input.ButtonPressed(Buttons.Start, PlayerIndex.One) Or Input.ButtonPressed(Buttons.Start, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.Start, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.Start, PlayerIndex.Four) Then
             If isPaused = False Then
-                ScreenManager.AddScreen(New PauseScreen)
                 BeginPause()
             Else
                 EndPause()
@@ -98,16 +106,18 @@ Public Class Game1
         'Input
         Input.Update()
 
-
         ' Allows the game to exit
         If ShouldExit = True Then
             Me.Exit()
         End If
 
 
+        'TODO: Fix pausing
+
         'Don't update this frame if we're paused.
         If isPaused Then
             CheckForPause()
+            PauseScreen.HandlePauseScreen()
             Return
         End If
 

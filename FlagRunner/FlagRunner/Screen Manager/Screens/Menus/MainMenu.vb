@@ -147,7 +147,23 @@ Public Class MainMenu
         '    KonamiStatus = False
         'End If
 
+        'Print helper text
+        If MenuSelect = MenuItems.Deathmatch Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "The first player to amass " & Options.getVictoryPoints & " kills is the victor.", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("The first player to amass " & Options.getVictoryPoints & " kills is the victor.").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
+        ElseIf MenuSelect = MenuItems.Options Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "Options", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("Options").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
+        ElseIf MenuSelect = MenuItems.Credits Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "Credits", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("Credits").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
+        ElseIf MenuSelect = MenuItems.Quit Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "Quit", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("Quit").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
+        ElseIf MenuSelect = MenuItems.CTF Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "The first player to return another player's flag " & Options.getVictoryPoints & " times is the victor.", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("The first player to return another player's flag " & Options.getVictoryPoints & " times is the victor.").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
+        ElseIf MenuSelect = MenuItems.Nightlight Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "The light is your guide, and the only thing that can hurt you. Last one standing wins.", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("The light is your guide, and the only thing that can hurt you. Last one standing wins.").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
+        ElseIf MenuSelect = MenuItems.LastManStanding Then
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "One life. Last one standing wins.", New Vector2(MenuPos.X + (MenuSize.X / 2) - Fonts.Centaur_10.MeasureString("One life. Last one standing wins.").X / 2, MenuPos.Y - 20), Color.White, 0, New Vector2(0, 0), 1.3, SpriteEffects.None, 0)
 
+        End If
 
         'Draw actual menu options
         Dim MenuY As Integer = MenuPos.Y + 20
