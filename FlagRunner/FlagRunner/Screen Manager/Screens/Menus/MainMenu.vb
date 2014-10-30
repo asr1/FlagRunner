@@ -25,7 +25,7 @@ Public Class MainMenu
 
         AddEntry("Capture The Flag", False)
         AddEntry("Deathmatch", True)
-        AddEntry("Nightlight", False)
+        AddEntry("Nightlight", True)
         AddEntry("Last Man Standing", False)
         AddEntry("Options", True)
         AddEntry("Credits", True)
@@ -117,6 +117,9 @@ Public Class MainMenu
                     ScreenManager.UnloadScreen("MainMenu")
                     ScreenManager.AddScreen(New MazeScreen)
                 Case MenuItems.Nightlight
+                    ScreenManager.UnloadScreen("TitleScreen")
+                    ScreenManager.UnloadScreen("MainMenu")
+                    ScreenManager.AddScreen(New DarkMaze)
                 Case MenuItems.LastManStanding
                 Case MenuItems.Options
                     ScreenManager.UnloadScreen("TitleScreen")

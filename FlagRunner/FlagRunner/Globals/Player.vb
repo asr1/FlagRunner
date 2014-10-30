@@ -1,4 +1,6 @@
-﻿Public Enum Direction
+﻿
+
+Public Enum Direction
     None
     Down
     Left
@@ -32,6 +34,8 @@ Public Class Player
     'Used to toggle if a player is created
     Public NeedsUpdating As Boolean = False
 
+
+
     'Map coordinates
     Private AvatarPosition As Vector2
 
@@ -59,6 +63,8 @@ Public Class Player
         Health = MaxHealth
         UniquePlayerNum = playerNum
         HitBox = New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+
+
 
 
         'Position them appropriately

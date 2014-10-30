@@ -79,6 +79,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Krypton">
+      <HintPath>..\..\..\..\..\..\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
@@ -116,6 +119,7 @@
     <Compile Include="Screen Manager\Screens\OptionScreen.vb" />
     <Compile Include="Screen Manager\Screens\PauseScreen.vb" />
     <Compile Include="Screen Manager\Screens\TitleScreen.vb" />
+    <Compile Include="Screen Manager\Screens\World\DarkMaze.vb" />
     <Compile Include="Screen Manager\Screens\World\MazeScreen.vb" />
     <Compile Include="Sound Manager\SoundManager.vb" />
     <Compile Include="Sound Manager\Sounds.vb" />
@@ -130,6 +134,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Import Include="Krypton" />
+    <Import Include="Krypton.Lights" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Microsoft.Win32" />
     <Import Include="System.Collections.Generic" />
@@ -192,6 +198,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shadow Lighting C Sharp\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

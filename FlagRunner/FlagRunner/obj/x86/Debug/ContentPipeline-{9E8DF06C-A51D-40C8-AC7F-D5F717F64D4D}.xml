@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Fonts\Georgia_16.spritefont</Source>
-      <Name>Fonts\Georgia_16</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>c:\users\alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16.xnb</Output>
-      <Time>2014-10-04T22:33:09.37323-05:00</Time>
-    </Item>
-    <Item>
       <Source>GFX\BlackGradient.PNG</Source>
       <Name>GFX\BlackGradient</Name>
       <Importer>TextureImporter</Importer>
@@ -18,113 +9,6 @@
       <Options>None</Options>
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\BlackGradient.xnb</Output>
       <Time>2014-10-06T15:35:12.9885286-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Centaur_10.spritefont</Source>
-      <Name>Fonts\Centaur_10</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Centaur_10.xnb</Output>
-      <Time>2014-10-06T18:29:45.0334953-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Georgia_16_Bold.spritefont</Source>
-      <Name>Fonts\Georgia_16_Bold</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16_Bold.xnb</Output>
-      <Time>2014-10-06T19:08:26.6132821-05:00</Time>
-    </Item>
-    <Item>
-      <Source>GFX\Avatars\Pirate.png</Source>
-      <Name>GFX\Avatars\Pirate</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Avatars\Pirate.xnb</Output>
-      <Time>2014-10-09T10:35:18.8351014-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Rienzi.wav</Source>
-      <Name>Songs\Rienzi</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.wma</Extra>
-      <Time>2014-10-11T12:47:05.273657-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Tannhauser.wav</Source>
-      <Name>Songs\Tannhauser</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.wma</Extra>
-      <Time>2014-10-11T12:47:04.730626-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Lohengrin.wav</Source>
-      <Name>Songs\Lohengrin</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.wma</Extra>
-      <Time>2014-10-11T12:47:04.7676281-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Meistersinger.wav</Source>
-      <Name>Songs\Meistersinger</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.wma</Extra>
-      <Time>2014-10-11T12:47:04.8656337-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Valkyries.wav</Source>
-      <Name>Songs\Valkyries</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.wma</Extra>
-      <Time>2014-10-11T12:47:04.9126364-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Siegfried.wav</Source>
-      <Name>Songs\Siegfried</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.wma</Extra>
-      <Time>2014-10-11T12:47:05.0926467-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\1812.wav</Source>
-      <Name>Songs\1812</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.xnb</Output>
-      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.wma</Extra>
-      <Time>2014-10-11T13:27:43.2921037-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Songs\Athens.wav</Source>
-      <Name>Songs\Athens</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.wma</Extra>
-      <Time>2014-10-11T15:58:17.6218378-05:00</Time>
     </Item>
     <Item>
       <Source>GFX\Tiles\Cobble.png</Source>
@@ -152,6 +36,15 @@
       <Options>None</Options>
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall3.xnb</Output>
       <Time>2014-10-07T22:03:44.8414386-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Avatars\Pirate.png</Source>
+      <Name>GFX\Avatars\Pirate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Avatars\Pirate.xnb</Output>
+      <Time>2014-10-09T10:35:18.8351014-05:00</Time>
     </Item>
     <Item>
       <Source>GFX\Tiles\CrackedWall2.png</Source>
@@ -207,6 +100,113 @@
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Trident.xnb</Output>
       <Time>2014-10-27T17:20:48.7115494-05:00</Time>
     </Item>
+    <Item>
+      <Source>Fonts\Georgia_16.spritefont</Source>
+      <Name>Fonts\Georgia_16</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16.xnb</Output>
+      <Time>2014-10-04T22:33:09.37323-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Centaur_10.spritefont</Source>
+      <Name>Fonts\Centaur_10</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Centaur_10.xnb</Output>
+      <Time>2014-10-06T18:29:45.0334953-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Georgia_16_Bold.spritefont</Source>
+      <Name>Fonts\Georgia_16_Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16_Bold.xnb</Output>
+      <Time>2014-10-06T19:08:26.6132821-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Rienzi.wav</Source>
+      <Name>Songs\Rienzi</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.wma</Extra>
+      <Time>2014-10-11T12:47:05.273657-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Tannhauser.wav</Source>
+      <Name>Songs\Tannhauser</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.wma</Extra>
+      <Time>2014-10-11T12:47:04.730626-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Lohengrin.wav</Source>
+      <Name>Songs\Lohengrin</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.wma</Extra>
+      <Time>2014-10-11T12:47:04.7676281-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Meistersinger.wav</Source>
+      <Name>Songs\Meistersinger</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.wma</Extra>
+      <Time>2014-10-11T12:47:04.8656337-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Valkyries.wav</Source>
+      <Name>Songs\Valkyries</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.wma</Extra>
+      <Time>2014-10-11T12:47:04.9126364-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Siegfried.wav</Source>
+      <Name>Songs\Siegfried</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.wma</Extra>
+      <Time>2014-10-11T12:47:05.0926467-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\1812.wav</Source>
+      <Name>Songs\1812</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.wma</Extra>
+      <Time>2014-10-11T13:27:43.2921037-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Athens.wav</Source>
+      <Name>Songs\Athens</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.wma</Extra>
+      <Time>2014-10-11T15:58:17.6218378-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>
@@ -243,6 +243,10 @@
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll</Key>
+        <Value>2011-02-14T18:14:54-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
