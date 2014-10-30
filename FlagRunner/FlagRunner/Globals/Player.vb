@@ -264,7 +264,6 @@ Public Class Player
         'Redraw the background
         Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
-
         Select Case Me.LastDir
             Case Direction.Down
                 Me.HitBox.Y += 4

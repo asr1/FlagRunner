@@ -41,7 +41,6 @@ Public Class Game1
         isPaused = True
         SoundManager.Pause()
 
-        ScreenManager.AddScreen(New PauseScreen)
         'Stop any vibrartion
         GamePad.SetVibration(PlayerIndex.One, 0, 0)
         GamePad.SetVibration(PlayerIndex.Two, 0, 0)
@@ -116,8 +115,19 @@ Public Class Game1
 
         'Don't update this frame if we're paused.
         If isPaused Then
+            'Draw outside the draw() sub
+            '  Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+            Globals.SpriteBatch.Begin()
+            'Redraw the background
+            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+
+            ' ScreenManager.AddScreen(New PauseScreen)
+            Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "PAUSED", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("PAUSED").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
+            Globals.SpriteBatch.End()
+            Globals.Graphics.GraphicsDevice.Present()
+
             CheckForPause()
-            PauseScreen.HandlePauseScreen()
+            ' PauseScreen.HandlePauseScreen()
             Return
         End If
 
