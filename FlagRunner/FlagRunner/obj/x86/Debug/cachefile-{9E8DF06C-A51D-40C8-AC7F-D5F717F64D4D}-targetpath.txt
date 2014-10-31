@@ -28,3 +28,4 @@ Content\Songs\1812.xnb
 Content\Songs\1812.wma
 Content\Songs\Athens.xnb
 Content\Songs\Athens.wma
+Content\KryptonEffect.xnb

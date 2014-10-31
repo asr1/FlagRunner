@@ -8,6 +8,9 @@ End Enum
 Public Class Game1
     Inherits Microsoft.Xna.Framework.Game
 
+    Public KrypEng As New KryptonEngine(Me, "KryptonEffect")
+
+
     Public Shared isPaused As Boolean = False
     Public Shared ShouldExit As Boolean = False 'If we get an exit signal.
 
@@ -24,7 +27,8 @@ Public Class Game1
     Protected Overrides Sub Initialize()
         Me.IsMouseVisible = False 'We don't want the mouse
         Window.AllowUserResizing = True 'Errr, we may regret this?
-
+        Globals.KrypEng = Me.KrypEng
+        Globals.KrypEng.Initialize()
 
         Globals.GameSize = New Vector2(GAME_SIZE_X, GAME_SIZE_Y)
         Globals.Graphics.PreferredBackBufferWidth = Globals.GameSize.X
