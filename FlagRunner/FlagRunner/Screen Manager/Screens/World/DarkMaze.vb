@@ -41,7 +41,7 @@ Public Class DarkMaze
 
 
         createLights()
-        CreateHulls()
+        '   CreateHulls()
         MyBase.Draw()
 
 

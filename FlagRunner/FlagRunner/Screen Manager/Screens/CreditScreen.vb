@@ -42,8 +42,13 @@
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Game By", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("XNA Tutorials").X / 2, 210), Color.White)
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Alex Rinehart", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("Alex Rinehart").X / 2, 240), Color.White, 0, New Vector2(0, 0), 0.75, SpriteEffects.None, 0)
 
-        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Special Thanks", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("XNA Tutorials").X / 2, 270), Color.White)
-        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Zachary Hodgerson", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("Zachary Hodgerson").X / 2, 300), Color.White, 0, New Vector2(0, 0), 0.75, SpriteEffects.None, 0)
+
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Lighting By", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("XNA Tutorials").X / 2, 270), Color.White)
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Krypton", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("Krypton").X / 2, 300), Color.White, 0, New Vector2(0, 0), 0.75, SpriteEffects.None, 0)
+
+
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Special Thanks", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("XNA Tutorials").X / 2, 330), Color.White)
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Zachary Hodgerson", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("Zachary Hodgerson").X / 2, 360), Color.White, 0, New Vector2(0, 0), 0.75, SpriteEffects.None, 0)
 
 
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Back", New Vector2(10, Globals.GameSize.Y - Fonts.Georgia_16.MeasureString("Back").Y - 10), Color.Red)
