@@ -107,16 +107,17 @@ Public Class MainMenu
         If Input.KeyPressed(Keys.Enter) Or Input.ButtonPressed(Buttons.A, PlayerIndex.One) Or Input.ButtonPressed(Buttons.A, PlayerIndex.One) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Two) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Three) Or Input.ButtonPressed(Buttons.A, PlayerIndex.Four) Then
             Select Case MenuSelect
                 Case MenuItems.CTF
-                    Game1.GameMode = GameMode.CTF
+                    Game1.SetGameMode(GameMode.CTF)
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
                     ScreenManager.AddScreen(New MazeScreen)
                 Case MenuItems.Deathmatch
-                    Game1.GameMode = GameMode.Deathmatch
+                    Game1.SetGameMode(GameMode.Deathmatch)
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
                     ScreenManager.AddScreen(New MazeScreen)
                 Case MenuItems.Nightlight
+                    Game1.SetGameMode(GameMode.Nightlight)
                     ScreenManager.UnloadScreen("TitleScreen")
                     ScreenManager.UnloadScreen("MainMenu")
                     ScreenManager.AddScreen(New DarkMaze)

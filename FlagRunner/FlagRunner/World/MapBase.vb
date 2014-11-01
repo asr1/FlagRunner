@@ -16,7 +16,9 @@
         GenerateOutside(Width, Height)
 
         'Fill with items once
-        InitializeItems(Width, Height)
+        If Not Game1.GetGameMode = GameMode.Nightlight Then
+            InitializeItems(Width, Height)
+        End If
 
         UpdateTiles(Width, Height)
         'Generate maps until we have a path from corner 1 to 4 and corner 2 to 3

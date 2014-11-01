@@ -14,7 +14,7 @@ Public Class DarkMaze
         light.Color = Color.White
         light.Intensity = 1
         light.Angle = 250
-        light.Position = New Vector2(0, 0)
+        light.Position = New Vector2(100, -48)
         light.IsOn = True
 
         Globals.KrypEng.Lights.Add(light)
@@ -43,7 +43,7 @@ Public Class DarkMaze
         Dim Projection As Matrix = Matrix.CreateOrthographic(Globals.Graphics.PreferredBackBufferWidth, Globals.Graphics.PreferredBackBufferHeight, 0, 1)
 
 
-        Globals.KrypEng.AmbientColor = Color.Black
+        'Globals.KrypEng.AmbientColor = Color.Black
 
         Globals.KrypEng.Matrix = World * View * Projection
         Globals.KrypEng.Bluriness = 1

@@ -17,7 +17,16 @@ Public Class Game1
     'Screen size needs to be tilesize * size of Tilelist
     Public Const GAME_SIZE_X As Integer = 1224, GAME_SIZE_Y As Integer = 1224
     Private ScreenManager As ScreenManager
-    Public Shared GameMode As GameMode
+    Private Shared GameMode As GameMode
+
+    Public Shared Function GetGameMode() As GameMode
+        Return GameMode
+    End Function
+
+    Public Shared Sub SetGameMode(newMode As GameMode)
+        GameMode = newMode
+    End Sub
+
 
     Public Sub New()
         Globals.Graphics = New GraphicsDeviceManager(Me)
