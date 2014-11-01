@@ -25,3 +25,12 @@ C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\KryptonTestbed.exe
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\KryptonTestbed.pdb
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Content\KryptonEffect.xnb
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\KryptonTestbed.exe
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\KryptonTestbed.pdb
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Krypton.dll
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Krypton.pdb
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\KryptonTestbed.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\KryptonTestbed.exe
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\KryptonTestbed.pdb

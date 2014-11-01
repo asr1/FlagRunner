@@ -1,3 +1,4 @@
 C:\Users\Christopher\Desktop\Krypton\KryptonTestbed\KryptonTestbedContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Christopher\Desktop\Krypton v2.0\KryptonTestbed\KryptonTestbedContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbedContent\obj\x86\Debug\KryptonTestbedContent.contentprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbedContent\obj\x86\Debug\KryptonTestbedContent.contentprojResolveAssemblyReference.cache

@@ -7,7 +7,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Content\KryptonEffect.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Content\KryptonEffect.xnb</Output>
       <Time>2011-02-13T17:19:12-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -17,10 +17,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbedContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbedContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\KryptonTestbed\KryptonTestbed\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

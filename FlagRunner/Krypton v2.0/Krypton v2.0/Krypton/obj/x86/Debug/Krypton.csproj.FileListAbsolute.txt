@@ -16,3 +16,9 @@ C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll
 C:\Users\Alex\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.pdb
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\bin\x86\Debug\Krypton.dll
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\bin\x86\Debug\Krypton.pdb
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll
+C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.pdb
