@@ -8,7 +8,6 @@ Content\GFX\Tiles\CrackedWall.xnb
 Content\GFX\Tiles\Base.xnb
 Content\GFX\Connected.xnb
 Content\GFX\Healthbar.xnb
-Content\GFX\Items\Trident.xnb
 Content\Fonts\Georgia_16.xnb
 Content\Fonts\Centaur_10.xnb
 Content\Fonts\Georgia_16_Bold.xnb
@@ -21,6 +20,8 @@ Content\Songs\Siegfried.xnb
 Content\Songs\1812.xnb
 Content\Songs\Athens.xnb
 Content\KryptonEffect.xnb
+Content\GFX\Items\Weapons\Trident.xnb
+Content\GFX\Items\Weapons\LightGun.xnb
 Content\Songs\Rienzi.wma
 Content\Songs\Tannhauser.wma
 Content\Songs\Lohengrin.wma

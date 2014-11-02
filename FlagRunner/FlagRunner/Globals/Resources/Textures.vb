@@ -9,6 +9,7 @@ Public Class Textures
     Public Shared HealthBar As Texture2D
     Public Shared Trident As Texture2D
     Public Shared LightTexture As Texture2D
+    Public Shared LightGun As Texture2D
 
     'Avatars
     Public Shared Pirate As Texture2D
@@ -22,8 +23,9 @@ Public Class Textures
         BaseTile = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Base")
         StatusLight = Globals.Content.Load(Of Texture2D)("GFX/Connected")
         HealthBar = Globals.Content.Load(Of Texture2D)("GFX/Healthbar")
-        Trident = Globals.Content.Load(Of Texture2D)("GFX/Items/Trident")
+        Trident = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/Trident")
         LightTexture = LightTextureBuilder.CreatePointLight(Globals.Graphics.GraphicsDevice, 512)
+        LightGun = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/Lightgun")
     End Sub
 
     Public Shared Function GetHealthBarSource() As Rectangle

@@ -43,7 +43,7 @@ Public Class DarkMaze
         Dim Projection As Matrix = Matrix.CreateOrthographic(Globals.Graphics.PreferredBackBufferWidth, Globals.Graphics.PreferredBackBufferHeight, 0, 1)
 
 
-        'Globals.KrypEng.AmbientColor = Color.Black
+        Globals.KrypEng.AmbientColor = Color.Black
 
         Globals.KrypEng.Matrix = World * View * Projection
         Globals.KrypEng.Bluriness = 1

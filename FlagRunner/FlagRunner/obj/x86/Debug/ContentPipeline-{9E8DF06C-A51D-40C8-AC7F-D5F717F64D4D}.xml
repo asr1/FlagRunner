@@ -92,15 +92,6 @@
       <Time>2014-10-25T18:21:56.5587111-05:00</Time>
     </Item>
     <Item>
-      <Source>GFX\Items\Trident.png</Source>
-      <Name>GFX\Items\Trident</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Trident.xnb</Output>
-      <Time>2014-10-27T17:20:48.7115494-05:00</Time>
-    </Item>
-    <Item>
       <Source>Fonts\Georgia_16.spritefont</Source>
       <Name>Fonts\Georgia_16</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -215,6 +206,24 @@
       <Options>None</Options>
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\KryptonEffect.xnb</Output>
       <Time>2014-10-31T15:36:20.7918382-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Items\Weapons\Trident.png</Source>
+      <Name>GFX\Items\Weapons\Trident</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\Trident.xnb</Output>
+      <Time>2014-10-27T17:20:48.7115494-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Items\Weapons\LightGun.png</Source>
+      <Name>GFX\Items\Weapons\LightGun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\LightGun.xnb</Output>
+      <Time>2014-11-01T20:05:30.2385926-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
