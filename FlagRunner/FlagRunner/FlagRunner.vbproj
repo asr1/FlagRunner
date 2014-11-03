@@ -105,6 +105,7 @@
     <Compile Include="Globals\Resources\Textures.vb" />
     <Compile Include="Globals\Utilities.vb" />
     <Compile Include="Items\Item.vb" />
+    <Compile Include="Items\Weapons\LightGun.vb" />
     <Compile Include="Items\Weapons\Trident.vb" />
     <Compile Include="Items\Weapons\Weapon.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -114,10 +115,10 @@
     <Compile Include="Screen Manager\ScreenManager.vb" />
     <Compile Include="Screen Manager\Screens\CreditScreen.vb" />
     <Compile Include="Screen Manager\Screens\Debug.vb" />
-    <Compile Include="Screen Manager\Screens\ItemOptionScreen.vb" />
+    <Compile Include="Screen Manager\Screens\Menus\ItemOptionScreen.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MainMenu.vb" />
     <Compile Include="Screen Manager\Screens\Menus\MenuEntry.vb" />
-    <Compile Include="Screen Manager\Screens\OptionScreen.vb" />
+    <Compile Include="Screen Manager\Screens\Menus\OptionScreen.vb" />
     <Compile Include="Screen Manager\Screens\PauseScreen.vb" />
     <Compile Include="Screen Manager\Screens\TitleScreen.vb" />
     <Compile Include="Screen Manager\Screens\World\DarkMaze.vb" />

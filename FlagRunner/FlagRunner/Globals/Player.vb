@@ -1,6 +1,4 @@
-﻿
-
-Public Enum Direction
+﻿Public Enum Direction
     None
     Down
     Left
@@ -26,8 +24,8 @@ Public Class Player
     Private Health As Integer 'The current health a player has
 
     'Set these equal to fists or something
-    Private MainWeapon As Weapon
-    Private SecondaryWeapon As Weapon
+    Private MainWeapon As Weapon = Nothing
+    Private SecondaryWeapon As Weapon = Nothing
 
     Private Const PUNCH_DAMAGE = 1
 
@@ -56,6 +54,12 @@ Public Class Player
     'Colision
     Public HitBox As Rectangle
 
+    'Getter for max health (This is basically a const)
+    Public Shared Function getMaxHealth() As Integer
+        Return MaxHealth
+    End Function
+
+
     'TODO find a way to mark player number so that we know which player to respawn. Possibly just have  a respawn function
     Public Sub New()
         'Set attributes
@@ -64,8 +68,9 @@ Public Class Player
         UniquePlayerNum = playerNum
         HitBox = New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize, Me.AvatarPosition.Y * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
 
-
-
+        If Game1.GetGameMode = GameMode.Nightlight Then
+            MainWeapon = New LightGun
+        End If
 
         'Position them appropriately
         If playerNum = 1 Then
@@ -106,9 +111,25 @@ Public Class Player
         AvatarPosition = Position
     End Sub
 
-    Public Shared Function getMaxHealth() As Integer
-        Return MaxHealth
+    'Getter for main weapon
+    Public Function getMainWeapon() As Weapon
+        Return MainWeapon
     End Function
+
+    'Getter for secondary Weapon
+    Public Function getSecondaryWeapon() As Weapon
+        Return SecondaryWeapon
+    End Function
+
+    'Setter for main weapon
+    Public Sub setMainWeapon(weapon As Weapon)
+        MainWeapon = weapon
+    End Sub
+
+    'Setter for secondary weapons
+    Public Sub setSecWeap(weapon As Weapon)
+        SecondaryWeapon = weapon
+    End Sub
 
 
     ''A new function used for respawning that takes in the player's number
@@ -262,6 +283,7 @@ Public Class Player
     Public Sub DecreaseHealth(i As Integer)
         Me.Health = Math.Max(0, Me.Health - i)
     End Sub
+
 
     'Present issue: Sprite draws in wrong spot on full screen. Please investigate.
     Public Sub Punch()

@@ -9,4 +9,10 @@
     Public MaxRange As Boolean 'How far will a projectile go?
     Public Damage As Integer 'How much damage will getting hit cost me?
     Public SoundEffect As String 'TODO
+
+
+    Public MustOverride Function getSourceRect(dir As Direction) As Rectangle
+
+    Public MustOverride Sub Attack(dir As Direction, player As Player)
+
 End Class

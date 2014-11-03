@@ -7,17 +7,20 @@ Public Class DarkMaze
         Name = "DarkMaze"
     End Sub
 
+    Dim DEBUGBOOL As Boolean = True
     Public Sub createLights()
         Dim light As New Light2D
         light.Texture = Textures.LightTexture
-        light.Range = 15
+        light.Range = 150 '15
         light.Color = Color.White
         light.Intensity = 1
         light.Angle = 250
-        light.Position = New Vector2(100, -48)
+        light.Position = New Vector2(100, 100) '(100, -48)
         light.IsOn = True
 
         Globals.KrypEng.Lights.Add(light)
+
+        DEBUGBOOL = False
     End Sub
 
     'I think this is a light blocker. That means
@@ -32,7 +35,7 @@ Public Class DarkMaze
     Public Overrides Sub Draw()
 
         'Possible way to fix coordinates.
-        '   Globals.KrypEng.SpriteBatchCompatablityEnabled = True
+        Globals.KrypEng.SpriteBatchCompatablityEnabled = True
 
 
         'Other way to fix coordinates.
@@ -44,14 +47,15 @@ Public Class DarkMaze
 
 
         Globals.KrypEng.AmbientColor = Color.Black
-
-        Globals.KrypEng.Matrix = World * View * Projection
+        Globals.KrypEng.CullMode = CullMode.None
+        Globals.KrypEng.Matrix = World ' World * View * Projection
         Globals.KrypEng.Bluriness = 1
         Globals.KrypEng.LightMapPrepare()
 
 
-
-        createLights()
+        If DEBUGBOOL = True Then
+            '        createLights()
+        End If
         ' CreateHulls()
         MyBase.Draw()
 
