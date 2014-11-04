@@ -128,6 +128,15 @@ Public Class Game1
 
         'Don't update this frame if we're paused.
         If isPaused Then
+
+            If Input.ButtonDown(Buttons.X, PlayerIndex.One) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.One) Or Input.ButtonDown(Buttons.X, PlayerIndex.Two) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.Two) Or Input.ButtonDown(Buttons.X, PlayerIndex.Three) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.Three) Or Input.ButtonDown(Buttons.X, PlayerIndex.Four) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.Four) Then
+                ScreenManager.UnloadScreen("MazeScreen")
+                ScreenManager.AddScreen(New TitleScreen)
+                ScreenManager.AddScreen(New MainMenu)
+                EndPause()
+            End If
+
+
             'Draw outside the draw() sub
             '  Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
             Globals.SpriteBatch.Begin()
@@ -136,6 +145,8 @@ Public Class Game1
 
             ' ScreenManager.AddScreen(New PauseScreen)
             Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "PAUSED", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("PAUSED").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
+            Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "Press L and X to exit", New Vector2(Globals.GameSize.X / 2 - Fonts.Centaur_10.MeasureString("Press L and X to exit").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 100 * 55), Color.White)
+
             Globals.SpriteBatch.End()
             Globals.Graphics.GraphicsDevice.Present()
 
@@ -150,7 +161,7 @@ Public Class Game1
         Globals.GameTime = gameTime
 
         'update screens
-        ScreenManager.update()
+        ScreenManager.Update()
 
         'Add screen here. Todo?
 

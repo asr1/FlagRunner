@@ -4,7 +4,10 @@ Public Class DarkMaze
     Inherits MazeScreen
 
     Public Sub New()
-        Name = "DarkMaze"
+        'Using this name for compatability with pause screen.
+        'It won't be an issue because onyl one mazescreen will ever
+        'Be displayed at one time.
+        Name = "Mazescreen"
     End Sub
 
     Dim DEBUGBOOL As Boolean = True
