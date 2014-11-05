@@ -1,0 +1,32 @@
+Add weapons 
+add items and picking them up
+Add swapping method for item
+Add running
+
+Todo investigate attacking upwards
+
+Add Respawn Function
+Add scoring
+Add options - relative item drop frequency
+
+ITEMS/WEAPONS:
+(TODO: Find/make sprites for these:)
+Wings - faster speed
+laser - dial up nosie
+shield
+missile launcher
+pistol
+blunderbuss
+katana
+uzi
+flamerthrower
+grenade launcher
+medkit
+Mines
+Remote Mines
+Spellcasting staff?
+Trident
+
+BUGS:
+Music starts after puaing.
+Occassional crash in nightlight when firing offscreen? Crashes in moveavatar function, AVx = -1
