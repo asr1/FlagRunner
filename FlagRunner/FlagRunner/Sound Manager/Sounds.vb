@@ -7,6 +7,7 @@
     Public Shared Track6 As Song
     Public Shared Track7 As Song
     Public Shared Track8 As Song
+    Public Shared Track9 As Song
 
     Public Shared Sub load()
         Track1 = Globals.Content.Load(Of Song)("Songs/Lohengrin")
@@ -17,6 +18,7 @@
         Track6 = Globals.Content.Load(Of Song)("Songs/Valkyries")
         Track7 = Globals.Content.Load(Of Song)("Songs/1812")
         Track8 = Globals.Content.Load(Of Song)("Songs/Athens")
+        Track9 = Globals.Content.Load(Of Song)("Songs/Sabre")
     End Sub
 
 End Class

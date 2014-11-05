@@ -2,7 +2,7 @@
 
     Public Shared SoundOn As Boolean = True 'Tracks the stats of the music being played
     'An array of every song. Used for shuffling.
-    Public Shared Songs() As Song = {Sounds.Track1, Sounds.Track2, Sounds.Track3, Sounds.Track4, Sounds.Track5, Sounds.Track6, Sounds.Track7, Sounds.Track8}
+    Public Shared Songs() As Song = {Sounds.Track1, Sounds.Track2, Sounds.Track3, Sounds.Track4, Sounds.Track5, Sounds.Track6, Sounds.Track7, Sounds.Track8, Sounds.Track9}
 
     'Used to enable all sounds
         Public Shared Sub Play()
