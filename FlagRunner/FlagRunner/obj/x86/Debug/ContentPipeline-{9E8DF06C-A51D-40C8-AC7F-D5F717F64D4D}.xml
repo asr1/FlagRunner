@@ -225,6 +225,16 @@
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\LightGun.xnb</Output>
       <Time>2014-11-01T21:11:55.789255-05:00</Time>
     </Item>
+    <Item>
+      <Source>Songs\Sabre.wav</Source>
+      <Name>Songs\Sabre</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.xnb</Output>
+      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.wma</Extra>
+      <Time>2014-11-04T18:17:55.9303314-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>

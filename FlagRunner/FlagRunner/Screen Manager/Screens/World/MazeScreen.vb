@@ -96,9 +96,14 @@
                 Else
                     Player2.MoveDir = Direction.None
                 End If
-                If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Two) Then
+            'Attack
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Two) Then
+                If Player2.getMainWeapon Is Nothing Then
                     Player2.Punch()
+                Else
+                    Player2.getMainWeapon.Attack(Player2.LastDir, Player2)
                 End If
+            End If
             End If
 
             'Player 3
@@ -120,9 +125,14 @@
                 Else
                     Player3.MoveDir = Direction.None
                 End If
-                If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Three) Then
+            'Attack
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Three) Then
+                If Player3.getMainWeapon Is Nothing Then
                     Player3.Punch()
+                Else
+                    Player3.getMainWeapon.Attack(Player3.LastDir, Player3)
                 End If
+            End If
             End If
 
             'Player 4
@@ -144,9 +154,14 @@
                 Else
                     Player4.MoveDir = Direction.None
                 End If
-                If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Four) Then
+            'Attack
+            If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Four) Then
+                If Player4.getMainWeapon Is Nothing Then
                     Player4.Punch()
+                Else
+                    Player4.getMainWeapon.Attack(Player4.LastDir, Player4)
                 End If
+            End If
             End If
     End Sub
 
