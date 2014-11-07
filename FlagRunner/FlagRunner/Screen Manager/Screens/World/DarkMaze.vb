@@ -9,8 +9,9 @@ Public Class DarkMaze
         'Using this name for compatability with pause screen.
         'It won't be an issue because onyl one mazescreen will ever
         'Be displayed at one time.
-        Name = "Mazescreen"
+        Name = "MazeScreen"
     End Sub
+
 
     Public Sub RevealScreen()
         Dim light As New Light2D

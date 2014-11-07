@@ -12,6 +12,7 @@ Public Class Game1
 
 
     Public Shared isPaused As Boolean = False
+    Private Shared isOver As Boolean = False
     Public Shared ShouldExit As Boolean = False 'If we get an exit signal.
 
     'Screen size needs to be tilesize * size of Tilelist
@@ -62,6 +63,11 @@ Public Class Game1
 
 
 
+    End Sub
+
+    Private Sub Reset()
+        GameMode = Nothing
+        Globals.KrypEng.Lights.Clear()
     End Sub
 
     'End pause
@@ -123,7 +129,7 @@ Public Class Game1
             Me.Exit()
         End If
 
-        If Utilities.CheckForWin = True Then
+        If Utilities.CheckForWin = True And MazeScreen.Initialized = True Then
             isPaused = True
         End If
 
@@ -139,6 +145,7 @@ Public Class Game1
                 ScreenManager.AddScreen(New MainMenu)
                 Player.reset()
                 EndPause()
+                Reset()
             End If
 
 
@@ -149,7 +156,7 @@ Public Class Game1
             Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
             'Pause will behave the same as exit
-            If Utilities.CheckForWin = True Then
+            If isOver = True Then
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Victory by " & Utilities.GetWinner, New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("Victory By Player 1").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
             Else
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "PAUSED", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("PAUSED").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
@@ -175,10 +182,10 @@ Public Class Game1
         'Add screen here. Todo?
 
 
-
-        ' Globals.Graphics.ApplyChanges()
-
-
+        'Skip once.
+        If MazeScreen.Initialized = True Then
+            isOver = Utilities.CheckForWin
+        End If
     End Sub
 
     'This is called when the game should draw itself.

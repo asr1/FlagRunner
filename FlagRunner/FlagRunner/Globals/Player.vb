@@ -164,8 +164,14 @@ Public Class Player
     'Used if we exit a game prematurely
     'So that we don't break things with our
     'New()
+    'Basically pretending we're starting a new game.
     Public Shared Sub reset()
         playerNum = 1
+        For Each Player As Player In MazeScreen.ConnectedPlayers
+            If Player IsNot Nothing Then
+                Player.isAlive = True
+            End If
+        Next
     End Sub
 
 

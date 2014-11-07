@@ -4,7 +4,6 @@ Add swapping method for item
 
 Todo investigate attacking upwards
 
-Add scoring
 Add options - relative item drop frequency
 
 ITEMS/WEAPONS:
@@ -28,4 +27,3 @@ Trident
 BUGS:
 Music starts after puaing.
 Fix light gun sprite when facing right.
-Pause screen does not work in nightlight (possibly fixed with relocation bug)

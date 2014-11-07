@@ -5,7 +5,7 @@
     Dim lights(3) As Light2D 'All 4 of the lightballs out
     Public Sub New()
         GFX = Textures.LightGun
-        Damage = 0.5
+        Damage = 0.05
     End Sub
 
 

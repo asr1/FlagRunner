@@ -21,6 +21,8 @@
     Public Shared Player3 As Player
     Public Shared Player4 As Player
 
+    Public Shared Initialized As Boolean = False
+
 
     Public Shared ConnectedPlayers(0 To 3) As Player
 
@@ -332,7 +334,9 @@
                 MoveTime = 0 'reset time to reset cycle
             End If
         End If
-    'End character movement updates
+        'End character movement updates
+
+        Initialized = True
     End Sub
 
     'returns the first open square near the given coordinates.
