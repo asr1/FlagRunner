@@ -158,6 +158,11 @@ Public Class Player
 
     ''''''''''''''''''''''''''''''''''''''''End Getters and Setters
 
+    Public Shared Sub reset()
+        playerNum = 1
+    End Sub
+
+
     ''A new function used for respawning that takes in the player's number
     ''To ensure they are created appropriately
     'Public Sub New(Pnum As Integer)

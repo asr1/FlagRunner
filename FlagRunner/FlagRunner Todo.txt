@@ -4,7 +4,6 @@ Add swapping method for item
 
 Todo investigate attacking upwards
 
-Add Respawn Function
 Add scoring
 Add options - relative item drop frequency
 
@@ -28,5 +27,4 @@ Trident
 
 BUGS:
 Music starts after puaing.
-Occassional crash in nightlight when firing offscreen? Crashes in moveavatar function, AVx = -1
 Fix light gun sprite when facing right.

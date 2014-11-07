@@ -129,10 +129,12 @@ Public Class Game1
         'Don't update this frame if we're paused.
         If isPaused Then
 
+            'Exit this game and start a new one.
             If Input.ButtonDown(Buttons.X, PlayerIndex.One) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.One) Or Input.ButtonDown(Buttons.X, PlayerIndex.Two) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.Two) Or Input.ButtonDown(Buttons.X, PlayerIndex.Three) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.Three) Or Input.ButtonDown(Buttons.X, PlayerIndex.Four) And Input.ButtonDown(Buttons.LeftTrigger, PlayerIndex.Four) Then
                 ScreenManager.UnloadScreen("MazeScreen")
                 ScreenManager.AddScreen(New TitleScreen)
                 ScreenManager.AddScreen(New MainMenu)
+                Player.reset()
                 EndPause()
             End If
 
