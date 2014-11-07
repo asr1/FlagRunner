@@ -22,6 +22,7 @@ Public Class Player
     Private PlayerColor As Color 'The color of the given player
     Private Shared MaxHealth As Integer = Options.getHealth 'The maximum health a player has
     Private Health As Integer 'The current health a player has
+    Private isAlive As Boolean = True
 
     'Set these equal to fists or something
     Private MainWeapon As Weapon = Nothing
@@ -42,8 +43,8 @@ Public Class Player
 
     'Movement
     Public AvatarMoving As Boolean = False
-    Public BaseSpeed As Integer = 3
-    Public MoveSpeed As Integer 'This updates based on status effects
+    Public Const BaseSpeed As Double = 3
+    Public MoveSpeed As Double 'This updates based on status effects
     Public MoveDir As Direction = Direction.None
     Public LastDir As Direction = Direction.Down
     Private AvatarFrame As Integer = 0
@@ -91,6 +92,7 @@ Public Class Player
     End Sub
 
 
+    ''''''''''''''''''''''''''''''''''''''''''Begin Getters and Setters
     'Getter for UniquePlayerNum
     Public Function GetPlayerID() As Integer
         Return UniquePlayerNum
@@ -131,6 +133,23 @@ Public Class Player
         SecondaryWeapon = weapon
     End Sub
 
+    'Getter for isAlive                                                                
+    Public Function Living() As Boolean
+        Return isAlive
+    End Function
+
+    'Getter for Basespeed
+    Public Function GetSpeed() As Double
+        Return MoveSpeed
+    End Function
+
+    'Setter for Basespeed
+    Public Sub SetSpeed(newSpeed As Double)
+        MoveSpeed = newSpeed
+    End Sub
+
+
+    ''''''''''''''''''''''''''''''''''''''''End Getters and Setters
 
     ''A new function used for respawning that takes in the player's number
     ''To ensure they are created appropriately

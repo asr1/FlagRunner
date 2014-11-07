@@ -1,7 +1,6 @@
 Add weapons 
 add items and picking them up
 Add swapping method for item
-Add running
 
 Todo investigate attacking upwards
 

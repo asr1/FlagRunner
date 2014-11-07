@@ -49,6 +49,13 @@
         'Player 1
         If Status.isConnected(PlayerIndex.One) Then
             'movement
+            'Speed
+            If Input.ButtonDown(Buttons.B, PlayerIndex.One) Then
+                Player1.SetSpeed(Player.BaseSpeed * 1.5)
+            Else
+                Player1.SetSpeed(Player.BaseSpeed)
+            End If
+
             If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then 'And Player1.AvatarMoving = False Then
                 If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.One) Then
                     Player1.MoveAvatar(Direction.Down, Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y + 1)
@@ -78,24 +85,30 @@
         End If
 
             'Player 2
-            If Status.isConnected(PlayerIndex.Two) Then
-                If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then 'And Player2.AvatarMoving = False Then
-                    If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Two) Then
-                        Player2.MoveAvatar(Direction.Down, Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y + 1)
-                        Player2.LastDir = Direction.Down
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Two) Then
-                        Player2.MoveAvatar(Direction.Up, Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y - 1)
-                        Player2.LastDir = Direction.Up
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Two) Then
-                        Player2.MoveAvatar(Direction.Left, Player2.getAvatarPosition.X - 1, Player2.getAvatarPosition.Y)
-                        Player2.LastDir = Direction.Left
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Two) Then
-                        Player2.MoveAvatar(Direction.Right, Player2.getAvatarPosition.X + 1, Player2.getAvatarPosition.Y)
-                        Player2.LastDir = Direction.Right
-                    End If
-                Else
-                    Player2.MoveDir = Direction.None
+        If Status.isConnected(PlayerIndex.Two) Then
+            'Running
+            If Input.ButtonDown(Buttons.B, PlayerIndex.Two) Then
+                Player2.SetSpeed(Player.BaseSpeed * 1.5)
+            Else
+                Player2.SetSpeed(Player.BaseSpeed)
+            End If
+            If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then 'And Player2.AvatarMoving = False Then
+                If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Two) Then
+                    Player2.MoveAvatar(Direction.Down, Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y + 1)
+                    Player2.LastDir = Direction.Down
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Two) Then
+                    Player2.MoveAvatar(Direction.Up, Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y - 1)
+                    Player2.LastDir = Direction.Up
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Two) Then
+                    Player2.MoveAvatar(Direction.Left, Player2.getAvatarPosition.X - 1, Player2.getAvatarPosition.Y)
+                    Player2.LastDir = Direction.Left
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Two) Then
+                    Player2.MoveAvatar(Direction.Right, Player2.getAvatarPosition.X + 1, Player2.getAvatarPosition.Y)
+                    Player2.LastDir = Direction.Right
                 End If
+            Else
+                Player2.MoveDir = Direction.None
+            End If
             'Attack
             If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Two) Then
                 If Player2.getMainWeapon Is Nothing Then
@@ -104,27 +117,33 @@
                     Player2.getMainWeapon.Attack(Player2.LastDir, Player2)
                 End If
             End If
-            End If
+        End If
 
             'Player 3
-            If Status.isConnected(PlayerIndex.Three) Then
-                If Player3.AvatarOffset.X = 0 And Player3.AvatarOffset.Y = 0 Then 'And Player3.AvatarMoving = False Then
-                    If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Three) Then
-                        Player3.MoveAvatar(Direction.Down, Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y + 1)
-                        Player3.LastDir = Direction.Down
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Three) Then
-                        Player3.MoveAvatar(Direction.Up, Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y - 1)
-                        Player3.LastDir = Direction.Up
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Three) Then
-                        Player3.MoveAvatar(Direction.Left, Player3.getAvatarPosition.X - 1, Player3.getAvatarPosition.Y)
-                        Player3.LastDir = Direction.Left
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Three) Then
-                        Player3.MoveAvatar(Direction.Right, Player3.getAvatarPosition.X + 1, Player3.getAvatarPosition.Y)
-                        Player3.LastDir = Direction.Right
-                    End If
-                Else
-                    Player3.MoveDir = Direction.None
+        If Status.isConnected(PlayerIndex.Three) Then
+            'Running
+            If Input.ButtonDown(Buttons.B, PlayerIndex.Three) Then
+                Player3.SetSpeed(Player.BaseSpeed * 1.5)
+            Else
+                Player3.SetSpeed(Player.BaseSpeed)
+            End If
+            If Player3.AvatarOffset.X = 0 And Player3.AvatarOffset.Y = 0 Then 'And Player3.AvatarMoving = False Then
+                If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Three) Then
+                    Player3.MoveAvatar(Direction.Down, Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y + 1)
+                    Player3.LastDir = Direction.Down
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Three) Then
+                    Player3.MoveAvatar(Direction.Up, Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y - 1)
+                    Player3.LastDir = Direction.Up
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Three) Then
+                    Player3.MoveAvatar(Direction.Left, Player3.getAvatarPosition.X - 1, Player3.getAvatarPosition.Y)
+                    Player3.LastDir = Direction.Left
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Three) Then
+                    Player3.MoveAvatar(Direction.Right, Player3.getAvatarPosition.X + 1, Player3.getAvatarPosition.Y)
+                    Player3.LastDir = Direction.Right
                 End If
+            Else
+                Player3.MoveDir = Direction.None
+            End If
             'Attack
             If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Three) Then
                 If Player3.getMainWeapon Is Nothing Then
@@ -133,27 +152,33 @@
                     Player3.getMainWeapon.Attack(Player3.LastDir, Player3)
                 End If
             End If
-            End If
+        End If
 
             'Player 4
-            If Status.isConnected(PlayerIndex.Four) Then
-                If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then 'And Player4.AvatarMoving = False Then
-                    If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Four) Then
-                        Player4.MoveAvatar(Direction.Down, Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y + 1)
-                        Player4.LastDir = Direction.Down
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Four) Then
-                        Player4.MoveAvatar(Direction.Up, Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y - 1)
-                        Player4.LastDir = Direction.Up
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Four) Then
-                        Player4.MoveAvatar(Direction.Left, Player4.getAvatarPosition.X - 1, Player4.getAvatarPosition.Y)
-                        Player4.LastDir = Direction.Left
-                    ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Four) Then
-                        Player4.MoveAvatar(Direction.Right, Player4.getAvatarPosition.X + 1, Player4.getAvatarPosition.Y)
-                        Player4.LastDir = Direction.Right
-                    End If
-                Else
-                    Player4.MoveDir = Direction.None
+        If Status.isConnected(PlayerIndex.Four) Then
+            'Running
+            If Input.ButtonDown(Buttons.B, PlayerIndex.Four) Then
+                Player4.SetSpeed(Player.BaseSpeed * 1.5)
+            Else
+                Player4.SetSpeed(Player.BaseSpeed)
+            End If
+            If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then 'And Player4.AvatarMoving = False Then
+                If Input.ButtonDown(Buttons.LeftThumbstickDown, PlayerIndex.Four) Then
+                    Player4.MoveAvatar(Direction.Down, Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y + 1)
+                    Player4.LastDir = Direction.Down
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickUp, PlayerIndex.Four) Then
+                    Player4.MoveAvatar(Direction.Up, Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y - 1)
+                    Player4.LastDir = Direction.Up
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickLeft, PlayerIndex.Four) Then
+                    Player4.MoveAvatar(Direction.Left, Player4.getAvatarPosition.X - 1, Player4.getAvatarPosition.Y)
+                    Player4.LastDir = Direction.Left
+                ElseIf Input.ButtonDown(Buttons.LeftThumbstickRight, PlayerIndex.Four) Then
+                    Player4.MoveAvatar(Direction.Right, Player4.getAvatarPosition.X + 1, Player4.getAvatarPosition.Y)
+                    Player4.LastDir = Direction.Right
                 End If
+            Else
+                Player4.MoveDir = Direction.None
+            End If
             'Attack
             If Input.ButtonPressed(Buttons.RightTrigger, PlayerIndex.Four) Then
                 If Player4.getMainWeapon Is Nothing Then
@@ -162,7 +187,7 @@
                     Player4.getMainWeapon.Attack(Player4.LastDir, Player4)
                 End If
             End If
-            End If
+        End If
     End Sub
 
     Public Overrides Sub Update()
