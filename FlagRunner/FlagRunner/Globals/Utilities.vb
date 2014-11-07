@@ -83,4 +83,60 @@
         'Shouldn't be reached
         Return MaxEnum(EnumType)
     End Function
+
+    'Returns true if the game is over
+    Public Shared Function CheckForWin() As Boolean
+        If Game1.GetGameMode = GameMode.LastManStanding Or Game1.GetGameMode = GameMode.Nightlight Then
+            Dim livingPlayers As Integer = 0
+            For Each Player As Player In MazeScreen.ConnectedPlayers
+                If Player IsNot Nothing Then
+                    If Player.Living Then
+                        livingPlayers += 1
+                    End If
+                End If
+            Next
+            If livingPlayers < 2 Then
+                Return True
+            End If
+            Return False     'We've still got people playing.
+        Else ' Other game modes
+            For Each Player As Player In MazeScreen.ConnectedPlayers
+                If Player IsNot Nothing Then
+                    If Player.VictoryPoints = Options.getVictoryPoints Then
+                        Return True
+                    End If
+                End If
+            Next
+            Return False 'No players have won.
+        End If
+    End Function
+
+    'Returns the name of the player that won
+    'Preconditions: there must be a victor
+    Public Shared Function GetWinner() As String
+        If CheckForWin() = True Then
+            If Game1.GetGameMode = GameMode.LastManStanding Or Game1.GetGameMode = GameMode.Nightlight Then
+                For Each Player As Player In MazeScreen.ConnectedPlayers
+                    If Player IsNot Nothing Then
+                        If Player.Living Then
+                            'We know by this point that there is only one victor.
+                            Return "Player " & Player.GetPlayerID
+                        End If
+                    End If
+                Next
+                'No return, never reached
+            Else ' Other game modes
+                For Each Player As Player In MazeScreen.ConnectedPlayers
+                    If Player IsNot Nothing Then
+                        If Player.VictoryPoints = Options.getVictoryPoints Then
+                            Return "Player " & Player.GetPlayerID
+                        End If
+                    End If
+                Next
+            End If
+        End If
+
+        Return "" ' This is never reached.
+    End Function
+
 End Class

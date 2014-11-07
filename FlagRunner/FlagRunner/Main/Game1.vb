@@ -123,6 +123,9 @@ Public Class Game1
             Me.Exit()
         End If
 
+        If Utilities.CheckForWin = True Then
+            isPaused = True
+        End If
 
         'TODO: Fix pausing
 
@@ -145,8 +148,12 @@ Public Class Game1
             'Redraw the background
             Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
-            ' ScreenManager.AddScreen(New PauseScreen)
-            Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "PAUSED", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("PAUSED").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
+            'Pause will behave the same as exit
+            If Utilities.CheckForWin = True Then
+                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "Victory by " & Utilities.GetWinner, New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("Victory By Player 1").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
+            Else
+                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, "PAUSED", New Vector2(Globals.GameSize.X / 2 - Fonts.Georgia_16.MeasureString("PAUSED").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 2), Color.White)
+            End If
             Globals.SpriteBatch.DrawString(Fonts.Centaur_10, "Press L and X to exit", New Vector2(Globals.GameSize.X / 2 - Fonts.Centaur_10.MeasureString("Press L and X to exit").X, Globals.Graphics.GraphicsDevice.Viewport.Height / 100 * 55), Color.White)
 
             Globals.SpriteBatch.End()

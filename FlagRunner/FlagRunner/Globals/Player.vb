@@ -20,9 +20,10 @@ Public Class Player
     Private Shared playerNum = 1 'The number of players
     Private UniquePlayerNum As Integer 'The unique identifier for this specific player
     Private PlayerColor As Color 'The color of the given player
-    Private Shared MaxHealth As Integer = Options.getHealth 'The maximum health a player has
-    Private Health As Integer 'The current health a player has
+    Private Shared MaxHealth As Double = Options.getHealth 'The maximum health a player has
+    Private Health As Double 'The current health a player has
     Private isAlive As Boolean = True
+    Public VictoryPoints As Integer = 0
 
     'Weapons
     'Set these equal to fists or something
@@ -67,7 +68,6 @@ Public Class Player
     End Function
 
 
-    'TODO find a way to mark player number so that we know which player to respawn. Possibly just have  a respawn function
     Public Sub New()
         'Set attributes
         MoveSpeed = BaseSpeed
@@ -155,20 +155,20 @@ Public Class Player
         MoveSpeed = newSpeed
     End Sub
 
+    Public Sub IncreaseVicPoints()
+        VictoryPoints += 1
+    End Sub
 
     ''''''''''''''''''''''''''''''''''''''''End Getters and Setters
 
+    'Used if we exit a game prematurely
+    'So that we don't break things with our
+    'New()
     Public Shared Sub reset()
         playerNum = 1
     End Sub
 
 
-    ''A new function used for respawning that takes in the player's number
-    ''To ensure they are created appropriately
-    'Public Sub New(Pnum As Integer)
-    '    playerNum = Pnum
-
-    'End Sub
 
     'A function for respawining based on gametype
     Private Sub respawn()
@@ -327,7 +327,7 @@ Public Class Player
 
     'Decrease hit points by the amount specified,  
     'Going no lower than zero
-    Public Sub DecreaseHealth(i As Integer)
+    Public Sub DecreaseHealth(i As Double)
         Me.Health = Math.Max(0, Me.Health - i)
         If Me.Health = 0 Then
             Me.respawn()

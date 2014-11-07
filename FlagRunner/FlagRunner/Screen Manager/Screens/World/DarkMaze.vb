@@ -12,11 +12,10 @@ Public Class DarkMaze
         Name = "Mazescreen"
     End Sub
 
-    Dim DEBUGBOOL As Boolean = True
-    Public Sub createLights()
+    Public Sub RevealScreen()
         Dim light As New Light2D
         light.Texture = Textures.LightTexture
-        light.Range = 150 '15
+        light.Range = 15000
         light.Color = Color.White
         light.Intensity = 1
         light.Angle = 250
@@ -24,8 +23,6 @@ Public Class DarkMaze
         light.IsOn = True
 
         Globals.KrypEng.Lights.Add(light)
-
-        DEBUGBOOL = False
     End Sub
 
     'I think this is a light blocker. That means
@@ -58,10 +55,6 @@ Public Class DarkMaze
         Globals.KrypEng.LightMapPrepare()
 
 
-        If DEBUGBOOL = True Then
-            '        createLights()
-        End If
-        ' CreateHulls()
         MyBase.Draw()
 
 
@@ -70,15 +63,6 @@ Public Class DarkMaze
             Globals.KrypEng.RenderHelper.BufferAddBoundOutline(l.Bounds)
         Next
 
-
-        'Globals.Graphics.GraphicsDevice.Clear(Color.White)
-        'Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
-        'Globals.Graphics.GraphicsDevice.Present()
-
-
-        '     Globals.SpriteBatch.Begin()
-        'Globals.SpriteBatch.Draw(light, New Rectangle(0, 0, 10, 10), Color.White)
-        '   Globals.SpriteBatch.End()
     End Sub
 
     Private Function CheckLightCollision(Player As Player) As Boolean
@@ -110,6 +94,9 @@ Public Class DarkMaze
         MyBase.Update()
         'See if any player is getting hit with light
         CalcLightDamage()
+        If Utilities.CheckForWin Then
+            RevealScreen()
+        End If
     End Sub
 
 End Class
