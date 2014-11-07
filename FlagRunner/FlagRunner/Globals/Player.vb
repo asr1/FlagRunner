@@ -24,6 +24,7 @@ Public Class Player
     Private Health As Integer 'The current health a player has
     Private isAlive As Boolean = True
 
+    'Weapons
     'Set these equal to fists or something
     Private MainWeapon As Weapon = Nothing
     Private SecondaryWeapon As Weapon = Nothing
@@ -37,6 +38,7 @@ Public Class Player
 
     'Map coordinates
     Private AvatarPosition As Vector2
+    Private StartPosition As Vector2
 
     'Avatar offset for smooth walking
     Public AvatarOffset As Vector2 = New Vector2(0, 0)
@@ -54,6 +56,10 @@ Public Class Player
 
     'Colision
     Public HitBox As Rectangle
+
+    'Used for nightlight mode. We get a delay of a couple frames 
+    'Before we start taking damage.
+    Public FramesInLight As Integer = 0
 
     'Getter for max health (This is basically a const)
     Public Shared Function getMaxHealth() As Integer
@@ -87,6 +93,7 @@ Public Class Player
             AvatarPosition = New Vector2(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1)
             PlayerColor = Color.Orange
         End If
+        StartPosition = AvatarPosition
         NeedsUpdating = True
         playerNum += 1
     End Sub
@@ -157,6 +164,22 @@ Public Class Player
     '    playerNum = Pnum
 
     'End Sub
+
+    'A function for respawining based on gametype
+    Private Sub respawn()
+        'Only one life, no respawn
+        If Game1.GetGameMode = GameMode.LastManStanding Or Game1.GetGameMode = GameMode.Nightlight Then
+            isAlive = False
+        Else 'We need to respawn
+            'Probably TODO
+            AvatarPosition = StartPosition
+            MainWeapon = Nothing
+            SecondaryWeapon = Nothing
+            MoveSpeed = BaseSpeed
+            Health = MaxHealth
+        End If
+    End Sub
+
 
     'Moves the player
     Public Sub Move(Dir As Direction)
@@ -301,6 +324,9 @@ Public Class Player
     'Going no lower than zero
     Public Sub DecreaseHealth(i As Integer)
         Me.Health = Math.Max(0, Me.Health - i)
+        If Me.Health = 0 Then
+            Me.respawn()
+        End If
     End Sub
 
 

@@ -3,6 +3,8 @@
 Public Class DarkMaze
     Inherits MazeScreen
 
+    Const LIGHT_DELAY_TIME As Integer = 2
+
     Public Sub New()
         'Using this name for compatability with pause screen.
         'It won't be an issue because onyl one mazescreen will ever
@@ -77,6 +79,37 @@ Public Class DarkMaze
         '     Globals.SpriteBatch.Begin()
         'Globals.SpriteBatch.Draw(light, New Rectangle(0, 0, 10, 10), Color.White)
         '   Globals.SpriteBatch.End()
+    End Sub
+
+    Private Function CheckLightCollision(Player As Player) As Boolean
+        For Each light As Light2D In Globals.KrypEng.Lights
+            'Covnert from boundingRect to a real rectangle so I can check intersection.
+            If Player.HitBox.Intersects(New Rectangle(light.Bounds.Left, light.Bounds.Bottom, light.Bounds.Width, light.Bounds.Height)) Then
+                Player.FramesInLight += 1
+                'If we're in at least one light, get out of here
+                Return True
+            End If
+        Next
+        'We weren't in any lights.
+        Player.FramesInLight = 0
+        Return False
+    End Function
+
+    'Damages any player that is hit with light
+    Private Sub CalcLightDamage()
+        For Each Player As Player In ConnectedPlayers
+            If Player IsNot Nothing Then
+                'We get a few free frames to stand in the light before it hurts.
+                If CheckLightCollision(Player) Then ' And Player.FramesInLight > LIGHT_DELAY_TIME Then
+                    Player.DecreaseHealth(LightGun.Damage)
+                End If
+            End If
+        Next
+    End Sub
+    Public Overrides Sub Update()
+        MyBase.Update()
+        'See if any player is getting hit with light
+        CalcLightDamage()
     End Sub
 
 End Class

@@ -3,9 +3,9 @@
 
     Dim numShots As Integer = 0 'tracks number of current light balls extended
     Dim lights(3) As Light2D 'All 4 of the lightballs out
-
     Public Sub New()
         GFX = Textures.LightGun
+        Damage = 0.5
     End Sub
 
 
@@ -81,12 +81,14 @@
     Public Shared Sub UpdateLights()
         Globals.KrypEng.Lights.Clear()
         For Each Player As Player In MazeScreen.ConnectedPlayers
-            If TypeOf (Player.getMainWeapon) Is LightGun Then
-                For Each light As Light2D In DirectCast(Player.getMainWeapon, LightGun).lights
-                    If Not light Is Nothing Then
-                        Globals.KrypEng.Lights.Add(light)
-                    End If
-                Next
+            If Player IsNot Nothing Then
+                If TypeOf (Player.getMainWeapon) Is LightGun Then
+                    For Each light As Light2D In DirectCast(Player.getMainWeapon, LightGun).lights
+                        If Not light Is Nothing Then
+                            Globals.KrypEng.Lights.Add(light)
+                        End If
+                    Next
+                End If
             End If
         Next
     End Sub

@@ -1,5 +1,5 @@
 ﻿Public Class Status
     Public Shared Function isConnected(i As PlayerIndex) As Boolean
-        Return GamePad.GetState(PlayerIndex.One).IsConnected
+        Return GamePad.GetState(i).IsConnected
     End Function
 End Class

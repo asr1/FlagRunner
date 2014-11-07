@@ -47,7 +47,7 @@
 
     Public Overrides Sub HandleInput()
         'Player 1
-        If Status.isConnected(PlayerIndex.One) Then
+        If Status.isConnected(PlayerIndex.One) AndAlso Player1.Living Then
             'movement
             'Speed
             If Input.ButtonDown(Buttons.B, PlayerIndex.One) Then
@@ -85,7 +85,7 @@
         End If
 
             'Player 2
-        If Status.isConnected(PlayerIndex.Two) Then
+        If Status.isConnected(PlayerIndex.Two) AndAlso Player2.Living Then
             'Running
             If Input.ButtonDown(Buttons.B, PlayerIndex.Two) Then
                 Player2.SetSpeed(Player.BaseSpeed * 1.5)
@@ -120,7 +120,7 @@
         End If
 
             'Player 3
-        If Status.isConnected(PlayerIndex.Three) Then
+        If Status.isConnected(PlayerIndex.Three) AndAlso Player3.Living Then
             'Running
             If Input.ButtonDown(Buttons.B, PlayerIndex.Three) Then
                 Player3.SetSpeed(Player.BaseSpeed * 1.5)
@@ -155,7 +155,7 @@
         End If
 
             'Player 4
-        If Status.isConnected(PlayerIndex.Four) Then
+        If Status.isConnected(PlayerIndex.Four) AndAlso Player4.Living Then
             'Running
             If Input.ButtonDown(Buttons.B, PlayerIndex.Four) Then
                 Player4.SetSpeed(Player.BaseSpeed * 1.5)
@@ -263,16 +263,16 @@
 
         If MoveTime > 15 Then
     'Player 1
-            If Status.isConnected(PlayerIndex.One) Then
+            If Status.isConnected(PlayerIndex.One) AndAlso Player1.Living Then
                 If Player1.AvatarMoving = True Then
                     If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
-    'finish move cycle before accepting new inputs
+                        'finish move cycle before accepting new inputs
                         Player1.Move(Player1.LastDir)
                     Else 'If not between movements, accept new
                         Player1.Move(Player1.MoveDir)
                     End If
 
-    'Between movements
+                    'Between movements
                     If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then
                         Player1.AvatarMoving = False
                     End If
@@ -280,16 +280,16 @@
             End If
 
     'Player 2
-            If Status.isConnected(PlayerIndex.Two) Then
+            If Status.isConnected(PlayerIndex.Two) AndAlso Player2.Living Then
                 If Player2.AvatarMoving = True Then
                     If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
-    'finish move cycle before accepting new inputs
+                        'finish move cycle before accepting new inputs
                         Player2.Move(Player2.LastDir)
                     Else 'If not between movements, accept new
                         Player2.Move(Player2.MoveDir)
                     End If
 
-    'Between movements
+                    'Between movements
                     If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then
                         Player2.AvatarMoving = False
                     End If
@@ -297,33 +297,33 @@
             End If
 
     'Player 3
-            If Status.isConnected(PlayerIndex.Three) Then
+            If Status.isConnected(PlayerIndex.Three) AndAlso Player3.Living Then
                 If Player3.AvatarMoving = True Then
                     If Player3.MoveDir = Direction.None And (Player3.AvatarOffset.X <> 0 Or Player3.AvatarOffset.Y <> 0) Then
-    'finish move cycle before accepting new inputs
+                        'finish move cycle before accepting new inputs
                         Player3.Move(Player3.LastDir)
                     Else 'If not between movements, accept new
                         Player3.Move(Player3.MoveDir)
                     End If
 
-    'Between movements
-                    If Player3.AvatarOffset.X = 0 And Player3.AvatarOffset.Y = 0 Then
+                    'Between movements
+                    If Player3.AvatarOffset.X = 0 AndAlso Player3.AvatarOffset.Y = 0 Then
                         Player3.AvatarMoving = False
                     End If
                 End If
             End If
 
     'Player 4
-            If Status.isConnected(PlayerIndex.Four) Then
+            If Status.isConnected(PlayerIndex.Four) AndAlso Player4.Living Then
                 If Player4.AvatarMoving = True Then
                     If Player4.MoveDir = Direction.None And (Player4.AvatarOffset.X <> 0 Or Player4.AvatarOffset.Y <> 0) Then
-    'finish move cycle before accepting new inputs
+                        'finish move cycle before accepting new inputs
                         Player4.Move(Player4.LastDir)
                     Else 'If not between movements, accept new
                         Player4.Move(Player4.MoveDir)
                     End If
 
-    'Between movements
+                    'Between movements
                     If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then
                         Player4.AvatarMoving = False
                     End If
