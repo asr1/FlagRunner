@@ -170,6 +170,7 @@ Public Class Player
         For Each Player As Player In MazeScreen.ConnectedPlayers
             If Player IsNot Nothing Then
                 Player.isAlive = True
+                Player.VictoryPoints = 0
             End If
         Next
     End Sub
