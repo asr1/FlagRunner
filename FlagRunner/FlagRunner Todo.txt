@@ -2,6 +2,8 @@ Add weapons
 add items and picking them up
 Add swapping method for item
 
+add scoring (determine who gets a point!)
+
 Todo investigate attacking upwards
 
 Add options - relative item drop frequency

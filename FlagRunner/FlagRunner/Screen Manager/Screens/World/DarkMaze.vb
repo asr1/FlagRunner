@@ -3,7 +3,7 @@
 Public Class DarkMaze
     Inherits MazeScreen
 
-    Const LIGHT_DELAY_TIME As Integer = 2
+    Const LIGHT_DELAY_TIME As Integer = 60
 
     Public Sub New()
         'Using this name for compatability with pause screen.
@@ -85,7 +85,7 @@ Public Class DarkMaze
         For Each Player As Player In ConnectedPlayers
             If Player IsNot Nothing Then
                 'We get a few free frames to stand in the light before it hurts.
-                If CheckLightCollision(Player) Then ' And Player.FramesInLight > LIGHT_DELAY_TIME Then
+                If CheckLightCollision(Player) And Player.FramesInLight > LIGHT_DELAY_TIME Then
                     Player.DecreaseHealth(LightGun.Damage)
                 End If
             End If
