@@ -29,3 +29,5 @@ Trident
 BUGS:
 Music starts after puaing.
 Fix light gun sprite when facing right.
+Add transitions to shooting.
+Fix punch location again

@@ -1,9 +1,9 @@
 ﻿Public Class MazeScreen
     Inherits BaseScreen
 
-
     'The ratio of expected screen size to actual. Might need to adjsut if issues on other screens (like check min/max for positive/negative ratio)
-    Public Shared ScaleFactor As Vector2 = New Vector2(Globals.Graphics.GraphicsDevice.Viewport.Width / Globals.GameSize.X, Globals.Graphics.GraphicsDevice.Viewport.Height / Globals.GameSize.Y)
+    Public Shared ScaleFactor As Vector2
+
     Public Shared Map As MapBase
     Private Shared MapWidth As Integer = 50
     Private Shared MapHeight As Integer = 50
@@ -193,6 +193,11 @@
     End Sub
 
     Public Overrides Sub Update()
+        'Update scalefactor
+        ScaleFactor = New Vector2(Globals.Graphics.GraphicsDevice.Viewport.Width / Globals.GameSize.X, Globals.Graphics.GraphicsDevice.Viewport.Height / Globals.GameSize.Y)
+
+
+
         'Update Tiles
         MapBase.UpdateTiles(MazeScreen.getMapSize().X, MazeScreen.getMapSize().Y)
 
@@ -260,11 +265,11 @@
         End If
 
 
-    'character movement updates
+        'character movement updates
         MoveTime += Globals.GameTime.ElapsedGameTime.TotalMilliseconds
 
         If MoveTime > 15 Then
-    'Player 1
+            'Player 1
             If Status.isConnected(PlayerIndex.One) AndAlso Player1.Living Then
                 If Player1.AvatarMoving = True Then
                     If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
@@ -281,7 +286,7 @@
                 End If
             End If
 
-    'Player 2
+            'Player 2
             If Status.isConnected(PlayerIndex.Two) AndAlso Player2.Living Then
                 If Player2.AvatarMoving = True Then
                     If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
@@ -298,7 +303,7 @@
                 End If
             End If
 
-    'Player 3
+            'Player 3
             If Status.isConnected(PlayerIndex.Three) AndAlso Player3.Living Then
                 If Player3.AvatarMoving = True Then
                     If Player3.MoveDir = Direction.None And (Player3.AvatarOffset.X <> 0 Or Player3.AvatarOffset.Y <> 0) Then
@@ -315,7 +320,7 @@
                 End If
             End If
 
-    'Player 4
+            'Player 4
             If Status.isConnected(PlayerIndex.Four) AndAlso Player4.Living Then
                 If Player4.AvatarMoving = True Then
                     If Player4.MoveDir = Direction.None And (Player4.AvatarOffset.X <> 0 Or Player4.AvatarOffset.Y <> 0) Then
