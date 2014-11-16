@@ -376,7 +376,7 @@ Public Class Player
                 Me.HitBox.X -= 4
 
             Case Direction.Up
-                Me.HitBox.Y += 4
+                Me.HitBox.Y -= 4
                 Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize) + 4) * MazeScreen.ScaleFactor.X, (Me.AvatarPosition.Y * MazeScreen.TileSize) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
                 If DetectCollision(Me) Then
                     FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
