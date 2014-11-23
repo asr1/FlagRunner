@@ -4,8 +4,6 @@ Add swapping method for item
 
 add scoring (determine who gets a point!)
 
-Todo investigate attacking upwards
-
 Add options - relative item drop frequency
 
 ITEMS/WEAPONS:
@@ -27,6 +25,6 @@ Spellcasting staff?
 Trident
 
 BUGS:
-Music starts after puaing.
+Music starts after pausing.
 Fix light gun sprite when facing right.
 Add transitions to shooting.
