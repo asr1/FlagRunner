@@ -175,6 +175,44 @@ Public Class Player
         Next
     End Sub
 
+    'Todo
+    Public Sub PickUpItem(item As Item, position As Vector2)
+        'Basically we need a case statement here
+        'For every type of itme in the game.
+
+        'Then, after implementing effects,
+        'We remove the item
+        MapBase.TileList(position.X, position.Y).Item = Nothing
+    End Sub
+
+    'TODO Drop old weapon
+    Public Sub PickUpWeapon(weapon As Weapon, position As Vector2)
+        'We're not holding anything
+        If Me.MainWeapon Is Nothing Then
+            Me.MainWeapon = weapon
+            MapBase.TileList(position.X, position.Y).Item = Nothing
+
+            'We're holindg one weapon
+            'And that weapon is not the same as the weapon we're already holding
+        ElseIf Me.SecondaryWeapon Is Nothing And Not weapon.GetType Is MainWeapon.GetType Then
+            'Pick up this weapon in the primary slot, 
+            'And switch our primary weapon to secondary.
+            Me.SecondaryWeapon = weapon
+            Me.SwapWeapons()
+            MapBase.TileList(position.X, position.Y).Item = Nothing
+
+            'We have two weapons
+            'Check for duplicate
+        ElseIf Not Me.SecondaryWeapon Is Nothing AndAlso Not Me.SecondaryWeapon.GetType Is weapon.GetType Then
+            'Replace the primary weapon
+            DropWeapon(weapon, position)
+            Me.MainWeapon = weapon
+        End If
+    End Sub
+
+    Private Shared Sub DropWeapon(weapon As Weapon, position As Vector2)
+        MapBase.TileList(position.X, position.Y).Item = weapon
+    End Sub
 
 
     'A function for respawining based on gametype

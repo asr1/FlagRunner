@@ -32,3 +32,4 @@ Content\GFX\Items\Weapons\Trident.xnb
 Content\GFX\Items\Weapons\LightGun.xnb
 Content\Songs\Sabre.xnb
 Content\Songs\Sabre.wma
+Content\GFX\Xbox360_Button_A.xnb

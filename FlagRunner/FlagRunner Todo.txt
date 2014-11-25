@@ -10,7 +10,7 @@ ITEMS/WEAPONS:
 (TODO: Find/make sprites for these:)
 Wings - faster speed
 laser - dial up nosie
-shield
+armor
 missile launcher
 pistol
 blunderbuss

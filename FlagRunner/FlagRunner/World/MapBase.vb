@@ -83,6 +83,7 @@
             For y = 0 To Col - 1
                 TileList(x, y) = New Tile
                 TileList(x, y).TerrainType = TileType.Cobble
+                TileList(x, y).Item = Nothing
             Next
         Next
 

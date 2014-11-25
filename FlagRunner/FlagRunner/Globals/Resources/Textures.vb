@@ -10,6 +10,7 @@ Public Class Textures
     Public Shared Trident As Texture2D
     Public Shared LightTexture As Texture2D
     Public Shared LightGun As Texture2D
+    Public Shared AButton As Texture2D
 
     'Avatars
     Public Shared Pirate As Texture2D
@@ -26,6 +27,7 @@ Public Class Textures
         Trident = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/Trident")
         LightTexture = LightTextureBuilder.CreatePointLight(Globals.Graphics.GraphicsDevice, 512)
         LightGun = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/Lightgun")
+        AButton = Globals.Content.Load(Of Texture2D)("GFX/Xbox360_Button_A")
     End Sub
 
     Public Shared Function GetHealthBarSource() As Rectangle

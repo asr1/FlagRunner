@@ -84,9 +84,22 @@
                 End If
             End If
 
+            'Grab Item
+            If Input.ButtonPressed(Buttons.A, PlayerIndex.One) Then
+                'Emulate a with statement
+                Dim FloorItem As Item = MapBase.TileList(Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y).Item
+
+                If Not FloorItem Is Nothing Then  ' There's something here
+                    If TryCast(FloorItem, Weapon) Is Nothing Then 'We have an item
+                        Player1.PickUpItem(FloorItem, Player1.getAvatarPosition)
+                    Else 'We have a weapon
+                        Player1.PickUpWeapon(FloorItem, Player1.getAvatarPosition)
+                    End If
+                End If
+            End If
         End If
 
-            'Player 2
+        'Player 2
         If Status.isConnected(PlayerIndex.Two) AndAlso Player2.Living Then
             'Running
             If Input.ButtonDown(Buttons.B, PlayerIndex.Two) Then
@@ -121,7 +134,7 @@
             End If
         End If
 
-            'Player 3
+        'Player 3
         If Status.isConnected(PlayerIndex.Three) AndAlso Player3.Living Then
             'Running
             If Input.ButtonDown(Buttons.B, PlayerIndex.Three) Then
@@ -156,7 +169,7 @@
             End If
         End If
 
-            'Player 4
+        'Player 4
         If Status.isConnected(PlayerIndex.Four) AndAlso Player4.Living Then
             'Running
             If Input.ButtonDown(Buttons.B, PlayerIndex.Four) Then
@@ -433,6 +446,11 @@
                 'Healthbar fill
                 Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player1.getAvatarPosition.X * TileSize + 1), Player1.getAvatarPosition.Y * TileSize - 10, TileSize * Player1.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
+            'Item in square
+            If Not MapBase.TileList(Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y).Item Is Nothing Then
+                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
+            End If
+            'Weapon
             If Not Player1.getMainWeapon Is Nothing Then
                 Globals.SpriteBatch.Draw(Player1.getMainWeapon.GFX, New Rectangle(Player1.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player1.getAvatarPosition.Y * TileSize + 10, 7, 12), Player1.getMainWeapon.getSourceRect(Player1.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
             End If
@@ -450,6 +468,14 @@
                 'Healthbar fill
                 Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player2.getAvatarPosition.X * TileSize + 1), Player2.getAvatarPosition.Y * TileSize - 10, TileSize * Player2.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
+            'Item in square
+            If Not MapBase.TileList(Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y).Item Is Nothing Then
+                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
+            End If
+            'Weapon
+            If Not Player2.getMainWeapon Is Nothing Then
+                Globals.SpriteBatch.Draw(Player2.getMainWeapon.GFX, New Rectangle(Player2.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player2.getAvatarPosition.Y * TileSize + 10, 7, 12), Player2.getMainWeapon.getSourceRect(Player2.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
+            End If
         End If
 
         If Status.isConnected(PlayerIndex.Three) Then
@@ -463,6 +489,14 @@
                 'Health bar fill
                 Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player3.getAvatarPosition.X * TileSize + 1, Player3.getAvatarPosition.Y * TileSize - 10, TileSize * Player3.GetHealth / Player.getMaxHealth, 9), Color.Green)
             End If
+            'Item in square
+            If Not MapBase.TileList(Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y).Item Is Nothing Then
+                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize + TileSize, 16, 16), Color.White)
+            End If
+            'Weapon
+            If Not Player3.getMainWeapon Is Nothing Then
+                Globals.SpriteBatch.Draw(Player3.getMainWeapon.GFX, New Rectangle(Player3.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player3.getAvatarPosition.Y * TileSize + 10, 7, 12), Player3.getMainWeapon.getSourceRect(Player3.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
+            End If
         End If
 
         If Status.isConnected(PlayerIndex.Four) Then
@@ -475,6 +509,14 @@
                 Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
                 'Health bar fill
                 Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player4.getAvatarPosition.X * TileSize + 1, Player4.getAvatarPosition.Y * TileSize - 10, TileSize * Player4.GetHealth / Player.getMaxHealth, 9), Color.Green)
+            End If
+            'Item in square
+            If Not MapBase.TileList(Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y).Item Is Nothing Then
+                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize + TileSize, 16, 16), Color.White)
+            End If
+            'Weapon
+            If Not Player4.getMainWeapon Is Nothing Then
+                Globals.SpriteBatch.Draw(Player4.getMainWeapon.GFX, New Rectangle(Player4.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player4.getAvatarPosition.Y * TileSize + 10, 7, 12), Player4.getMainWeapon.getSourceRect(Player4.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
             End If
 
         End If

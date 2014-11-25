@@ -235,6 +235,15 @@
       <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.wma</Extra>
       <Time>2014-11-04T18:17:55.9303314-06:00</Time>
     </Item>
+    <Item>
+      <Source>GFX\Xbox360_Button_A.png</Source>
+      <Name>GFX\Xbox360_Button_A</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Xbox360_Button_A.xnb</Output>
+      <Time>2014-11-24T10:43:23.6641343-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>
