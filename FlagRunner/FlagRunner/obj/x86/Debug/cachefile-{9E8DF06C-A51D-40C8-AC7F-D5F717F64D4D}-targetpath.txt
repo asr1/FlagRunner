@@ -8,6 +8,9 @@ Content\GFX\Tiles\CrackedWall.xnb
 Content\GFX\Tiles\Base.xnb
 Content\GFX\Connected.xnb
 Content\GFX\Healthbar.xnb
+Content\GFX\Items\Weapons\Trident.xnb
+Content\GFX\Items\Weapons\LightGun.xnb
+Content\GFX\Xbox360_Button_A.xnb
 Content\Fonts\Georgia_16.xnb
 Content\Fonts\Centaur_10.xnb
 Content\Fonts\Georgia_16_Bold.xnb
@@ -27,9 +30,6 @@ Content\Songs\1812.xnb
 Content\Songs\1812.wma
 Content\Songs\Athens.xnb
 Content\Songs\Athens.wma
-Content\KryptonEffect.xnb
-Content\GFX\Items\Weapons\Trident.xnb
-Content\GFX\Items\Weapons\LightGun.xnb
 Content\Songs\Sabre.xnb
 Content\Songs\Sabre.wma
-Content\GFX\Xbox360_Button_A.xnb
+Content\KryptonEffect.xnb

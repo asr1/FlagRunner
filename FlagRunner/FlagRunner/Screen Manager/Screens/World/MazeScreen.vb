@@ -434,9 +434,10 @@
         End If
 
 
-        'Avatars and health bars
+
         'Player 1
         If Status.isConnected(PlayerIndex.One) Then
+            'Avatars and health bars
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
             If Options.GetHealthBarOption = DisplayHealth.Number Then
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player1.GetHealth, New Vector2(Player1.getAvatarPosition.X * TileSize, (Player1.getAvatarPosition.Y * TileSize) - TileSize), Color.White)

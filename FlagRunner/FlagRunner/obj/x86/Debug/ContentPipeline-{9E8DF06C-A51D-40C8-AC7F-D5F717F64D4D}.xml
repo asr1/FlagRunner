@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\BlackGradient.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\BlackGradient.xnb</Output>
       <Time>2014-10-06T15:35:12.9885286-05:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Cobble.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Cobble.xnb</Output>
       <Time>2014-10-07T22:02:38.1986269-05:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Wall.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Wall.xnb</Output>
       <Time>2014-10-07T22:03:33.4877892-05:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall3.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall3.xnb</Output>
       <Time>2014-10-07T22:03:44.8414386-05:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Avatars\Pirate.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Avatars\Pirate.xnb</Output>
       <Time>2014-10-09T10:35:18.8351014-05:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall2.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall2.xnb</Output>
       <Time>2014-10-11T13:59:36.080509-05:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\CrackedWall.xnb</Output>
       <Time>2014-10-11T14:00:29.3765573-05:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Base.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\Base.xnb</Output>
       <Time>2014-10-15T13:48:59.2952925-05:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Connected.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Connected.xnb</Output>
       <Time>2014-10-15T19:27:09.2088092-05:00</Time>
     </Item>
     <Item>
@@ -88,8 +88,35 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Healthbar.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Healthbar.xnb</Output>
       <Time>2014-10-25T18:21:56.5587111-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Items\Weapons\Trident.png</Source>
+      <Name>GFX\Items\Weapons\Trident</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\Trident.xnb</Output>
+      <Time>2014-11-25T20:30:16.1489076-06:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Items\Weapons\LightGun.png</Source>
+      <Name>GFX\Items\Weapons\LightGun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\LightGun.xnb</Output>
+      <Time>2014-11-01T21:11:55.789255-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Xbox360_Button_A.png</Source>
+      <Name>GFX\Xbox360_Button_A</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Xbox360_Button_A.xnb</Output>
+      <Time>2014-11-24T10:43:23.6641343-06:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Georgia_16.spritefont</Source>
@@ -97,7 +124,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16.xnb</Output>
       <Time>2014-10-04T22:33:09.37323-05:00</Time>
     </Item>
     <Item>
@@ -106,7 +133,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Centaur_10.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Centaur_10.xnb</Output>
       <Time>2014-10-06T18:29:45.0334953-05:00</Time>
     </Item>
     <Item>
@@ -115,7 +142,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16_Bold.xnb</Output>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Fonts\Georgia_16_Bold.xnb</Output>
       <Time>2014-10-06T19:08:26.6132821-05:00</Time>
     </Item>
     <Item>
@@ -124,8 +151,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Rienzi.wma</Extra>
       <Time>2014-10-11T12:47:05.273657-05:00</Time>
     </Item>
     <Item>
@@ -134,8 +161,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Tannhauser.wma</Extra>
       <Time>2014-10-11T12:47:04.730626-05:00</Time>
     </Item>
     <Item>
@@ -144,8 +171,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Lohengrin.wma</Extra>
       <Time>2014-10-11T12:47:04.7676281-05:00</Time>
     </Item>
     <Item>
@@ -154,8 +181,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Meistersinger.wma</Extra>
       <Time>2014-10-11T12:47:04.8656337-05:00</Time>
     </Item>
     <Item>
@@ -164,8 +191,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Valkyries.wma</Extra>
       <Time>2014-10-11T12:47:04.9126364-05:00</Time>
     </Item>
     <Item>
@@ -174,8 +201,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Siegfried.wma</Extra>
       <Time>2014-10-11T12:47:05.0926467-05:00</Time>
     </Item>
     <Item>
@@ -184,8 +211,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\1812.wma</Extra>
       <Time>2014-10-11T13:27:43.2921037-05:00</Time>
     </Item>
     <Item>
@@ -194,36 +221,9 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Athens.wma</Extra>
       <Time>2014-10-11T15:58:17.6218378-05:00</Time>
-    </Item>
-    <Item>
-      <Source>KryptonEffect.fx</Source>
-      <Name>KryptonEffect</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\KryptonEffect.xnb</Output>
-      <Time>2014-10-31T15:36:20.7918382-05:00</Time>
-    </Item>
-    <Item>
-      <Source>GFX\Items\Weapons\Trident.png</Source>
-      <Name>GFX\Items\Weapons\Trident</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\Trident.xnb</Output>
-      <Time>2014-10-27T17:20:48.7115494-05:00</Time>
-    </Item>
-    <Item>
-      <Source>GFX\Items\Weapons\LightGun.png</Source>
-      <Name>GFX\Items\Weapons\LightGun</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\LightGun.xnb</Output>
-      <Time>2014-11-01T21:11:55.789255-05:00</Time>
     </Item>
     <Item>
       <Source>Songs\Sabre.wav</Source>
@@ -231,18 +231,18 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.xnb</Output>
-      <Extra>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.wma</Extra>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.xnb</Output>
+      <Extra>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Songs\Sabre.wma</Extra>
       <Time>2014-11-04T18:17:55.9303314-06:00</Time>
     </Item>
     <Item>
-      <Source>GFX\Xbox360_Button_A.png</Source>
-      <Name>GFX\Xbox360_Button_A</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Source>KryptonEffect.fx</Source>
+      <Name>KryptonEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Xbox360_Button_A.xnb</Output>
-      <Time>2014-11-24T10:43:23.6641343-06:00</Time>
+      <Output>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\KryptonEffect.xnb</Output>
+      <Time>2014-10-31T15:36:20.7918382-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -251,10 +251,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunnerContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -282,7 +282,7 @@
         <Value>2011-09-01T16:22:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\bin\x86\Debug\Krypton.dll</Key>
+        <Key>C:\Users\Alex\Documents\Visual Studio 2012\Projects\FlagRunner\FlagRunner\Krypton v2.0\Krypton v2.0\Krypton\bin\x86\Debug\Krypton.dll</Key>
         <Value>2014-10-31T13:39:13.043874-05:00</Value>
       </Assembly>
       <Assembly>

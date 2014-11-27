@@ -6,7 +6,7 @@
     End Sub
 
     Public Overrides Function getSourceRect(dir As Direction) As Rectangle
-        Return New Rectangle(0, 0, 0, 0)
+        Return New Rectangle(8, 9, 15, 21)
     End Function
 
     Public Overrides Sub Attack(dir As Direction, player As Player)
