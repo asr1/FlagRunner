@@ -33,3 +33,4 @@ Content\Songs\Athens.wma
 Content\Songs\Sabre.xnb
 Content\Songs\Sabre.wma
 Content\KryptonEffect.xnb
+Content\KryptonEffect.fx
