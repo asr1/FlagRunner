@@ -81,7 +81,7 @@
   <ItemGroup>
     <Reference Include="Krypton, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Downloads\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll</HintPath>
+      <HintPath>..\Krypton v2.0\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />

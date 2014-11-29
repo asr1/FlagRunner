@@ -205,11 +205,14 @@
         End If
     End Sub
 
+
+    Private Sub UpdateHitbox(ByRef player As Player)
+        player.HitBox = New Rectangle(player.getAvatarPosition.X * TileSize, player.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
+    End Sub
+
     Public Overrides Sub Update()
         'Update scalefactor
         ScaleFactor = New Vector2(Globals.Graphics.GraphicsDevice.Viewport.Width / Globals.GameSize.X, Globals.Graphics.GraphicsDevice.Viewport.Height / Globals.GameSize.Y)
-
-
 
         'Update Tiles
         MapBase.UpdateTiles(MazeScreen.getMapSize().X, MazeScreen.getMapSize().Y)
@@ -218,72 +221,26 @@
         Game1.CheckForPause()
 
         'Updates player information
-        If Status.isConnected(PlayerIndex.One) Then
-            'Update the hit box
-            Player1.HitBox = New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
-
-            'If they were just created, add them to the list.
-            If Player1.NeedsUpdating = True Then
-                'Updates the list of players
-
-                'Add the player to the list
-                ConnectedPlayers(0) = Player1
-                Player1.NeedsUpdating = False
-            End If
-        End If
-
-        'Player 2
-        If Status.isConnected(PlayerIndex.Two) Then
-            'Update the hit box
-            Player2.HitBox = New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
-
-            'If they were just created, add them to the list.
-            If Player2.NeedsUpdating = True Then
-                'Updates the list of players
-
-                'Add the player to the list
-                ConnectedPlayers(1) = Player2
-                Player2.NeedsUpdating = False
-            End If
-        End If
-
-        'Player 3
-        If Status.isConnected(PlayerIndex.Three) Then
-            'Update the hit box
-            Player3.HitBox = New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
-
-            'If they were just created, add them to the list.
-            If Player3.NeedsUpdating = True Then
-                'Updates the list of players
-
-                'Add the player to the list
-                ConnectedPlayers(2) = Player3
-                Player3.NeedsUpdating = False
-            End If
-        End If
-
-        'Player 4
-        If Status.isConnected(PlayerIndex.Four) Then
-            'Update the hit box
-            Player4.HitBox = New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
-
-            'If they were just created, add them to the list.
-            If Player4.NeedsUpdating = True Then
-                'Updates the list of players
-
-                'Add the player to the list
-                ConnectedPlayers(3) = Player4
-                Player4.NeedsUpdating = False
-            End If
-        End If
 
 
         'character movement updates
         MoveTime += Globals.GameTime.ElapsedGameTime.TotalMilliseconds
 
         If MoveTime > 15 Then
+
             'Player 1
             If Status.isConnected(PlayerIndex.One) AndAlso Player1.Living Then
+                UpdateHitbox(Player1)
+
+                'If they were just created, add them to the list.
+                If Player1.NeedsUpdating = True Then
+                    'Updates the list of players
+
+                    'Add the player to the list
+                    ConnectedPlayers(0) = Player1
+                    Player1.NeedsUpdating = False
+                End If
+
                 If Player1.AvatarMoving = True Then
                     If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -301,6 +258,16 @@
 
             'Player 2
             If Status.isConnected(PlayerIndex.Two) AndAlso Player2.Living Then
+                UpdateHitbox(Player2)
+                'If they were just created, add them to the list.
+                If Player2.NeedsUpdating = True Then
+                    'Updates the list of players
+
+                    'Add the player to the list
+                    ConnectedPlayers(1) = Player2
+                    Player2.NeedsUpdating = False
+                End If
+
                 If Player2.AvatarMoving = True Then
                     If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -318,6 +285,20 @@
 
             'Player 3
             If Status.isConnected(PlayerIndex.Three) AndAlso Player3.Living Then
+
+                UpdateHitbox(Player3)
+
+                'If they were just created, add them to the list.
+                If Player3.NeedsUpdating = True Then
+                    'Updates the list of players
+
+                    'Add the player to the list
+                    ConnectedPlayers(2) = Player3
+                    Player3.NeedsUpdating = False
+                End If
+
+
+
                 If Player3.AvatarMoving = True Then
                     If Player3.MoveDir = Direction.None And (Player3.AvatarOffset.X <> 0 Or Player3.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -335,6 +316,18 @@
 
             'Player 4
             If Status.isConnected(PlayerIndex.Four) AndAlso Player4.Living Then
+
+                UpdateHitbox(Player4)
+
+                'If they were just created, add them to the list.
+                If Player4.NeedsUpdating = True Then
+                    'Updates the list of players
+
+                    'Add the player to the list
+                    ConnectedPlayers(3) = Player4
+                    Player4.NeedsUpdating = False
+                End If
+
                 If Player4.AvatarMoving = True Then
                     If Player4.MoveDir = Direction.None And (Player4.AvatarOffset.X <> 0 Or Player4.AvatarOffset.Y <> 0) Then
                         'finish move cycle before accepting new inputs
@@ -356,31 +349,6 @@
 
         Initialized = True
     End Sub
-
-    'returns the first open square near the given coordinates.
-    'TODO: Fix or remove this code
-    Public Shared Function FindOpen(X As Integer, Y As Integer) As Vector2
-        While MapBase.TileList(X, Y).isBlocked = True 'Loop until we find one
-            If MapBase.TileList(X, Y).isBlocked = False Then
-                Return New Vector2(X, Y)
-            Else
-                X += 1
-            End If
-            If MapBase.TileList(X, Y).isBlocked = False Then
-                Return New Vector2(X, Y)
-            Else
-                X -= 1
-                Y += 1
-                If MapBase.TileList(X, Y).isBlocked = False Then
-                    Return New Vector2(X, Y)
-                Else
-                    X += 1
-                End If
-            End If
-
-        End While
-        Return New Vector2(X, Y)
-    End Function
 
     Public Overrides Sub Draw()
         MyBase.Draw()
