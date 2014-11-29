@@ -210,6 +210,22 @@
         player.HitBox = New Rectangle(player.getAvatarPosition.X * TileSize, player.getAvatarPosition.Y * TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
     End Sub
 
+    Private Sub UpdateMovement(ByRef player As Player)
+        If player.AvatarMoving = True Then
+            If player.MoveDir = Direction.None And (player.AvatarOffset.X <> 0 Or player.AvatarOffset.Y <> 0) Then
+                'finish move cycle before accepting new inputs
+                player.Move(player.LastDir)
+            Else 'If not between movements, accept new
+                player.Move(player.MoveDir)
+            End If
+
+            'Between movements
+            If player.AvatarOffset.X = 0 And player.AvatarOffset.Y = 0 Then
+                player.AvatarMoving = False
+            End If
+        End If
+    End Sub
+
     Public Overrides Sub Update()
         'Update scalefactor
         ScaleFactor = New Vector2(Globals.Graphics.GraphicsDevice.Viewport.Width / Globals.GameSize.X, Globals.Graphics.GraphicsDevice.Viewport.Height / Globals.GameSize.Y)
@@ -241,19 +257,7 @@
                     Player1.NeedsUpdating = False
                 End If
 
-                If Player1.AvatarMoving = True Then
-                    If Player1.MoveDir = Direction.None And (Player1.AvatarOffset.X <> 0 Or Player1.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
-                        Player1.Move(Player1.LastDir)
-                    Else 'If not between movements, accept new
-                        Player1.Move(Player1.MoveDir)
-                    End If
-
-                    'Between movements
-                    If Player1.AvatarOffset.X = 0 And Player1.AvatarOffset.Y = 0 Then
-                        Player1.AvatarMoving = False
-                    End If
-                End If
+                UpdateMovement(Player1)
             End If
 
             'Player 2
@@ -268,19 +272,7 @@
                     Player2.NeedsUpdating = False
                 End If
 
-                If Player2.AvatarMoving = True Then
-                    If Player2.MoveDir = Direction.None And (Player2.AvatarOffset.X <> 0 Or Player2.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
-                        Player2.Move(Player2.LastDir)
-                    Else 'If not between movements, accept new
-                        Player2.Move(Player2.MoveDir)
-                    End If
-
-                    'Between movements
-                    If Player2.AvatarOffset.X = 0 And Player2.AvatarOffset.Y = 0 Then
-                        Player2.AvatarMoving = False
-                    End If
-                End If
+                UpdateMovement(Player2)
             End If
 
             'Player 3
@@ -297,21 +289,7 @@
                     Player3.NeedsUpdating = False
                 End If
 
-
-
-                If Player3.AvatarMoving = True Then
-                    If Player3.MoveDir = Direction.None And (Player3.AvatarOffset.X <> 0 Or Player3.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
-                        Player3.Move(Player3.LastDir)
-                    Else 'If not between movements, accept new
-                        Player3.Move(Player3.MoveDir)
-                    End If
-
-                    'Between movements
-                    If Player3.AvatarOffset.X = 0 AndAlso Player3.AvatarOffset.Y = 0 Then
-                        Player3.AvatarMoving = False
-                    End If
-                End If
+                UpdateMovement(Player3)
             End If
 
             'Player 4
@@ -328,27 +306,18 @@
                     Player4.NeedsUpdating = False
                 End If
 
-                If Player4.AvatarMoving = True Then
-                    If Player4.MoveDir = Direction.None And (Player4.AvatarOffset.X <> 0 Or Player4.AvatarOffset.Y <> 0) Then
-                        'finish move cycle before accepting new inputs
-                        Player4.Move(Player4.LastDir)
-                    Else 'If not between movements, accept new
-                        Player4.Move(Player4.MoveDir)
-                    End If
-
-                    'Between movements
-                    If Player4.AvatarOffset.X = 0 And Player4.AvatarOffset.Y = 0 Then
-                        Player4.AvatarMoving = False
-                    End If
-                End If
-
-                MoveTime = 0 'reset time to reset cycle
+                UpdateMovement(Player4)
             End If
+
+            MoveTime = 0 'reset time to reset cycle
         End If
         'End character movement updates
 
         Initialized = True
     End Sub
+
+
+
 
     Public Overrides Sub Draw()
         MyBase.Draw()
