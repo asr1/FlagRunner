@@ -319,6 +319,9 @@
 
 
 
+
+
+
     Public Overrides Sub Draw()
         MyBase.Draw()
         Globals.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
@@ -352,28 +355,11 @@
             Globals.SpriteBatch.Draw(Textures.BlackGradient, Player2.HitBox, Color.Red)
         End If
 
-        'Draw bases with the right colors and properties.
-        If Status.isConnected(PlayerIndex.One) Then
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
-            MapBase.TileList(1, 1).TerrainType = TileType.Base
-        End If
-        If Status.isConnected(PlayerIndex.Two) Then
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
-            MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
-        End If
-        If Status.isConnected(PlayerIndex.Three) Then
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
-            MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
-        End If
-        If Status.isConnected(PlayerIndex.Four) Then
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
-            MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
-        End If
-
-
-
         'Player 1
         If Status.isConnected(PlayerIndex.One) Then
+            'Bases
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
+            MapBase.TileList(1, 1).TerrainType = TileType.Base
             'Avatars and health bars
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
             If Options.GetHealthBarOption = DisplayHealth.Number Then
@@ -398,6 +384,10 @@
         If Status.isConnected(PlayerIndex.Two) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
 
+            'Base
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
+            MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
+
             If Options.GetHealthBarOption = DisplayHealth.Number Then
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player2.GetHealth, New Vector2(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize - TileSize), Color.White)
             ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
@@ -419,6 +409,10 @@
         If Status.isConnected(PlayerIndex.Three) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Green)
 
+            'Base
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
+            MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
+
             If Options.GetHealthBarOption = DisplayHealth.Number Then
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player3.GetHealth, New Vector2(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize - TileSize), Color.White)
             ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
@@ -439,6 +433,10 @@
 
         If Status.isConnected(PlayerIndex.Four) Then
             Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
+
+            'Base
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
+            MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
             If Options.GetHealthBarOption = DisplayHealth.Number Then
                 Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player4.GetHealth, New Vector2(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - TileSize), Color.White)
