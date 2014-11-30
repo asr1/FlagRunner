@@ -317,10 +317,20 @@
     End Sub
 
 
+    Private Sub DrawAvatar(ByVal player As Player)
+        Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(player.getAvatarPosition.X * TileSize, player.getAvatarPosition.Y * TileSize, TileSize, TileSize), player.FetchAvatarSrc(player.LastDir), Color.Blue)
+    End Sub
 
-
-
-
+    Private Sub DrawHealthBars(ByVal player As Player)
+        If Options.GetHealthBarOption = DisplayHealth.Number Then
+            Globals.SpriteBatch.DrawString(Fonts.Georgia_16, player.GetHealth, New Vector2(player.getAvatarPosition.X * TileSize, (player.getAvatarPosition.Y * TileSize) - TileSize), Color.White)
+        ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
+            'Health bar frame.
+            Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(player.getAvatarPosition.X * TileSize, player.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
+            'Healthbar fill
+            Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((player.getAvatarPosition.X * TileSize + 1), player.getAvatarPosition.Y * TileSize - 10, TileSize * player.GetHealth / player.getMaxHealth, 9), Color.Green)
+        End If
+    End Sub
 
     Public Overrides Sub Draw()
         MyBase.Draw()
@@ -360,16 +370,10 @@
             'Bases
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
             MapBase.TileList(1, 1).TerrainType = TileType.Base
+
             'Avatars and health bars
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
-            If Options.GetHealthBarOption = DisplayHealth.Number Then
-                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player1.GetHealth, New Vector2(Player1.getAvatarPosition.X * TileSize, (Player1.getAvatarPosition.Y * TileSize) - TileSize), Color.White)
-            ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
-                'Health bar frame.
-                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
-                'Healthbar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player1.getAvatarPosition.X * TileSize + 1), Player1.getAvatarPosition.Y * TileSize - 10, TileSize * Player1.GetHealth / Player.getMaxHealth, 9), Color.Green)
-            End If
+            DrawAvatar(Player1)
+            DrawHealthBars(Player1)
             'Item in square
             If Not MapBase.TileList(Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y).Item Is Nothing Then
                 Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
@@ -382,20 +386,13 @@
 
         'Player 2
         If Status.isConnected(PlayerIndex.Two) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Red)
+            DrawAvatar(Player2)
 
             'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
 
-            If Options.GetHealthBarOption = DisplayHealth.Number Then
-                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player2.GetHealth, New Vector2(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize - TileSize), Color.White)
-            ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
-                'Health bar frame
-                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
-                'Healthbar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle((Player2.getAvatarPosition.X * TileSize + 1), Player2.getAvatarPosition.Y * TileSize - 10, TileSize * Player2.GetHealth / Player.getMaxHealth, 9), Color.Green)
-            End If
+            DrawHealthBars(Player2)
             'Item in square
             If Not MapBase.TileList(Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y).Item Is Nothing Then
                 Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
@@ -407,20 +404,14 @@
         End If
 
         If Status.isConnected(PlayerIndex.Three) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Green)
+            DrawAvatar(Player3)
 
             'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
             MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
-            If Options.GetHealthBarOption = DisplayHealth.Number Then
-                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player3.GetHealth, New Vector2(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize - TileSize), Color.White)
-            ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
-                'Health bar Frame
-                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
-                'Health bar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player3.getAvatarPosition.X * TileSize + 1, Player3.getAvatarPosition.Y * TileSize - 10, TileSize * Player3.GetHealth / Player.getMaxHealth, 9), Color.Green)
-            End If
+            DrawHealthBars(Player3)
+
             'Item in square
             If Not MapBase.TileList(Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y).Item Is Nothing Then
                 Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize + TileSize, 16, 16), Color.White)
@@ -432,20 +423,14 @@
         End If
 
         If Status.isConnected(PlayerIndex.Four) Then
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Orange)
+            DrawAvatar(Player4)
 
             'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
-            If Options.GetHealthBarOption = DisplayHealth.Number Then
-                Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Player4.GetHealth, New Vector2(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - TileSize), Color.White)
-            ElseIf Options.GetHealthBarOption = DisplayHealth.Bar Then
-                'Health bar Frame
-                Globals.SpriteBatch.Draw(Textures.HealthBar, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize - 10, TileSize, 10), Textures.GetHealthBarSource, Color.White)
-                'Health bar fill
-                Globals.SpriteBatch.Draw(Textures.BlackGradient, New Rectangle(Player4.getAvatarPosition.X * TileSize + 1, Player4.getAvatarPosition.Y * TileSize - 10, TileSize * Player4.GetHealth / Player.getMaxHealth, 9), Color.Green)
-            End If
+            DrawHealthBars(Player4)
+
             'Item in square
             If Not MapBase.TileList(Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y).Item Is Nothing Then
                 Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize + TileSize, 16, 16), Color.White)
