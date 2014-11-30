@@ -332,6 +332,18 @@
         End If
     End Sub
 
+    Private Sub DrawItemButton(ByVal player As Player)
+        If Not MapBase.TileList(player.getAvatarPosition.X, player.getAvatarPosition.Y).Item Is Nothing Then
+            Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(player.getAvatarPosition.X * TileSize, player.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
+        End If
+    End Sub
+
+    Private Sub DrawWeapon(ByVal player As Player)
+        If Not player.getMainWeapon Is Nothing Then
+            Globals.SpriteBatch.Draw(player.getMainWeapon.GFX, New Rectangle(player.getAvatarPosition.X * TileSize + 0.0 * TileSize, player.getAvatarPosition.Y * TileSize + 10, 7, 12), player.getMainWeapon.getSourceRect(Player1.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
+        End If
+    End Sub
+
     Public Overrides Sub Draw()
         MyBase.Draw()
         Globals.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone)
@@ -367,79 +379,48 @@
 
         'Player 1
         If Status.isConnected(PlayerIndex.One) Then
-            'Bases
+            'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
             MapBase.TileList(1, 1).TerrainType = TileType.Base
 
-            'Avatars and health bars
             DrawAvatar(Player1)
             DrawHealthBars(Player1)
-            'Item in square
-            If Not MapBase.TileList(Player1.getAvatarPosition.X, Player1.getAvatarPosition.Y).Item Is Nothing Then
-                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
-            End If
-            'Weapon
-            If Not Player1.getMainWeapon Is Nothing Then
-                Globals.SpriteBatch.Draw(Player1.getMainWeapon.GFX, New Rectangle(Player1.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player1.getAvatarPosition.Y * TileSize + 10, 7, 12), Player1.getMainWeapon.getSourceRect(Player1.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
-            End If
+            DrawItemButton(Player1)
+            DrawWeapon(Player1)
         End If
 
         'Player 2
         If Status.isConnected(PlayerIndex.Two) Then
-            DrawAvatar(Player2)
-
             'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
 
+            DrawAvatar(Player2)
             DrawHealthBars(Player2)
-            'Item in square
-            If Not MapBase.TileList(Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y).Item Is Nothing Then
-                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * (TileSize) + TileSize, 16, 16), Color.White)
-            End If
-            'Weapon
-            If Not Player2.getMainWeapon Is Nothing Then
-                Globals.SpriteBatch.Draw(Player2.getMainWeapon.GFX, New Rectangle(Player2.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player2.getAvatarPosition.Y * TileSize + 10, 7, 12), Player2.getMainWeapon.getSourceRect(Player2.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
-            End If
+            DrawItemButton(Player2)
+            DrawWeapon(Player2)
         End If
 
         If Status.isConnected(PlayerIndex.Three) Then
-            DrawAvatar(Player3)
-
             'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
             MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
+            DrawAvatar(Player3)
             DrawHealthBars(Player3)
-
-            'Item in square
-            If Not MapBase.TileList(Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y).Item Is Nothing Then
-                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize + TileSize, 16, 16), Color.White)
-            End If
-            'Weapon
-            If Not Player3.getMainWeapon Is Nothing Then
-                Globals.SpriteBatch.Draw(Player3.getMainWeapon.GFX, New Rectangle(Player3.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player3.getAvatarPosition.Y * TileSize + 10, 7, 12), Player3.getMainWeapon.getSourceRect(Player3.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
-            End If
+            DrawItemButton(Player3)
+            DrawWeapon(Player3)
         End If
 
         If Status.isConnected(PlayerIndex.Four) Then
-            DrawAvatar(Player4)
-
             'Base
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
+            DrawAvatar(Player4)
             DrawHealthBars(Player4)
-
-            'Item in square
-            If Not MapBase.TileList(Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y).Item Is Nothing Then
-                Globals.SpriteBatch.Draw(Textures.AButton, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize + TileSize, 16, 16), Color.White)
-            End If
-            'Weapon
-            If Not Player4.getMainWeapon Is Nothing Then
-                Globals.SpriteBatch.Draw(Player4.getMainWeapon.GFX, New Rectangle(Player4.getAvatarPosition.X * TileSize + 0.0 * TileSize, Player4.getAvatarPosition.Y * TileSize + 10, 7, 12), Player4.getMainWeapon.getSourceRect(Player4.LastDir), Color.White, 0, New Vector2(0, 0), SpriteEffects.None, 0)
-            End If
-
+            DrawItemButton(Player4)
+            DrawWeapon(Player4)
         End If
 
         Globals.SpriteBatch.End()
