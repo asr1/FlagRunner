@@ -317,10 +317,6 @@
     End Sub
 
 
-    Private Sub DrawAvatar(ByVal player As Player)
-        Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(player.getAvatarPosition.X * TileSize, player.getAvatarPosition.Y * TileSize, TileSize, TileSize), player.FetchAvatarSrc(player.LastDir), Color.Blue)
-    End Sub
-
     Private Sub DrawHealthBars(ByVal player As Player)
         If Options.GetHealthBarOption = DisplayHealth.Number Then
             Globals.SpriteBatch.DrawString(Fonts.Georgia_16, player.GetHealth, New Vector2(player.getAvatarPosition.X * TileSize, (player.getAvatarPosition.Y * TileSize) - TileSize), Color.White)
@@ -383,7 +379,8 @@
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
             MapBase.TileList(1, 1).TerrainType = TileType.Base
 
-            DrawAvatar(Player1)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
+
             DrawHealthBars(Player1)
             DrawItemButton(Player1)
             DrawWeapon(Player1)
@@ -395,7 +392,8 @@
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
 
-            DrawAvatar(Player2)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Blue)
+
             DrawHealthBars(Player2)
             DrawItemButton(Player2)
             DrawWeapon(Player2)
@@ -406,7 +404,8 @@
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
             MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
-            DrawAvatar(Player3)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Blue)
+
             DrawHealthBars(Player3)
             DrawItemButton(Player3)
             DrawWeapon(Player3)
@@ -417,7 +416,8 @@
             Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
-            DrawAvatar(Player4)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Blue)
+
             DrawHealthBars(Player4)
             DrawItemButton(Player4)
             DrawWeapon(Player4)
