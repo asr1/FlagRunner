@@ -31,6 +31,7 @@
     'TODO we need to actually draw here
     Public Overrides Sub Attack(dir As Direction, player As Player)
 
+
         Dim AniTime As Double = 0
         Dim DrawTime As Double = 100  'The amount of delay between drawn updates
 
@@ -60,33 +61,95 @@
                 Select Case dir
                     Case Direction.Down
                         While (.Y < StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+
+
+                            'Begin draw outside Draw() sub
+                            Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            Globals.SpriteBatch.Begin()
+                            'Redraw the background
+                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+
+
+
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .Y += 1
                                 AniTime = 0
                             End If
+                            UpdateLights()
+                            DebugDrawLights()
+
+                            'Draw outside the draw() sub
+                            Globals.SpriteBatch.End()
+                            Globals.Graphics.GraphicsDevice.Present()
+
 
                         End While
                     Case Direction.Up
                         While (.Y > StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            'Begin draw outside Draw() sub
+                            '          Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            Globals.SpriteBatch.Begin()
+                            'Redraw the background
+                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+
+
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .Y -= 1
                             End If
+                            UpdateLights()
+                            DebugDrawLights()
+
+                            'Draw outside the draw() sub
+                            Globals.SpriteBatch.End()
+                            Globals.Graphics.GraphicsDevice.Present()
+
+
                         End While
                     Case Direction.Left
                         While (.X > StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            'Begin draw outside Draw() sub
+                            Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            Globals.SpriteBatch.Begin()
+                            'Redraw the background
+                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+
+
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .X -= 1
                             End If
+                            UpdateLights()
+                            DebugDrawLights()
+
+                            'Draw outside the draw() sub
+                            Globals.SpriteBatch.End()
+                            Globals.Graphics.GraphicsDevice.Present()
+
+
                         End While
                     Case Direction.Right
                         While (.X < StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            'Begin draw outside Draw() sub
+                            Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            Globals.SpriteBatch.Begin()
+                            'Redraw the background
+                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+
+
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .X += 1
                             End If
+                            UpdateLights()
+                            DebugDrawLights()
+
+                            'Draw outside the draw() sub
+                            Globals.SpriteBatch.End()
+                            Globals.Graphics.GraphicsDevice.Present()
+
+
                         End While
                 End Select
             End If
@@ -94,7 +157,16 @@
             .Y *= MazeScreen.TileSize
         End With
         numShots += 1
+
+
         UpdateLights()
+    End Sub
+
+    Private Shared Sub DebugDrawLights()
+        Globals.KrypEng.Draw(Globals.GameTime)
+        For Each l As Light2D In Globals.KrypEng.Lights
+            Globals.KrypEng.RenderHelper.BufferAddBoundOutline(l.Bounds)
+        Next
     End Sub
 
     Public Shared Sub UpdateLights()
