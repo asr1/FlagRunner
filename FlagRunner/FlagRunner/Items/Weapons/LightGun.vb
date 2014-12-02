@@ -28,7 +28,12 @@
 
 
     'Shoot a ball of light, up to 4 times, then start overwriting
+    'TODO we need to actually draw here
     Public Overrides Sub Attack(dir As Direction, player As Player)
+
+        Dim AniTime As Double = 0
+        Dim DrawTime As Double = 100  'The amount of delay between drawn updates
+
         lights(numShots Mod 4) = New Light2D
         Dim StopPos As Integer
         With lights(numShots Mod 4)
@@ -54,20 +59,34 @@
             If MapBase.TileList(.X, .Y).isBlocked = False Then
                 Select Case dir
                     Case Direction.Down
-                        While (.Y < StopPos) And MapBase.TileList(.X, .Y).isBlocked = False
-                            .Y += 1
+                        While (.Y < StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
+                            If AniTime > DrawTime Then
+                                .Y += 1
+                                AniTime = 0
+                            End If
+
                         End While
                     Case Direction.Up
-                        While (.Y > StopPos) And MapBase.TileList(.X, .Y).isBlocked = False
-                            .Y -= 1
+                        While (.Y > StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
+                            If AniTime > DrawTime Then
+                                .Y -= 1
+                            End If
                         End While
                     Case Direction.Left
-                        While (.X > StopPos) And MapBase.TileList(.X, .Y).isBlocked = False
-                            .X -= 1
+                        While (.X > StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
+                            If AniTime > DrawTime Then
+                                .X -= 1
+                            End If
                         End While
                     Case Direction.Right
-                        While (.X < StopPos) And MapBase.TileList(.X, .Y).isBlocked = False
-                            .X += 1
+                        While (.X < StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
+                            AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
+                            If AniTime > DrawTime Then
+                                .X += 1
+                            End If
                         End While
                 End Select
             End If

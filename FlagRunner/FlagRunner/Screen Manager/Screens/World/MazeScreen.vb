@@ -376,10 +376,10 @@
         'Player 1
         If Status.isConnected(PlayerIndex.One) Then
             'Base
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, TileSize, TileSize, TileSize), Player1.GetColor)
             MapBase.TileList(1, 1).TerrainType = TileType.Base
 
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player1.getAvatarPosition.X * TileSize, Player1.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player1.FetchAvatarSrc(Player1.LastDir), Player1.GetColor)
 
             DrawHealthBars(Player1)
             DrawItemButton(Player1)
@@ -389,10 +389,10 @@
         'Player 2
         If Status.isConnected(PlayerIndex.Two) Then
             'Base
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Color.Red)
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, TileSize, TileSize, TileSize), Player2.GetColor)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, 1).TerrainType = TileType.Base
 
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player2.getAvatarPosition.X * TileSize, Player2.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player2.FetchAvatarSrc(Player2.LastDir), Player2.GetColor)
 
             DrawHealthBars(Player2)
             DrawItemButton(Player2)
@@ -401,10 +401,10 @@
 
         If Status.isConnected(PlayerIndex.Three) Then
             'Base
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Green)
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle(TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Player3.GetColor)
             MapBase.TileList(1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player3.getAvatarPosition.X * TileSize, Player3.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player3.FetchAvatarSrc(Player3.LastDir), Player3.GetColor)
 
             DrawHealthBars(Player3)
             DrawItemButton(Player3)
@@ -413,10 +413,10 @@
 
         If Status.isConnected(PlayerIndex.Four) Then
             'Base
-            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Color.Orange)
+            Globals.SpriteBatch.Draw(Textures.BaseTile, New Rectangle((MazeScreen.getMapSize.X - 1) * TileSize, (MazeScreen.getMapSize.Y - 1) * TileSize, TileSize, TileSize), Player4.GetColor)
             MapBase.TileList(MazeScreen.getMapSize.X - 1, MazeScreen.getMapSize.Y - 1).TerrainType = TileType.Base
 
-            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Color.Blue)
+            Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Player4.getAvatarPosition.X * TileSize, Player4.getAvatarPosition.Y * TileSize, TileSize, TileSize), Player4.FetchAvatarSrc(Player4.LastDir), Player4.GetColor)
 
             DrawHealthBars(Player4)
             DrawItemButton(Player4)

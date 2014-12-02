@@ -55,9 +55,7 @@ Public Class DarkMaze
         Globals.KrypEng.Bluriness = 1
         Globals.KrypEng.LightMapPrepare()
 
-
         MyBase.Draw()
-
 
         Globals.KrypEng.Draw(Globals.GameTime)
         For Each l As Light2D In Globals.KrypEng.Lights

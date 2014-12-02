@@ -35,8 +35,6 @@ Public Class Player
     'Used to toggle if a player is created
     Public NeedsUpdating As Boolean = False
 
-
-
     'Map coordinates
     Private AvatarPosition As Vector2
     Private StartPosition As Vector2
@@ -67,6 +65,10 @@ Public Class Player
         Return MaxHealth
     End Function
 
+
+    Public Function GetColor() As Color
+        Return Me.PlayerColor
+    End Function
 
     Public Sub New()
         'Set attributes

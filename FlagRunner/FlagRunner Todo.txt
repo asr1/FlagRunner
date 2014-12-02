@@ -30,3 +30,4 @@ BUGS:
 Music starts after pausing.
 Fix light gun sprite when facing right.
 Add transitions to shooting.
+crashes when a controller is added.
