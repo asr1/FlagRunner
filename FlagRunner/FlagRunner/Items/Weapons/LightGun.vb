@@ -57,97 +57,106 @@
                 Case Direction.Right
                     StopPos = Math.Min(Globals.GameSize.X, .X + 3)
             End Select
+
+            '''''''''''''DEBUG
+            StopPos += 100
+
+
             If MapBase.TileList(.X, .Y).isBlocked = False Then
                 Select Case dir
                     Case Direction.Down
                         While (.Y < StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
 
 
-                            'Begin draw outside Draw() sub
-                            Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
-                            Globals.SpriteBatch.Begin()
-                            'Redraw the background
-                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+                            ''Begin draw outside Draw() sub
+                            'Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            'Globals.SpriteBatch.Begin()
+                            ''Redraw the background
+                            'Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
 
 
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .Y += 1
+                                UpdateLights()
+                                DebugDrawLights()
                                 AniTime = 0
                             End If
-                            UpdateLights()
-                            DebugDrawLights()
-
-                            'Draw outside the draw() sub
-                            Globals.SpriteBatch.End()
-                            Globals.Graphics.GraphicsDevice.Present()
+                            ''Draw outside the draw() sub
+                            'Globals.SpriteBatch.End()
+                            'Globals.Graphics.GraphicsDevice.Present()
 
 
                         End While
                     Case Direction.Up
                         While (.Y > StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
-                            'Begin draw outside Draw() sub
-                            '          Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
-                            Globals.SpriteBatch.Begin()
-                            'Redraw the background
-                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+                            ''Begin draw outside Draw() sub
+                            ''          Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            'Globals.SpriteBatch.Begin()
+                            ''Redraw the background
+                            'Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
 
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .Y -= 1
-                            End If
-                            UpdateLights()
-                            DebugDrawLights()
 
-                            'Draw outside the draw() sub
-                            Globals.SpriteBatch.End()
-                            Globals.Graphics.GraphicsDevice.Present()
+                                UpdateLights()
+                                DebugDrawLights()
+                                AniTime = 0
+                            End If
+
+                            ''Draw outside the draw() sub
+                            'Globals.SpriteBatch.End()
+                            'Globals.Graphics.GraphicsDevice.Present()
 
 
                         End While
                     Case Direction.Left
                         While (.X > StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
-                            'Begin draw outside Draw() sub
-                            Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
-                            Globals.SpriteBatch.Begin()
-                            'Redraw the background
-                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+                            ''Begin draw outside Draw() sub
+                            'Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            'Globals.SpriteBatch.Begin()
+                            ''Redraw the background
+                            'Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
 
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .X -= 1
-                            End If
-                            UpdateLights()
-                            DebugDrawLights()
 
-                            'Draw outside the draw() sub
-                            Globals.SpriteBatch.End()
-                            Globals.Graphics.GraphicsDevice.Present()
+                                UpdateLights()
+                                DebugDrawLights()
+                                AniTime = 0
+                            End If
+
+                            ''Draw outside the draw() sub
+                            'Globals.SpriteBatch.End()
+                            'Globals.Graphics.GraphicsDevice.Present()
 
 
                         End While
                     Case Direction.Right
                         While (.X < StopPos) AndAlso MapBase.TileList(.X, .Y).isBlocked = False
-                            'Begin draw outside Draw() sub
-                            Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
-                            Globals.SpriteBatch.Begin()
-                            'Redraw the background
-                            Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
+                            ''Begin draw outside Draw() sub
+                            'Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
+                            'Globals.SpriteBatch.Begin()
+                            ''Redraw the background
+                            'Globals.SpriteBatch.Draw(Globals.BackBuffer, New Rectangle(0, 0, Globals.Graphics.GraphicsDevice.Viewport.Width, Globals.Graphics.GraphicsDevice.Viewport.Height), Color.White)
 
 
                             AniTime += Globals.GameTime.ElapsedGameTime.Milliseconds
                             If AniTime > DrawTime Then
                                 .X += 1
-                            End If
-                            UpdateLights()
-                            DebugDrawLights()
 
-                            'Draw outside the draw() sub
-                            Globals.SpriteBatch.End()
-                            Globals.Graphics.GraphicsDevice.Present()
+                                UpdateLights()
+                                DebugDrawLights()
+                                AniTime = 0
+                            End If
+                            ''Draw outside the draw() sub
+                            'Globals.SpriteBatch.End()
+                            'Globals.Graphics.GraphicsDevice.Present()
 
 
                         End While
@@ -163,9 +172,16 @@
     End Sub
 
     Private Shared Sub DebugDrawLights()
+
         Globals.KrypEng.Draw(Globals.GameTime)
         For Each l As Light2D In Globals.KrypEng.Lights
             Globals.KrypEng.RenderHelper.BufferAddBoundOutline(l.Bounds)
+        Next
+        For Each screen As BaseScreen In ScreenManager.Screens
+            If screen.Name = "MazeScreen" Then
+                screen.Update()
+                screen.Draw()
+            End If
         Next
     End Sub
 
