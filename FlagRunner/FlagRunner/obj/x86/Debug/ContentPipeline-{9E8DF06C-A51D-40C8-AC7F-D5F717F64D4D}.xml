@@ -280,6 +280,15 @@
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\AttackTrident.xnb</Output>
       <Time>2015-03-20T10:32:05.3242571-05:00</Time>
     </Item>
+    <Item>
+      <Source>GFX\Tiles\WallCel.png</Source>
+      <Name>GFX\Tiles\WallCel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Tiles\WallCel.xnb</Output>
+      <Time>2015-03-20T15:44:30.7698318-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>

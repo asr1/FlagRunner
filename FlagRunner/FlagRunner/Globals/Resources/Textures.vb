@@ -13,13 +13,20 @@ Public Class Textures
     Public Shared LightGun As Texture2D
     Public Shared AButton As Texture2D
 
+
+    Private Shared celShaded As Boolean = False
+
     'Avatars
     Public Shared Pirate As Texture2D
 
     Public Shared Sub Load()
         BlackGradient = Globals.Content.Load(Of Texture2D)("GFX/blackgradient")
         Cobble = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Cobble")
-        Wall = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Wall")
+        If celShaded Then
+            Wall = Globals.Content.Load(Of Texture2D)("GFX/Tiles/WallCel")
+        Else
+            Wall = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Wall")
+        End If
         CrackedWall = Globals.Content.Load(Of Texture2D)("GFX/Tiles/CrackedWall")
         Pirate = Globals.Content.Load(Of Texture2D)("GFX/Avatars/Pirate")
         BaseTile = Globals.Content.Load(Of Texture2D)("GFX/Tiles/Base")
