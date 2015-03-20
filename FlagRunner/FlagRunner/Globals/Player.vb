@@ -30,13 +30,13 @@ Public Class Player
     Private MainWeapon As Weapon = Nothing
     Private SecondaryWeapon As Weapon = Nothing
 
-    Private Const PUNCH_DAMAGE = 1
+
 
     'Used to toggle if a player is created
     Public NeedsUpdating As Boolean = False
 
     'Map coordinates
-    Private AvatarPosition As Vector2
+    Public AvatarPosition As Vector2
     Private StartPosition As Vector2
 
     'Avatar offset for smooth walking
@@ -187,7 +187,7 @@ Public Class Player
         MapBase.TileList(position.X, position.Y).Item = Nothing
     End Sub
 
-    'TODO Drop old weapon
+    'TODO Drop old weapon (like leave it in the square)
     Public Sub PickUpWeapon(weapon As Weapon, position As Vector2)
         'We're not holding anything
         If Me.MainWeapon Is Nothing Then
@@ -210,6 +210,9 @@ Public Class Player
             DropWeapon(weapon, position)
             Me.MainWeapon = weapon
         End If
+
+        Sounds.pickUpNoise.play()
+
     End Sub
 
     Private Shared Sub DropWeapon(weapon As Weapon, position As Vector2)
@@ -287,7 +290,7 @@ Public Class Player
         'Grab the hitbox, test the new one, then restore the old hitbox
         Dim Temp As Rectangle = Me.HitBox
         Me.HitBox = New Rectangle(AvX * MazeScreen.TileSize, AvY * MazeScreen.TileSize, MazeScreen.TileSize, MazeScreen.TileSize)
-        If MapBase.TileList(AvX, AvY).isBlocked = False And DetectCollision(Me) = False Then
+        If MapBase.TileList(AvX, AvY).isBlocked = False And Utilities.DetectCollision(Me) = False Then
             AvatarMoving = True
             MoveDir = Dir
         End If
@@ -301,44 +304,6 @@ Public Class Player
         SecondaryWeapon = temp
     End Sub
 
-    'Detects a collision with another player
-    'Returns true if there is a collision, else false.
-    'So our collision detection works UNLESS both players are running at another, or 
-    'Both are moving simulataneously.
-    'Could remedy, could leave in. Let's see how it plays for a whle. (Fix in moveAvatar sub)
-    Private Function DetectCollision(player As Player) As Boolean
-        For Each p As Player In MazeScreen.ConnectedPlayers
-            If Not IsNothing(p) Then
-                'Don't test for collision with ourself
-                If Not p.Equals(player) Then
-                    If player.HitBox.Intersects(p.HitBox) Then
-                        Return True
-                    End If
-                End If
-            End If
-        Next
-        'We iterated through every player without finding a collision
-        Return False
-    End Function
-
-    'Detects a collision with another player
-    'Returns the player with which a collision occurs.
-    'Should only be called after detect collision
-    Private Function FindCollision(player As Player) As Player
-        For Each p As Player In MazeScreen.ConnectedPlayers
-            If Not IsNothing(p) Then
-                'Don't test for collision with ourself
-                If Not p.Equals(player) Then
-                    If player.HitBox.Intersects(p.HitBox) Then
-                        Return p
-                    End If
-                End If
-            End If
-        Next
-        'We iterated through every player without finding a collision
-        'We should never get here
-        Return Nothing
-    End Function
 
     'Returns true if the unique player identifiers are the same, false otherwise.
     Public Overrides Function Equals(obj As Object) As Boolean
@@ -374,16 +339,19 @@ Public Class Player
 
     'Decrease hit points by the amount specified,  
     'Going no lower than zero
-    Public Sub DecreaseHealth(i As Double)
+    'Returns true if the player was killed, false otherwise
+    Public Function DecreaseHealth(i As Double) As Boolean
         Me.Health = Math.Max(0, Me.Health - i)
         If Me.Health = 0 Then
             Me.respawn()
+            Return True
         End If
-    End Sub
+        Return False
+    End Function
 
 
-    'Present issue: Sprite draws in wrong spot on full screen. Please investigate.
     Public Sub Punch()
+        Sounds.punchNoise.play()
         Globals.Graphics.GraphicsDevice.SetRenderTarget(Nothing)
         Globals.SpriteBatch.Begin()
         'Redraw the background
@@ -394,41 +362,46 @@ Public Class Player
                 Me.HitBox.Y += 4
                 'Draw this animation
                 Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(Me.AvatarPosition.X * MazeScreen.TileSize * MazeScreen.ScaleFactor.X, ((Me.AvatarPosition.Y * MazeScreen.TileSize) + 1) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
-                If DetectCollision(Me) Then
-                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                If Utilities.DetectCollision(Me) Then
+                    If (Utilities.FindCollision(Me).DecreaseHealth(Damages.PUNCH_DAMAGE)) Then
+                        Me.IncreaseVicPoints()  'We got a kill
+                    End If
                 End If
                 Me.HitBox.Y -= 4
 
             Case Direction.Left
                 Me.HitBox.X -= 4
                 Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize) - 4) * MazeScreen.ScaleFactor.X, (Me.AvatarPosition.Y * MazeScreen.TileSize) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
-                If DetectCollision(Me) Then
-                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                If Utilities.DetectCollision(Me) Then
+                    If (Utilities.FindCollision(Me).DecreaseHealth(Damages.PUNCH_DAMAGE)) Then
+                        Me.IncreaseVicPoints()
+                    End If
                 End If
                 Me.HitBox.X += 4
 
             Case Direction.Right
                 Me.HitBox.X += 4
                 Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize)) * MazeScreen.ScaleFactor.X, ((Me.AvatarPosition.Y * MazeScreen.TileSize) + 4) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
-                If DetectCollision(Me) Then
-                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                If Utilities.DetectCollision(Me) Then
+                    If Utilities.FindCollision(Me).DecreaseHealth(Damages.PUNCH_DAMAGE) Then
+                        Me.IncreaseVicPoints()
+                    End If
                 End If
                 Me.HitBox.X -= 4
 
             Case Direction.Up
                 Me.HitBox.Y -= 4
                 Globals.SpriteBatch.Draw(Textures.Pirate, New Rectangle(((Me.AvatarPosition.X * MazeScreen.TileSize) + 4) * MazeScreen.ScaleFactor.X, (Me.AvatarPosition.Y * MazeScreen.TileSize) * MazeScreen.ScaleFactor.Y, MazeScreen.TileSize, MazeScreen.TileSize), Me.PlayerColor)
-                If DetectCollision(Me) Then
-                    FindCollision(Me).DecreaseHealth(PUNCH_DAMAGE)
+                If Utilities.DetectCollision(Me) Then
+                    If Utilities.FindCollision(Me).DecreaseHealth(Damages.PUNCH_DAMAGE) Then
+                        Me.IncreaseVicPoints()
+                    End If
                 End If
                 Me.HitBox.Y -= 4
         End Select
 
         Globals.SpriteBatch.End()
         Globals.Graphics.GraphicsDevice.Present()
-
-        'TODO
-        'Also play sound for swing, sound for hit
     End Sub
 
 End Class

@@ -33,4 +33,8 @@ Content\Songs\Athens.wma
 Content\Songs\Sabre.xnb
 Content\Songs\Sabre.wma
 Content\KryptonEffect.xnb
+Content\Sounds\pickup.xnb
+Content\Sounds\punch.xnb
+Content\Sounds\trident.xnb
+Content\GFX\Items\Weapons\AttackTrident.xnb
 Content\KryptonEffect.fx

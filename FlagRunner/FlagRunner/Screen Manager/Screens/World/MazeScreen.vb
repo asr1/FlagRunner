@@ -81,7 +81,13 @@
                     Player1.Punch()
                 Else
                     Player1.getMainWeapon.Attack(Player1.LastDir, Player1)
+                    Player1.getMainWeapon.playSound()
                 End If
+            End If
+
+            'Swap weapons
+            If (Input.ButtonPressed(Buttons.X, PlayerIndex.One)) Then
+                Player1.SwapWeapons()
             End If
 
             'Grab Item
@@ -130,9 +136,30 @@
                     Player2.Punch()
                 Else
                     Player2.getMainWeapon.Attack(Player2.LastDir, Player2)
+                    Player2.getMainWeapon.playSound()
                 End If
             End If
         End If
+
+        'Swap weapons
+        If (Input.ButtonPressed(Buttons.X, PlayerIndex.Two)) Then
+            Player2.SwapWeapons()
+        End If
+
+        'Grab Item
+        If Input.ButtonPressed(Buttons.A, PlayerIndex.Two) Then
+            'Emulate a with statement
+            Dim FloorItem As Item = MapBase.TileList(Player2.getAvatarPosition.X, Player2.getAvatarPosition.Y).Item
+
+            If Not FloorItem Is Nothing Then  ' There's something here
+                If TryCast(FloorItem, Weapon) Is Nothing Then 'We have an item
+                    Player2.PickUpItem(FloorItem, Player2.getAvatarPosition)
+                Else 'We have a weapon
+                    Player2.PickUpWeapon(FloorItem, Player2.getAvatarPosition)
+                End If
+            End If
+        End If
+
 
         'Player 3
         If Status.isConnected(PlayerIndex.Three) AndAlso Player3.Living Then
@@ -165,6 +192,26 @@
                     Player3.Punch()
                 Else
                     Player3.getMainWeapon.Attack(Player3.LastDir, Player3)
+                    Player3.getMainWeapon.playSound()
+                End If
+            End If
+        End If
+
+        'Swap weapons
+        If (Input.ButtonPressed(Buttons.X, PlayerIndex.Three)) Then
+            Player3.SwapWeapons()
+        End If
+
+        'Grab Item
+        If Input.ButtonPressed(Buttons.A, PlayerIndex.Three) Then
+            'Emulate a with statement
+            Dim FloorItem As Item = MapBase.TileList(Player3.getAvatarPosition.X, Player3.getAvatarPosition.Y).Item
+
+            If Not FloorItem Is Nothing Then  ' There's something here
+                If TryCast(FloorItem, Weapon) Is Nothing Then 'We have an item
+                    Player3.PickUpItem(FloorItem, Player3.getAvatarPosition)
+                Else 'We have a weapon
+                    Player3.PickUpWeapon(FloorItem, Player3.getAvatarPosition)
                 End If
             End If
         End If
@@ -200,9 +247,30 @@
                     Player4.Punch()
                 Else
                     Player4.getMainWeapon.Attack(Player4.LastDir, Player4)
+                    Player4.getMainWeapon.playSound()
                 End If
             End If
         End If
+
+        'Swap weapons
+        If (Input.ButtonPressed(Buttons.X, PlayerIndex.Four)) Then
+            Player4.SwapWeapons()
+        End If
+
+        'Grab Item
+        If Input.ButtonPressed(Buttons.A, PlayerIndex.Four) Then
+            'Emulate a with statement
+            Dim FloorItem As Item = MapBase.TileList(Player4.getAvatarPosition.X, Player4.getAvatarPosition.Y).Item
+
+            If Not FloorItem Is Nothing Then  ' There's something here
+                If TryCast(FloorItem, Weapon) Is Nothing Then 'We have an item
+                    Player4.PickUpItem(FloorItem, Player4.getAvatarPosition)
+                Else 'We have a weapon
+                    Player4.PickUpWeapon(FloorItem, Player4.getAvatarPosition)
+                End If
+            End If
+        End If
+
     End Sub
 
 

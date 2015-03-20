@@ -139,4 +139,44 @@
         Return "" ' This is never reached.
     End Function
 
+
+    'Detects a collision with another player
+    'Returns true if there is a collision, else false.
+    'So our collision detection works UNLESS both players are running at another, or 
+    'Both are moving simulataneously.
+    'Could remedy, could leave in. Let's see how it plays for a whle. (Fix in moveAvatar sub)
+    Public Shared Function DetectCollision(player As Player) As Boolean
+        For Each p As Player In MazeScreen.ConnectedPlayers
+            If Not IsNothing(p) Then
+                'Don't test for collision with ourself
+                If Not p.Equals(player) Then
+                    If player.HitBox.Intersects(p.HitBox) Then
+                        Return True
+                    End If
+                End If
+            End If
+        Next
+        'We iterated through every player without finding a collision
+        Return False
+    End Function
+
+    'Detects a collision with another player
+    'Returns the player with which a collision occurs.
+    'Should only be called after detect collision
+    Public Shared Function FindCollision(player As Player) As Player
+        For Each p As Player In MazeScreen.ConnectedPlayers
+            If Not IsNothing(p) Then
+                'Don't test for collision with ourself
+                If Not p.Equals(player) Then
+                    If player.HitBox.Intersects(p.HitBox) Then
+                        Return p
+                    End If
+                End If
+            End If
+        Next
+        'We iterated through every player without finding a collision
+        'We should never get here
+        Return Nothing
+    End Function
+
 End Class

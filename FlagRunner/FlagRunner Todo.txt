@@ -1,12 +1,18 @@
 Add weapons 
-add items and picking them up
-Add swapping method for item
+add items and picking them up (medkit, for example)
 
-Draw when I picked up a weapon
-
-add scoring (determine who gets a point!)
+When I pick up a weapon, update my sprite so that I'm carrying it.
 
 Add options - relative item drop frequency
+
+When I pick up a weapon, and I alrady have two, drop one and leave it in the square, yeah?
+
+Add capture the flag
+
+Do we want different sound effects for missing vs hitting with a weapon?
+or rather, swinging vs swining and hitting?
+
+trident attack, finish the art.
 
 ITEMS/WEAPONS:
 (TODO: Find/make sprites for these:)
@@ -31,3 +37,15 @@ Music starts after pausing.
 Fix light gun sprite when facing right.
 Add transitions to shooting.
 crashes when a controller is added.
+
+CONTROLS:
+
+R is attack,
+L thumstick is move
+A is pick up item
+B is run 
+X is swap weapons
+Start is pause game. 
+While paused L + X will exit to main menu.
+
+Z on the keyboard is toggle musix

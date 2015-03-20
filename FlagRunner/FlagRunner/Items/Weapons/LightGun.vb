@@ -29,7 +29,7 @@
 
     'Shoot a ball of light, up to 4 times, then start overwriting
     'TODO we need to actually draw here
-    Public Overrides Sub Attack(dir As Direction, player As Player)
+    Public Overrides Sub Attack(dir As Direction, attacker As Player)
 
 
         Dim AniTime As Double = 0
@@ -38,8 +38,8 @@
         lights(numShots Mod 4) = New Light2D
         Dim StopPos As Integer
         With lights(numShots Mod 4)
-            .X = player.getAvatarPosition.X
-            .Y = player.getAvatarPosition.Y
+            .X = attacker.getAvatarPosition.X
+            .Y = attacker.getAvatarPosition.Y
             .Texture = Textures.LightTexture
             .Range = 15
             .Color = Color.White

@@ -8,6 +8,7 @@ Public Class Textures
     Public Shared StatusLight As Texture2D
     Public Shared HealthBar As Texture2D
     Public Shared Trident As Texture2D
+    Public Shared attackTrident As Texture2D
     Public Shared LightTexture As Texture2D
     Public Shared LightGun As Texture2D
     Public Shared AButton As Texture2D
@@ -25,6 +26,7 @@ Public Class Textures
         StatusLight = Globals.Content.Load(Of Texture2D)("GFX/Connected")
         HealthBar = Globals.Content.Load(Of Texture2D)("GFX/Healthbar")
         Trident = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/Trident")
+        attackTrident = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/AttackTrident")
         LightTexture = LightTextureBuilder.CreatePointLight(Globals.Graphics.GraphicsDevice, 512)
         LightGun = Globals.Content.Load(Of Texture2D)("GFX/Items/Weapons/Lightgun")
         AButton = Globals.Content.Load(Of Texture2D)("GFX/Xbox360_Button_A")

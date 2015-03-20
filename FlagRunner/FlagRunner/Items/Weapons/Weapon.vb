@@ -7,12 +7,19 @@
     Public Shared IsMelee As Boolean 'If false, is ranged weapon
     Public Shared TwoHanded As Boolean 'If false, one handed
     Public Shared MaxRange As Boolean 'How far will a projectile go?
-    Public Shared Damage As Double 'How much damage will getting hit cost me?
-    Public Shared SoundEffect As String 'TODO
+    Public Shared Damage As Double = 0 'How much damage will getting hit cost me?
+    Public Shared sound As SoundEffect = Nothing 'TODO
 
 
     Public MustOverride Function getSourceRect(dir As Direction) As Rectangle
 
-    Public MustOverride Sub Attack(dir As Direction, player As Player)
+    'Dir: The direction the player is attacking in, player: the attacking player
+    Public MustOverride Sub Attack(dir As Direction, attacker As Player)
+
+    Public Sub playSound()
+        If Not IsNothing(sound) Then
+            sound.Play()
+        End If
+    End Sub
 
 End Class

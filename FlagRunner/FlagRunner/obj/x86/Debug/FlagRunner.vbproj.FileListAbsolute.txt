@@ -47,3 +47,7 @@ C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRu
 C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\FlagRunner.exe
 C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\FlagRunner.xml
 C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\obj\x86\Debug\FlagRunner.pdb
+C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Sounds\pickup.xnb
+C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Sounds\punch.xnb
+C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Sounds\trident.xnb
+C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\AttackTrident.xnb

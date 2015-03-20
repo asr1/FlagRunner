@@ -244,6 +244,42 @@
       <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\KryptonEffect.xnb</Output>
       <Time>2014-10-31T15:36:20.7918382-05:00</Time>
     </Item>
+    <Item>
+      <Source>Sounds\pickup.wav</Source>
+      <Name>Sounds\pickup</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Sounds\pickup.xnb</Output>
+      <Time>2015-03-19T23:20:44.2551319-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\punch.wav</Source>
+      <Name>Sounds\punch</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Sounds\punch.xnb</Output>
+      <Time>2015-03-19T23:49:38.3777146-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\trident.wav</Source>
+      <Name>Sounds\trident</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\Sounds\trident.xnb</Output>
+      <Time>2015-03-19T23:55:06.1826622-05:00</Time>
+    </Item>
+    <Item>
+      <Source>GFX\Items\Weapons\AttackTrident.png</Source>
+      <Name>GFX\Items\Weapons\AttackTrident</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Alex\documents\visual studio 2012\Projects\FlagRunner\FlagRunner\FlagRunner\bin\x86\Debug\Content\GFX\Items\Weapons\AttackTrident.xnb</Output>
+      <Time>2015-03-20T10:32:05.3242571-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9E8DF06C-A51D-40C8-AC7F-D5F717F64D4D}</ContentProjectGUID>

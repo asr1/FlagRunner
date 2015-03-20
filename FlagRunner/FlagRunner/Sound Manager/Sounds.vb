@@ -1,4 +1,5 @@
 ﻿Public Class Sounds
+    'songs
     Public Shared Track1 As Song
     Public Shared Track2 As Song
     Public Shared Track3 As Song
@@ -9,7 +10,13 @@
     Public Shared Track8 As Song
     Public Shared Track9 As Song
 
+    'soundeffects
+    Public Shared pickUpNoise = Globals.Content.Load(Of SoundEffect)("Sounds/Pickup")
+    Public Shared punchNoise = Globals.Content.Load(Of SoundEffect)("Sounds/punch")
+    Public Shared TridentNoise = Globals.Content.Load(Of SoundEffect)("sounds/trident")
+
     Public Shared Sub load()
+        'sounds
         Track1 = Globals.Content.Load(Of Song)("Songs/Lohengrin")
         Track2 = Globals.Content.Load(Of Song)("Songs/Meistersinger")
         Track3 = Globals.Content.Load(Of Song)("Songs/Rienzi")

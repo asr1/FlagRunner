@@ -4,7 +4,8 @@
     Breakability
     Health
     VPoints
-    Volume
+    MusicVolume
+    SoundVolume
     Items
     Back
 End Enum
@@ -44,6 +45,7 @@ Public Class OptionScreen
         AddEntry("Health", MenuEntries, True)
         AddEntry("Points to win", MenuEntries, True)
         AddEntry("Music Volume", MenuEntries, True)
+        AddEntry("Sound FX Volume", MenuEntries, True)
         AddEntry("Item Options", MenuEntries, True)
         AddEntry("Back", MenuEntries, True)
 
@@ -147,8 +149,10 @@ Public Class OptionScreen
                 Case OptionItems.VPoints
                     PointSelect = Utilities.NextSmallestEnum(GetType(VPoints), PointSelect)
                     Options.SetVictoryPoitns(PointSelect)
-                Case OptionItems.Volume
-                    SoundManager.SetVolume(-0.1F)
+                Case OptionItems.MusicVolume
+                    SoundManager.SetMusicVolume(-0.1F)
+                Case OptionItems.SoundVolume
+                    SoundManager.SetSoundVolume(-0.1F)
             End Select
         End If
 
@@ -177,8 +181,10 @@ Public Class OptionScreen
                 Case OptionItems.VPoints
                     PointSelect = Utilities.NextGreatestEnum(GetType(VPoints), PointSelect)
                     Options.SetVictoryPoitns(PointSelect)
-                Case OptionItems.Volume
-                    SoundManager.SetVolume(0.1F)
+                Case OptionItems.MusicVolume
+                    SoundManager.SetMusicVolume(0.1F)
+                Case OptionItems.SoundVolume
+                    SoundManager.SetSoundVolume(0.1F)
             End Select
         End If
 
@@ -216,8 +222,10 @@ Public Class OptionScreen
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, [Enum].GetName(GetType(Health), Options.getHealth), New Vector2(MenuPos.X + MenuSize.X / 2 + 100, 120), Color.White)
         'Victory Points
         Globals.SpriteBatch.DrawString(Fonts.Georgia_16, [Enum].GetName(GetType(VPoints), Options.getVictoryPoints), New Vector2(MenuPos.X + MenuSize.X / 2 + 100, 150), Color.White)
-        'Volume
-        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Math.Round(10 * SoundManager.GetVolume, 2), New Vector2(MenuPos.X + MenuSize.X / 2 + 100, 180), Color.White)
+        'Music Volume
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Math.Round(10 * SoundManager.GetMusicVolume, 2), New Vector2(MenuPos.X + MenuSize.X / 2 + 100, 180), Color.White)
+        'Sound Volume
+        Globals.SpriteBatch.DrawString(Fonts.Georgia_16, Math.Round(10 * SoundManager.GetSoundVolume, 2), New Vector2(MenuPos.X + MenuSize.X / 2 + 100, 210), Color.White)
         Globals.SpriteBatch.End()
     End Sub
 

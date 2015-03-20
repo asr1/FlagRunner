@@ -14,13 +14,22 @@
             soundOn = True
         End Sub
 
-    Public Shared Sub SetVolume(vol As Double)
+    Public Shared Sub SetMusicVolume(vol As Double)
         MediaPlayer.Volume = MathHelper.Clamp(MediaPlayer.Volume + vol, 0.0F, 1.0F)
     End Sub
 
-    Public Shared Function GetVolume() As Double
+    Public Shared Sub SetSoundVolume(vol As Double)
+        SoundEffect.MasterVolume = MathHelper.Clamp(SoundEffect.MasterVolume + vol, 0.0F, 1.0F)
+    End Sub
+
+    Public Shared Function GetMusicVolume() As Double
         Return MediaPlayer.Volume
     End Function
+
+    Public Shared Function GetSoundVolume() As Double
+        Return SoundEffect.MasterVolume
+    End Function
+
     'Resumes music at the last place it was paused
     Public Shared Sub ResumeMusic()
         MediaPlayer.Resume()
@@ -31,6 +40,7 @@
     'Used to disable all sounds
     Public Shared Sub Pause()
         MediaPlayer.Pause()
+        SoundEffect.MasterVolume = 0
         SoundOn = False
     End Sub
 
