@@ -111,7 +111,6 @@
     End Sub
 
     'It's possible that references to right and left are actually to top and bottom, and vice-versa
-    'By extension, it's not out of the question that divHorz() and divVert() are inversed 'Confirmed that these are inversed.
     Private Sub GenerateMaze(Left As Integer, Right As Integer, Top As Integer, Bottom As Integer)
         Dim Width As Integer = Right - Left
         Dim Height As Integer = Bottom - Top
@@ -120,31 +119,30 @@
         'And choose a direction
         If Width > Options.GetResolution And Height > Options.GetResolution Then
             If Width > Height Then
-                DivideVert(Left, Right, Top, Bottom)
-            ElseIf Height > Width Then
                 DivideHorz(Left, Right, Top, Bottom)
+            ElseIf Height > Width Then
+                DivideVert(Left, Right, Top, Bottom)
             Else 'They're equal
                 Dim Choice As Integer = Rand.Next(0, 2)
                 If (Choice = 0) Then
-                    DivideHorz(Left, Right, Top, Bottom)
-                Else
                     DivideVert(Left, Right, Top, Bottom)
+                Else
+                    DivideHorz(Left, Right, Top, Bottom)
                 End If
 
             End If
         ElseIf Width > Options.GetResolution And Height <= Options.GetResolution Then
-            DivideVert(Left, Right, Top, Bottom)
-        ElseIf Width <= Options.GetResolution And Height > Options.GetResolution Then
             DivideHorz(Left, Right, Top, Bottom)
+        ElseIf Width <= Options.GetResolution And Height > Options.GetResolution Then
+            DivideVert(Left, Right, Top, Bottom)
         End If
-
 
 
     End Sub
 
     'If sections are being blocked off, the problem here
     'Also, this is horizontal
-    Private Sub DivideVert(Left As Integer, Right As Integer, Top As Integer, Bottom As Integer)
+    Private Sub DivideHorz(Left As Integer, Right As Integer, Top As Integer, Bottom As Integer)
         'Find a random, even point to divide at
         Dim divPos As Integer = Left + 2 + Rand.Next(0, (Right - Left - 1) / 2 - 1) * 2
 
@@ -176,7 +174,7 @@
     End Sub
 
 
-    Private Sub DivideHorz(Left As Integer, Right As Integer, Top As Integer, Bottom As Integer)
+    Private Sub DivideVert(Left As Integer, Right As Integer, Top As Integer, Bottom As Integer)
         'Find a random, even point to divide at
         Dim divPos As Integer = Top + 2 + Rand.Next(0, (Bottom - Top - 1) / 2 - 1) * 2
         If divPos Mod 2 = 1 Then

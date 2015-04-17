@@ -267,7 +267,7 @@ Public Class Player
                     AvatarPosition.Y -= 1 'Actual movement?
                     AvatarOffset.Y = 0
                 End If
-        End Select
+        End Select    'move
 
         If AvatarOffset.X <> 0 Then
             AvatarFrame = Math.Floor(Math.Abs(AvatarOffset.X) / 32 * 4)
@@ -402,6 +402,6 @@ Public Class Player
 
         Globals.SpriteBatch.End()
         Globals.Graphics.GraphicsDevice.Present()
-    End Sub
+    End Sub  'punch()
 
 End Class
