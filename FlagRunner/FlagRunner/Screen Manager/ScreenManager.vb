@@ -5,8 +5,8 @@
 End Enum
 
 Public Class ScreenManager
-    Public Shared Screens As New List(Of BaseScreen) 'List of scren
-    Private Shared NewScreens As New List(Of BaseScreen) 'Sscreen to be added
+    Public Shared Screens As New List(Of BaseScreen) 'List of screen
+    Private Shared NewScreens As New List(Of BaseScreen) 'Screen to be added
     'Use so we can remove w/o affecting index numbers
     Private debugScreen As New Debug()
 
